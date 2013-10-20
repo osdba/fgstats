@@ -12,3 +12,136 @@ Fgstats is a Linux system and oracle database Monitor. It provides fine-grained(
 ### 显示Oracle的统计信息
 
 ![显示Oracle的统计信息](./png/stats01.png)
+
+
+## 安装
+
+### 程序分为两部分：
+  * fgweb: 提供web页面，查看收集到的细粒度统计信息。是一个C程序。
+  * fgcollect.pl: 细粒度数据收集程序，是一个perl脚本。 
+
+### 配置环境变量：
+  * 需要配置PostgreSQL的库和Oracle数据库的库路径到LD_LIBRARY_PATH中，如类似如下配置：
+  * export LD_LIBRARY_PATH=/usr/local/pgsql/lib:$LD_LIBRARY_PATH:$ORACLE_HOME/lib
+
+### 安装依赖包：
+  fgstats是使用perl脚本是收集Oracle数据库上的统计信息。
+  需要安装perl连接Oracle和PostgreSQL的驱动程序:
+  
+  * DBD:Oracle
+  * DBD:Pg
+  
+  具体如何安装请查看网上相关资料。
+
+### fgweb的安装：
+
+    cd fgstats/fgweb
+    make
+    make install
+  
+  这时就会在fgstats/bin下面生成fgweb程序。
+
+### 初使用化数据库：
+  
+  在PostgreSQL建一个数据库：
+  
+  在psql下执行：
+  
+    create database fg;
+  
+  或直接在bash下执行：
+    
+    createdb fg
+
+  然后在连接到这个数据库中执行fg_db_ini.sql：
+    
+    psql fg -f fgstats/fg_db_ini.sql
+
+### 配置fgstat
+  配置fgstats/conf/fgstats.conf文件，
+  
+  需要修改的配置项主要是连接PostgreSQL数据库的IP地址、用户名、密码等参数。
+
+### 启动程序
+  做完这些后，就可以启动fgweb程序了。启动方法为：
+    
+    cd fgstats/bin
+    ./fgweb
+  
+  注意这样启动是启动在前端，如果想让fgweb后台执行则：
+    
+    nohup ./fgweb >../log/fgweb.log 2>&1 &
+
+### 配置要监控的机器
+  启动fgweb程序，可以用浏览器打开http://127.0.0.1:8888进入fgstats界面了。
+  
+  这时由于还没有配置监控任主机，所以出来的监控界面中没有任何数据，也不能选择任何要监控的任何主机。所以先配置一台主机。
+  
+  配置方法先点界面中的“admin”链接，这时出现一个要求输入密码的界面，密码就是fgstats/conf/fgstats.conf中的密码，默认为“helloadmin”。
+  
+  进入配置界面：
+  
+  配置界面中,输入以下信息：
+  
+  * 主机名: ubuntu01              --主机名
+  
+  * 数据库名称: orcl               --数据库名称，如果是Oracle则是数据库实例名
+  
+  * IP地址: 192.168.1.21
+  
+  * 数据库端口:1521
+  
+  * 数据库类型: Oracle
+  
+  * 数据库版本: 10.2.0.4           --只是作为记录数据库的信息使用，可以输入任何值
+  
+  * OS类型: Linux                 --选择操作系统的类型，因为在不同的操作系统上获得CPU的命令是有差别的。
+  
+  * OS用户名:root                 --要求打此用户到主机的ssh通道，即可以直接ssh root@192.168.1.21
+  
+  * 备注：                        --备注信息，输入任意你需要记录的信息。
+
+  输入完后，点“增加主机定义”按钮则完成了增加一台主机的功能。
+
+  然后到第三个TAB切换页“监控项目配置”中，设置不同的主机需要监控的项目。
+
+### 启动数据采集程序：
+  做完这些后，就可以启动fgcollect.pl程序了。启动方法为：
+  
+    cd fgstats/bin
+    ./fgcollect.pl
+  
+  注意这样启动是启动在前端，如果想让fgcollect.pl后台执行则：
+  
+    nohup ./fgcollect.pl >../log/fgcollect.log 2>&1 &
+
+查看细粒度结果：
+  
+  用浏览器打开http://127.0.0.1:8888进入fgstats界面了，就可以看到结果了。
+  
+
+### 其它
+    
+  * 在Oracle数据库中一般需要建一个只读用户给fgstats使用：
+    
+        create user admin identified by helloadmin;
+        grant connect to admin;
+        grant select any table to admin;
+        grant select any dictionary to admin;
+        
+      连接测试：
+  
+      sqlplus admin/helloadmin@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.21)(PORT=1521)))(CONNECT_DATA=(SID=orcl)))
+
+  * 关于分表
+  
+    如果担心表db_stats_keepalive数据太多，想按天分区，则可以执行fgstats/bin/add_partition.pl脚本增加分区
+
+  * 自定义脚本或SQL，采集其它数据。
+  
+    如果配置的shell脚本，要求输入格式为一个指标名称，一个指标值，然后使用逗号人隔，如下面的脚本输出：
+  
+        osdba@osdba-laptop:~/fgstats/scripts$ ./s1001_1.sh
+    kthr_r,0,kthr_b,0,pi,7,po,15,cpu_user,1,cpu_sys,0,cpu_wait,0
+
+    如果配置的是SQL语句，要求输出格式为,输出两列，第一列为指标名称，第二列为指标值。
