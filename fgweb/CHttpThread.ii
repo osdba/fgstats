@@ -1,0 +1,9129 @@
+# 1 "CHttpThread.cpp"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "CHttpThread.cpp"
+# 1 "CHttpThread.h" 1
+
+
+# 1 "/usr/include/unistd.h" 1 3 4
+# 26 "/usr/include/unistd.h" 3 4
+# 1 "/usr/include/features.h" 1 3 4
+# 313 "/usr/include/features.h" 3 4
+# 1 "/usr/include/bits/predefs.h" 1 3 4
+# 314 "/usr/include/features.h" 2 3 4
+# 346 "/usr/include/features.h" 3 4
+# 1 "/usr/include/sys/cdefs.h" 1 3 4
+# 353 "/usr/include/sys/cdefs.h" 3 4
+# 1 "/usr/include/bits/wordsize.h" 1 3 4
+# 354 "/usr/include/sys/cdefs.h" 2 3 4
+# 347 "/usr/include/features.h" 2 3 4
+# 378 "/usr/include/features.h" 3 4
+# 1 "/usr/include/gnu/stubs.h" 1 3 4
+
+
+
+# 1 "/usr/include/bits/wordsize.h" 1 3 4
+# 5 "/usr/include/gnu/stubs.h" 2 3 4
+
+
+
+
+# 1 "/usr/include/gnu/stubs-64.h" 1 3 4
+# 10 "/usr/include/gnu/stubs.h" 2 3 4
+# 379 "/usr/include/features.h" 2 3 4
+# 27 "/usr/include/unistd.h" 2 3 4
+
+extern "C" {
+# 203 "/usr/include/unistd.h" 3 4
+# 1 "/usr/include/bits/posix_opt.h" 1 3 4
+# 204 "/usr/include/unistd.h" 2 3 4
+
+
+
+# 1 "/usr/include/bits/environments.h" 1 3 4
+# 23 "/usr/include/bits/environments.h" 3 4
+# 1 "/usr/include/bits/wordsize.h" 1 3 4
+# 24 "/usr/include/bits/environments.h" 2 3 4
+# 208 "/usr/include/unistd.h" 2 3 4
+# 218 "/usr/include/unistd.h" 3 4
+# 1 "/usr/include/bits/types.h" 1 3 4
+# 28 "/usr/include/bits/types.h" 3 4
+# 1 "/usr/include/bits/wordsize.h" 1 3 4
+# 29 "/usr/include/bits/types.h" 2 3 4
+
+
+typedef unsigned char __u_char;
+typedef unsigned short int __u_short;
+typedef unsigned int __u_int;
+typedef unsigned long int __u_long;
+
+
+typedef signed char __int8_t;
+typedef unsigned char __uint8_t;
+typedef signed short int __int16_t;
+typedef unsigned short int __uint16_t;
+typedef signed int __int32_t;
+typedef unsigned int __uint32_t;
+
+typedef signed long int __int64_t;
+typedef unsigned long int __uint64_t;
+
+
+
+
+
+
+
+typedef long int __quad_t;
+typedef unsigned long int __u_quad_t;
+# 131 "/usr/include/bits/types.h" 3 4
+# 1 "/usr/include/bits/typesizes.h" 1 3 4
+# 132 "/usr/include/bits/types.h" 2 3 4
+
+
+typedef unsigned long int __dev_t;
+typedef unsigned int __uid_t;
+typedef unsigned int __gid_t;
+typedef unsigned long int __ino_t;
+typedef unsigned long int __ino64_t;
+typedef unsigned int __mode_t;
+typedef unsigned long int __nlink_t;
+typedef long int __off_t;
+typedef long int __off64_t;
+typedef int __pid_t;
+typedef struct { int __val[2]; } __fsid_t;
+typedef long int __clock_t;
+typedef unsigned long int __rlim_t;
+typedef unsigned long int __rlim64_t;
+typedef unsigned int __id_t;
+typedef long int __time_t;
+typedef unsigned int __useconds_t;
+typedef long int __suseconds_t;
+
+typedef int __daddr_t;
+typedef long int __swblk_t;
+typedef int __key_t;
+
+
+typedef int __clockid_t;
+
+
+typedef void * __timer_t;
+
+
+typedef long int __blksize_t;
+
+
+
+
+typedef long int __blkcnt_t;
+typedef long int __blkcnt64_t;
+
+
+typedef unsigned long int __fsblkcnt_t;
+typedef unsigned long int __fsblkcnt64_t;
+
+
+typedef unsigned long int __fsfilcnt_t;
+typedef unsigned long int __fsfilcnt64_t;
+
+typedef long int __ssize_t;
+
+
+
+typedef __off64_t __loff_t;
+typedef __quad_t *__qaddr_t;
+typedef char *__caddr_t;
+
+
+typedef long int __intptr_t;
+
+
+typedef unsigned int __socklen_t;
+# 219 "/usr/include/unistd.h" 2 3 4
+
+
+typedef __ssize_t ssize_t;
+
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h" 1 3 4
+# 211 "/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h" 3 4
+typedef long unsigned int size_t;
+# 228 "/usr/include/unistd.h" 2 3 4
+
+
+
+
+
+typedef __gid_t gid_t;
+
+
+
+
+typedef __uid_t uid_t;
+
+
+
+
+
+typedef __off_t off_t;
+
+
+
+
+
+
+typedef __off64_t off64_t;
+
+
+
+
+typedef __useconds_t useconds_t;
+
+
+
+
+typedef __pid_t pid_t;
+
+
+
+
+
+
+typedef __intptr_t intptr_t;
+
+
+
+
+
+
+typedef __socklen_t socklen_t;
+# 288 "/usr/include/unistd.h" 3 4
+extern int access (__const char *__name, int __type) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int euidaccess (__const char *__name, int __type)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int eaccess (__const char *__name, int __type)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern int faccessat (int __fd, __const char *__file, int __type, int __flag)
+     throw () __attribute__ ((__nonnull__ (2))) ;
+# 331 "/usr/include/unistd.h" 3 4
+extern __off_t lseek (int __fd, __off_t __offset, int __whence) throw ();
+# 342 "/usr/include/unistd.h" 3 4
+extern __off64_t lseek64 (int __fd, __off64_t __offset, int __whence)
+     throw ();
+
+
+
+
+
+
+extern int close (int __fd);
+
+
+
+
+
+
+extern ssize_t read (int __fd, void *__buf, size_t __nbytes) ;
+
+
+
+
+
+extern ssize_t write (int __fd, __const void *__buf, size_t __n) ;
+# 373 "/usr/include/unistd.h" 3 4
+extern ssize_t pread (int __fd, void *__buf, size_t __nbytes,
+        __off_t __offset) ;
+
+
+
+
+
+
+extern ssize_t pwrite (int __fd, __const void *__buf, size_t __n,
+         __off_t __offset) ;
+# 401 "/usr/include/unistd.h" 3 4
+extern ssize_t pread64 (int __fd, void *__buf, size_t __nbytes,
+   __off64_t __offset) ;
+
+
+extern ssize_t pwrite64 (int __fd, __const void *__buf, size_t __n,
+    __off64_t __offset) ;
+
+
+
+
+
+
+
+extern int pipe (int __pipedes[2]) throw () ;
+
+
+
+
+extern int pipe2 (int __pipedes[2], int __flags) throw () ;
+# 429 "/usr/include/unistd.h" 3 4
+extern unsigned int alarm (unsigned int __seconds) throw ();
+# 441 "/usr/include/unistd.h" 3 4
+extern unsigned int sleep (unsigned int __seconds);
+
+
+
+
+
+
+extern __useconds_t ualarm (__useconds_t __value, __useconds_t __interval)
+     throw ();
+
+
+
+
+
+
+extern int usleep (__useconds_t __useconds);
+# 465 "/usr/include/unistd.h" 3 4
+extern int pause (void);
+
+
+
+extern int chown (__const char *__file, __uid_t __owner, __gid_t __group)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+
+
+
+extern int fchown (int __fd, __uid_t __owner, __gid_t __group) throw () ;
+
+
+
+
+extern int lchown (__const char *__file, __uid_t __owner, __gid_t __group)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+
+
+extern int fchownat (int __fd, __const char *__file, __uid_t __owner,
+       __gid_t __group, int __flag)
+     throw () __attribute__ ((__nonnull__ (2))) ;
+
+
+
+extern int chdir (__const char *__path) throw () __attribute__ ((__nonnull__ (1))) ;
+
+
+
+extern int fchdir (int __fd) throw () ;
+# 507 "/usr/include/unistd.h" 3 4
+extern char *getcwd (char *__buf, size_t __size) throw () ;
+
+
+
+
+
+extern char *get_current_dir_name (void) throw ();
+
+
+
+
+
+
+extern char *getwd (char *__buf)
+     throw () __attribute__ ((__nonnull__ (1))) __attribute__ ((__deprecated__)) ;
+
+
+
+
+extern int dup (int __fd) throw () ;
+
+
+extern int dup2 (int __fd, int __fd2) throw ();
+
+
+
+
+extern int dup3 (int __fd, int __fd2, int __flags) throw ();
+
+
+
+extern char **__environ;
+
+extern char **environ;
+
+
+
+
+
+extern int execve (__const char *__path, char *__const __argv[],
+     char *__const __envp[]) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int fexecve (int __fd, char *__const __argv[], char *__const __envp[])
+     throw ();
+
+
+
+
+extern int execv (__const char *__path, char *__const __argv[])
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int execle (__const char *__path, __const char *__arg, ...)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int execl (__const char *__path, __const char *__arg, ...)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int execvp (__const char *__file, char *__const __argv[])
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int execlp (__const char *__file, __const char *__arg, ...)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int execvpe (__const char *__file, char *__const __argv[],
+      char *__const __envp[])
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int nice (int __inc) throw () ;
+
+
+
+
+extern void _exit (int __status) __attribute__ ((__noreturn__));
+
+
+
+
+
+# 1 "/usr/include/bits/confname.h" 1 3 4
+# 26 "/usr/include/bits/confname.h" 3 4
+enum
+  {
+    _PC_LINK_MAX,
+
+    _PC_MAX_CANON,
+
+    _PC_MAX_INPUT,
+
+    _PC_NAME_MAX,
+
+    _PC_PATH_MAX,
+
+    _PC_PIPE_BUF,
+
+    _PC_CHOWN_RESTRICTED,
+
+    _PC_NO_TRUNC,
+
+    _PC_VDISABLE,
+
+    _PC_SYNC_IO,
+
+    _PC_ASYNC_IO,
+
+    _PC_PRIO_IO,
+
+    _PC_SOCK_MAXBUF,
+
+    _PC_FILESIZEBITS,
+
+    _PC_REC_INCR_XFER_SIZE,
+
+    _PC_REC_MAX_XFER_SIZE,
+
+    _PC_REC_MIN_XFER_SIZE,
+
+    _PC_REC_XFER_ALIGN,
+
+    _PC_ALLOC_SIZE_MIN,
+
+    _PC_SYMLINK_MAX,
+
+    _PC_2_SYMLINKS
+
+  };
+
+
+enum
+  {
+    _SC_ARG_MAX,
+
+    _SC_CHILD_MAX,
+
+    _SC_CLK_TCK,
+
+    _SC_NGROUPS_MAX,
+
+    _SC_OPEN_MAX,
+
+    _SC_STREAM_MAX,
+
+    _SC_TZNAME_MAX,
+
+    _SC_JOB_CONTROL,
+
+    _SC_SAVED_IDS,
+
+    _SC_REALTIME_SIGNALS,
+
+    _SC_PRIORITY_SCHEDULING,
+
+    _SC_TIMERS,
+
+    _SC_ASYNCHRONOUS_IO,
+
+    _SC_PRIORITIZED_IO,
+
+    _SC_SYNCHRONIZED_IO,
+
+    _SC_FSYNC,
+
+    _SC_MAPPED_FILES,
+
+    _SC_MEMLOCK,
+
+    _SC_MEMLOCK_RANGE,
+
+    _SC_MEMORY_PROTECTION,
+
+    _SC_MESSAGE_PASSING,
+
+    _SC_SEMAPHORES,
+
+    _SC_SHARED_MEMORY_OBJECTS,
+
+    _SC_AIO_LISTIO_MAX,
+
+    _SC_AIO_MAX,
+
+    _SC_AIO_PRIO_DELTA_MAX,
+
+    _SC_DELAYTIMER_MAX,
+
+    _SC_MQ_OPEN_MAX,
+
+    _SC_MQ_PRIO_MAX,
+
+    _SC_VERSION,
+
+    _SC_PAGESIZE,
+
+
+    _SC_RTSIG_MAX,
+
+    _SC_SEM_NSEMS_MAX,
+
+    _SC_SEM_VALUE_MAX,
+
+    _SC_SIGQUEUE_MAX,
+
+    _SC_TIMER_MAX,
+
+
+
+
+    _SC_BC_BASE_MAX,
+
+    _SC_BC_DIM_MAX,
+
+    _SC_BC_SCALE_MAX,
+
+    _SC_BC_STRING_MAX,
+
+    _SC_COLL_WEIGHTS_MAX,
+
+    _SC_EQUIV_CLASS_MAX,
+
+    _SC_EXPR_NEST_MAX,
+
+    _SC_LINE_MAX,
+
+    _SC_RE_DUP_MAX,
+
+    _SC_CHARCLASS_NAME_MAX,
+
+
+    _SC_2_VERSION,
+
+    _SC_2_C_BIND,
+
+    _SC_2_C_DEV,
+
+    _SC_2_FORT_DEV,
+
+    _SC_2_FORT_RUN,
+
+    _SC_2_SW_DEV,
+
+    _SC_2_LOCALEDEF,
+
+
+    _SC_PII,
+
+    _SC_PII_XTI,
+
+    _SC_PII_SOCKET,
+
+    _SC_PII_INTERNET,
+
+    _SC_PII_OSI,
+
+    _SC_POLL,
+
+    _SC_SELECT,
+
+    _SC_UIO_MAXIOV,
+
+    _SC_IOV_MAX = _SC_UIO_MAXIOV,
+
+    _SC_PII_INTERNET_STREAM,
+
+    _SC_PII_INTERNET_DGRAM,
+
+    _SC_PII_OSI_COTS,
+
+    _SC_PII_OSI_CLTS,
+
+    _SC_PII_OSI_M,
+
+    _SC_T_IOV_MAX,
+
+
+
+    _SC_THREADS,
+
+    _SC_THREAD_SAFE_FUNCTIONS,
+
+    _SC_GETGR_R_SIZE_MAX,
+
+    _SC_GETPW_R_SIZE_MAX,
+
+    _SC_LOGIN_NAME_MAX,
+
+    _SC_TTY_NAME_MAX,
+
+    _SC_THREAD_DESTRUCTOR_ITERATIONS,
+
+    _SC_THREAD_KEYS_MAX,
+
+    _SC_THREAD_STACK_MIN,
+
+    _SC_THREAD_THREADS_MAX,
+
+    _SC_THREAD_ATTR_STACKADDR,
+
+    _SC_THREAD_ATTR_STACKSIZE,
+
+    _SC_THREAD_PRIORITY_SCHEDULING,
+
+    _SC_THREAD_PRIO_INHERIT,
+
+    _SC_THREAD_PRIO_PROTECT,
+
+    _SC_THREAD_PROCESS_SHARED,
+
+
+    _SC_NPROCESSORS_CONF,
+
+    _SC_NPROCESSORS_ONLN,
+
+    _SC_PHYS_PAGES,
+
+    _SC_AVPHYS_PAGES,
+
+    _SC_ATEXIT_MAX,
+
+    _SC_PASS_MAX,
+
+
+    _SC_XOPEN_VERSION,
+
+    _SC_XOPEN_XCU_VERSION,
+
+    _SC_XOPEN_UNIX,
+
+    _SC_XOPEN_CRYPT,
+
+    _SC_XOPEN_ENH_I18N,
+
+    _SC_XOPEN_SHM,
+
+
+    _SC_2_CHAR_TERM,
+
+    _SC_2_C_VERSION,
+
+    _SC_2_UPE,
+
+
+    _SC_XOPEN_XPG2,
+
+    _SC_XOPEN_XPG3,
+
+    _SC_XOPEN_XPG4,
+
+
+    _SC_CHAR_BIT,
+
+    _SC_CHAR_MAX,
+
+    _SC_CHAR_MIN,
+
+    _SC_INT_MAX,
+
+    _SC_INT_MIN,
+
+    _SC_LONG_BIT,
+
+    _SC_WORD_BIT,
+
+    _SC_MB_LEN_MAX,
+
+    _SC_NZERO,
+
+    _SC_SSIZE_MAX,
+
+    _SC_SCHAR_MAX,
+
+    _SC_SCHAR_MIN,
+
+    _SC_SHRT_MAX,
+
+    _SC_SHRT_MIN,
+
+    _SC_UCHAR_MAX,
+
+    _SC_UINT_MAX,
+
+    _SC_ULONG_MAX,
+
+    _SC_USHRT_MAX,
+
+
+    _SC_NL_ARGMAX,
+
+    _SC_NL_LANGMAX,
+
+    _SC_NL_MSGMAX,
+
+    _SC_NL_NMAX,
+
+    _SC_NL_SETMAX,
+
+    _SC_NL_TEXTMAX,
+
+
+    _SC_XBS5_ILP32_OFF32,
+
+    _SC_XBS5_ILP32_OFFBIG,
+
+    _SC_XBS5_LP64_OFF64,
+
+    _SC_XBS5_LPBIG_OFFBIG,
+
+
+    _SC_XOPEN_LEGACY,
+
+    _SC_XOPEN_REALTIME,
+
+    _SC_XOPEN_REALTIME_THREADS,
+
+
+    _SC_ADVISORY_INFO,
+
+    _SC_BARRIERS,
+
+    _SC_BASE,
+
+    _SC_C_LANG_SUPPORT,
+
+    _SC_C_LANG_SUPPORT_R,
+
+    _SC_CLOCK_SELECTION,
+
+    _SC_CPUTIME,
+
+    _SC_THREAD_CPUTIME,
+
+    _SC_DEVICE_IO,
+
+    _SC_DEVICE_SPECIFIC,
+
+    _SC_DEVICE_SPECIFIC_R,
+
+    _SC_FD_MGMT,
+
+    _SC_FIFO,
+
+    _SC_PIPE,
+
+    _SC_FILE_ATTRIBUTES,
+
+    _SC_FILE_LOCKING,
+
+    _SC_FILE_SYSTEM,
+
+    _SC_MONOTONIC_CLOCK,
+
+    _SC_MULTI_PROCESS,
+
+    _SC_SINGLE_PROCESS,
+
+    _SC_NETWORKING,
+
+    _SC_READER_WRITER_LOCKS,
+
+    _SC_SPIN_LOCKS,
+
+    _SC_REGEXP,
+
+    _SC_REGEX_VERSION,
+
+    _SC_SHELL,
+
+    _SC_SIGNALS,
+
+    _SC_SPAWN,
+
+    _SC_SPORADIC_SERVER,
+
+    _SC_THREAD_SPORADIC_SERVER,
+
+    _SC_SYSTEM_DATABASE,
+
+    _SC_SYSTEM_DATABASE_R,
+
+    _SC_TIMEOUTS,
+
+    _SC_TYPED_MEMORY_OBJECTS,
+
+    _SC_USER_GROUPS,
+
+    _SC_USER_GROUPS_R,
+
+    _SC_2_PBS,
+
+    _SC_2_PBS_ACCOUNTING,
+
+    _SC_2_PBS_LOCATE,
+
+    _SC_2_PBS_MESSAGE,
+
+    _SC_2_PBS_TRACK,
+
+    _SC_SYMLOOP_MAX,
+
+    _SC_STREAMS,
+
+    _SC_2_PBS_CHECKPOINT,
+
+
+    _SC_V6_ILP32_OFF32,
+
+    _SC_V6_ILP32_OFFBIG,
+
+    _SC_V6_LP64_OFF64,
+
+    _SC_V6_LPBIG_OFFBIG,
+
+
+    _SC_HOST_NAME_MAX,
+
+    _SC_TRACE,
+
+    _SC_TRACE_EVENT_FILTER,
+
+    _SC_TRACE_INHERIT,
+
+    _SC_TRACE_LOG,
+
+
+    _SC_LEVEL1_ICACHE_SIZE,
+
+    _SC_LEVEL1_ICACHE_ASSOC,
+
+    _SC_LEVEL1_ICACHE_LINESIZE,
+
+    _SC_LEVEL1_DCACHE_SIZE,
+
+    _SC_LEVEL1_DCACHE_ASSOC,
+
+    _SC_LEVEL1_DCACHE_LINESIZE,
+
+    _SC_LEVEL2_CACHE_SIZE,
+
+    _SC_LEVEL2_CACHE_ASSOC,
+
+    _SC_LEVEL2_CACHE_LINESIZE,
+
+    _SC_LEVEL3_CACHE_SIZE,
+
+    _SC_LEVEL3_CACHE_ASSOC,
+
+    _SC_LEVEL3_CACHE_LINESIZE,
+
+    _SC_LEVEL4_CACHE_SIZE,
+
+    _SC_LEVEL4_CACHE_ASSOC,
+
+    _SC_LEVEL4_CACHE_LINESIZE,
+
+
+
+    _SC_IPV6 = _SC_LEVEL1_ICACHE_SIZE + 50,
+
+    _SC_RAW_SOCKETS,
+
+
+    _SC_V7_ILP32_OFF32,
+
+    _SC_V7_ILP32_OFFBIG,
+
+    _SC_V7_LP64_OFF64,
+
+    _SC_V7_LPBIG_OFFBIG,
+
+
+    _SC_SS_REPL_MAX,
+
+
+    _SC_TRACE_EVENT_NAME_MAX,
+
+    _SC_TRACE_NAME_MAX,
+
+    _SC_TRACE_SYS_MAX,
+
+    _SC_TRACE_USER_EVENT_MAX,
+
+
+    _SC_XOPEN_STREAMS,
+
+
+    _SC_THREAD_ROBUST_PRIO_INHERIT,
+
+    _SC_THREAD_ROBUST_PRIO_PROTECT
+
+  };
+
+
+enum
+  {
+    _CS_PATH,
+
+
+    _CS_V6_WIDTH_RESTRICTED_ENVS,
+
+
+
+    _CS_GNU_LIBC_VERSION,
+
+    _CS_GNU_LIBPTHREAD_VERSION,
+
+
+    _CS_V5_WIDTH_RESTRICTED_ENVS,
+
+
+
+    _CS_V7_WIDTH_RESTRICTED_ENVS,
+
+
+
+    _CS_LFS_CFLAGS = 1000,
+
+    _CS_LFS_LDFLAGS,
+
+    _CS_LFS_LIBS,
+
+    _CS_LFS_LINTFLAGS,
+
+    _CS_LFS64_CFLAGS,
+
+    _CS_LFS64_LDFLAGS,
+
+    _CS_LFS64_LIBS,
+
+    _CS_LFS64_LINTFLAGS,
+
+
+    _CS_XBS5_ILP32_OFF32_CFLAGS = 1100,
+
+    _CS_XBS5_ILP32_OFF32_LDFLAGS,
+
+    _CS_XBS5_ILP32_OFF32_LIBS,
+
+    _CS_XBS5_ILP32_OFF32_LINTFLAGS,
+
+    _CS_XBS5_ILP32_OFFBIG_CFLAGS,
+
+    _CS_XBS5_ILP32_OFFBIG_LDFLAGS,
+
+    _CS_XBS5_ILP32_OFFBIG_LIBS,
+
+    _CS_XBS5_ILP32_OFFBIG_LINTFLAGS,
+
+    _CS_XBS5_LP64_OFF64_CFLAGS,
+
+    _CS_XBS5_LP64_OFF64_LDFLAGS,
+
+    _CS_XBS5_LP64_OFF64_LIBS,
+
+    _CS_XBS5_LP64_OFF64_LINTFLAGS,
+
+    _CS_XBS5_LPBIG_OFFBIG_CFLAGS,
+
+    _CS_XBS5_LPBIG_OFFBIG_LDFLAGS,
+
+    _CS_XBS5_LPBIG_OFFBIG_LIBS,
+
+    _CS_XBS5_LPBIG_OFFBIG_LINTFLAGS,
+
+
+    _CS_POSIX_V6_ILP32_OFF32_CFLAGS,
+
+    _CS_POSIX_V6_ILP32_OFF32_LDFLAGS,
+
+    _CS_POSIX_V6_ILP32_OFF32_LIBS,
+
+    _CS_POSIX_V6_ILP32_OFF32_LINTFLAGS,
+
+    _CS_POSIX_V6_ILP32_OFFBIG_CFLAGS,
+
+    _CS_POSIX_V6_ILP32_OFFBIG_LDFLAGS,
+
+    _CS_POSIX_V6_ILP32_OFFBIG_LIBS,
+
+    _CS_POSIX_V6_ILP32_OFFBIG_LINTFLAGS,
+
+    _CS_POSIX_V6_LP64_OFF64_CFLAGS,
+
+    _CS_POSIX_V6_LP64_OFF64_LDFLAGS,
+
+    _CS_POSIX_V6_LP64_OFF64_LIBS,
+
+    _CS_POSIX_V6_LP64_OFF64_LINTFLAGS,
+
+    _CS_POSIX_V6_LPBIG_OFFBIG_CFLAGS,
+
+    _CS_POSIX_V6_LPBIG_OFFBIG_LDFLAGS,
+
+    _CS_POSIX_V6_LPBIG_OFFBIG_LIBS,
+
+    _CS_POSIX_V6_LPBIG_OFFBIG_LINTFLAGS,
+
+
+    _CS_POSIX_V7_ILP32_OFF32_CFLAGS,
+
+    _CS_POSIX_V7_ILP32_OFF32_LDFLAGS,
+
+    _CS_POSIX_V7_ILP32_OFF32_LIBS,
+
+    _CS_POSIX_V7_ILP32_OFF32_LINTFLAGS,
+
+    _CS_POSIX_V7_ILP32_OFFBIG_CFLAGS,
+
+    _CS_POSIX_V7_ILP32_OFFBIG_LDFLAGS,
+
+    _CS_POSIX_V7_ILP32_OFFBIG_LIBS,
+
+    _CS_POSIX_V7_ILP32_OFFBIG_LINTFLAGS,
+
+    _CS_POSIX_V7_LP64_OFF64_CFLAGS,
+
+    _CS_POSIX_V7_LP64_OFF64_LDFLAGS,
+
+    _CS_POSIX_V7_LP64_OFF64_LIBS,
+
+    _CS_POSIX_V7_LP64_OFF64_LINTFLAGS,
+
+    _CS_POSIX_V7_LPBIG_OFFBIG_CFLAGS,
+
+    _CS_POSIX_V7_LPBIG_OFFBIG_LDFLAGS,
+
+    _CS_POSIX_V7_LPBIG_OFFBIG_LIBS,
+
+    _CS_POSIX_V7_LPBIG_OFFBIG_LINTFLAGS
+
+  };
+# 605 "/usr/include/unistd.h" 2 3 4
+
+
+extern long int pathconf (__const char *__path, int __name)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern long int fpathconf (int __fd, int __name) throw ();
+
+
+extern long int sysconf (int __name) throw ();
+
+
+
+extern size_t confstr (int __name, char *__buf, size_t __len) throw ();
+
+
+
+
+extern __pid_t getpid (void) throw ();
+
+
+extern __pid_t getppid (void) throw ();
+
+
+
+
+extern __pid_t getpgrp (void) throw ();
+# 641 "/usr/include/unistd.h" 3 4
+extern __pid_t __getpgid (__pid_t __pid) throw ();
+
+extern __pid_t getpgid (__pid_t __pid) throw ();
+
+
+
+
+
+
+extern int setpgid (__pid_t __pid, __pid_t __pgid) throw ();
+# 667 "/usr/include/unistd.h" 3 4
+extern int setpgrp (void) throw ();
+# 684 "/usr/include/unistd.h" 3 4
+extern __pid_t setsid (void) throw ();
+
+
+
+extern __pid_t getsid (__pid_t __pid) throw ();
+
+
+
+extern __uid_t getuid (void) throw ();
+
+
+extern __uid_t geteuid (void) throw ();
+
+
+extern __gid_t getgid (void) throw ();
+
+
+extern __gid_t getegid (void) throw ();
+
+
+
+
+extern int getgroups (int __size, __gid_t __list[]) throw () ;
+
+
+
+extern int group_member (__gid_t __gid) throw ();
+
+
+
+
+
+
+extern int setuid (__uid_t __uid) throw ();
+
+
+
+
+extern int setreuid (__uid_t __ruid, __uid_t __euid) throw ();
+
+
+
+
+extern int seteuid (__uid_t __uid) throw ();
+
+
+
+
+
+
+extern int setgid (__gid_t __gid) throw ();
+
+
+
+
+extern int setregid (__gid_t __rgid, __gid_t __egid) throw ();
+
+
+
+
+extern int setegid (__gid_t __gid) throw ();
+
+
+
+
+
+extern int getresuid (__uid_t *__ruid, __uid_t *__euid, __uid_t *__suid)
+     throw ();
+
+
+
+extern int getresgid (__gid_t *__rgid, __gid_t *__egid, __gid_t *__sgid)
+     throw ();
+
+
+
+extern int setresuid (__uid_t __ruid, __uid_t __euid, __uid_t __suid)
+     throw ();
+
+
+
+extern int setresgid (__gid_t __rgid, __gid_t __egid, __gid_t __sgid)
+     throw ();
+
+
+
+
+
+
+extern __pid_t fork (void) throw ();
+
+
+
+
+
+
+extern __pid_t vfork (void) throw ();
+
+
+
+
+
+extern char *ttyname (int __fd) throw ();
+
+
+
+extern int ttyname_r (int __fd, char *__buf, size_t __buflen)
+     throw () __attribute__ ((__nonnull__ (2))) ;
+
+
+
+extern int isatty (int __fd) throw ();
+
+
+
+
+
+extern int ttyslot (void) throw ();
+
+
+
+
+extern int link (__const char *__from, __const char *__to)
+     throw () __attribute__ ((__nonnull__ (1, 2))) ;
+
+
+
+
+extern int linkat (int __fromfd, __const char *__from, int __tofd,
+     __const char *__to, int __flags)
+     throw () __attribute__ ((__nonnull__ (2, 4))) ;
+
+
+
+
+extern int symlink (__const char *__from, __const char *__to)
+     throw () __attribute__ ((__nonnull__ (1, 2))) ;
+
+
+
+
+extern ssize_t readlink (__const char *__restrict __path,
+    char *__restrict __buf, size_t __len)
+     throw () __attribute__ ((__nonnull__ (1, 2))) ;
+
+
+
+
+extern int symlinkat (__const char *__from, int __tofd,
+        __const char *__to) throw () __attribute__ ((__nonnull__ (1, 3))) ;
+
+
+extern ssize_t readlinkat (int __fd, __const char *__restrict __path,
+      char *__restrict __buf, size_t __len)
+     throw () __attribute__ ((__nonnull__ (2, 3))) ;
+
+
+
+extern int unlink (__const char *__name) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int unlinkat (int __fd, __const char *__name, int __flag)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+extern int rmdir (__const char *__path) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern __pid_t tcgetpgrp (int __fd) throw ();
+
+
+extern int tcsetpgrp (int __fd, __pid_t __pgrp_id) throw ();
+
+
+
+
+
+
+extern char *getlogin (void);
+
+
+
+
+
+
+
+extern int getlogin_r (char *__name, size_t __name_len) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int setlogin (__const char *__name) throw () __attribute__ ((__nonnull__ (1)));
+# 887 "/usr/include/unistd.h" 3 4
+# 1 "/usr/include/getopt.h" 1 3 4
+# 50 "/usr/include/getopt.h" 3 4
+extern "C" {
+# 59 "/usr/include/getopt.h" 3 4
+extern char *optarg;
+# 73 "/usr/include/getopt.h" 3 4
+extern int optind;
+
+
+
+
+extern int opterr;
+
+
+
+extern int optopt;
+# 152 "/usr/include/getopt.h" 3 4
+extern int getopt (int ___argc, char *const *___argv, const char *__shortopts)
+       throw ();
+# 187 "/usr/include/getopt.h" 3 4
+}
+# 888 "/usr/include/unistd.h" 2 3 4
+
+
+
+
+
+
+
+extern int gethostname (char *__name, size_t __len) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern int sethostname (__const char *__name, size_t __len)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+
+
+
+extern int sethostid (long int __id) throw () ;
+
+
+
+
+
+extern int getdomainname (char *__name, size_t __len)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+extern int setdomainname (__const char *__name, size_t __len)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+
+extern int vhangup (void) throw ();
+
+
+extern int revoke (__const char *__file) throw () __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+
+
+
+extern int profil (unsigned short int *__sample_buffer, size_t __size,
+     size_t __offset, unsigned int __scale)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int acct (__const char *__name) throw ();
+
+
+
+extern char *getusershell (void) throw ();
+extern void endusershell (void) throw ();
+extern void setusershell (void) throw ();
+
+
+
+
+
+extern int daemon (int __nochdir, int __noclose) throw () ;
+
+
+
+
+
+
+extern int chroot (__const char *__path) throw () __attribute__ ((__nonnull__ (1))) ;
+
+
+
+extern char *getpass (__const char *__prompt) __attribute__ ((__nonnull__ (1)));
+# 973 "/usr/include/unistd.h" 3 4
+extern int fsync (int __fd);
+
+
+
+
+
+
+extern long int gethostid (void);
+
+
+extern void sync (void) throw ();
+
+
+
+
+extern int getpagesize (void) throw () __attribute__ ((__const__));
+
+
+
+
+extern int getdtablesize (void) throw ();
+
+
+
+
+extern int truncate (__const char *__file, __off_t __length)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+# 1010 "/usr/include/unistd.h" 3 4
+extern int truncate64 (__const char *__file, __off64_t __length)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+# 1020 "/usr/include/unistd.h" 3 4
+extern int ftruncate (int __fd, __off_t __length) throw () ;
+# 1030 "/usr/include/unistd.h" 3 4
+extern int ftruncate64 (int __fd, __off64_t __length) throw () ;
+# 1040 "/usr/include/unistd.h" 3 4
+extern int brk (void *__addr) throw () ;
+
+
+
+
+
+extern void *sbrk (intptr_t __delta) throw ();
+# 1061 "/usr/include/unistd.h" 3 4
+extern long int syscall (long int __sysno, ...) throw ();
+# 1084 "/usr/include/unistd.h" 3 4
+extern int lockf (int __fd, int __cmd, __off_t __len) ;
+# 1094 "/usr/include/unistd.h" 3 4
+extern int lockf64 (int __fd, int __cmd, __off64_t __len) ;
+# 1115 "/usr/include/unistd.h" 3 4
+extern int fdatasync (int __fildes);
+
+
+
+
+
+
+
+extern char *crypt (__const char *__key, __const char *__salt)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern void encrypt (char *__block, int __edflag) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern void swab (__const void *__restrict __from, void *__restrict __to,
+    ssize_t __n) throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+
+
+extern char *ctermid (char *__s) throw ();
+# 1153 "/usr/include/unistd.h" 3 4
+}
+# 4 "CHttpThread.h" 2
+# 1 "/usr/include/pthread.h" 1 3 4
+# 24 "/usr/include/pthread.h" 3 4
+# 1 "/usr/include/endian.h" 1 3 4
+# 37 "/usr/include/endian.h" 3 4
+# 1 "/usr/include/bits/endian.h" 1 3 4
+# 38 "/usr/include/endian.h" 2 3 4
+# 61 "/usr/include/endian.h" 3 4
+# 1 "/usr/include/bits/byteswap.h" 1 3 4
+# 28 "/usr/include/bits/byteswap.h" 3 4
+# 1 "/usr/include/bits/wordsize.h" 1 3 4
+# 29 "/usr/include/bits/byteswap.h" 2 3 4
+# 62 "/usr/include/endian.h" 2 3 4
+# 25 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/sched.h" 1 3 4
+# 29 "/usr/include/sched.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h" 1 3 4
+# 30 "/usr/include/sched.h" 2 3 4
+
+
+# 1 "/usr/include/time.h" 1 3 4
+# 120 "/usr/include/time.h" 3 4
+struct timespec
+  {
+    __time_t tv_sec;
+    long int tv_nsec;
+  };
+# 33 "/usr/include/sched.h" 2 3 4
+
+
+# 1 "/usr/include/bits/sched.h" 1 3 4
+# 71 "/usr/include/bits/sched.h" 3 4
+struct sched_param
+  {
+    int __sched_priority;
+  };
+
+extern "C" {
+
+
+
+extern int clone (int (*__fn) (void *__arg), void *__child_stack,
+    int __flags, void *__arg, ...) throw ();
+
+
+extern int unshare (int __flags) throw ();
+
+
+extern int sched_getcpu (void) throw ();
+
+
+}
+
+
+
+
+
+
+
+struct __sched_param
+  {
+    int __sched_priority;
+  };
+# 113 "/usr/include/bits/sched.h" 3 4
+typedef unsigned long int __cpu_mask;
+
+
+
+
+
+
+typedef struct
+{
+  __cpu_mask __bits[1024 / (8 * sizeof (__cpu_mask))];
+} cpu_set_t;
+# 196 "/usr/include/bits/sched.h" 3 4
+extern "C" {
+
+extern int __sched_cpucount (size_t __setsize, const cpu_set_t *__setp)
+  throw ();
+extern cpu_set_t *__sched_cpualloc (size_t __count) throw () ;
+extern void __sched_cpufree (cpu_set_t *__set) throw ();
+
+}
+# 36 "/usr/include/sched.h" 2 3 4
+
+
+
+
+extern "C" {
+
+
+extern int sched_setparam (__pid_t __pid, __const struct sched_param *__param)
+     throw ();
+
+
+extern int sched_getparam (__pid_t __pid, struct sched_param *__param) throw ();
+
+
+extern int sched_setscheduler (__pid_t __pid, int __policy,
+          __const struct sched_param *__param) throw ();
+
+
+extern int sched_getscheduler (__pid_t __pid) throw ();
+
+
+extern int sched_yield (void) throw ();
+
+
+extern int sched_get_priority_max (int __algorithm) throw ();
+
+
+extern int sched_get_priority_min (int __algorithm) throw ();
+
+
+extern int sched_rr_get_interval (__pid_t __pid, struct timespec *__t) throw ();
+# 110 "/usr/include/sched.h" 3 4
+extern int sched_setaffinity (__pid_t __pid, size_t __cpusetsize,
+         __const cpu_set_t *__cpuset) throw ();
+
+
+extern int sched_getaffinity (__pid_t __pid, size_t __cpusetsize,
+         cpu_set_t *__cpuset) throw ();
+
+
+}
+# 26 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/time.h" 1 3 4
+# 30 "/usr/include/time.h" 3 4
+extern "C" {
+
+
+
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h" 1 3 4
+# 39 "/usr/include/time.h" 2 3 4
+
+
+
+# 1 "/usr/include/bits/time.h" 1 3 4
+# 43 "/usr/include/time.h" 2 3 4
+# 58 "/usr/include/time.h" 3 4
+
+
+typedef __clock_t clock_t;
+
+
+
+# 74 "/usr/include/time.h" 3 4
+
+
+typedef __time_t time_t;
+
+
+
+# 92 "/usr/include/time.h" 3 4
+typedef __clockid_t clockid_t;
+# 104 "/usr/include/time.h" 3 4
+typedef __timer_t timer_t;
+# 131 "/usr/include/time.h" 3 4
+
+
+struct tm
+{
+  int tm_sec;
+  int tm_min;
+  int tm_hour;
+  int tm_mday;
+  int tm_mon;
+  int tm_year;
+  int tm_wday;
+  int tm_yday;
+  int tm_isdst;
+
+
+  long int tm_gmtoff;
+  __const char *tm_zone;
+
+
+
+
+};
+
+
+
+
+
+
+
+
+struct itimerspec
+  {
+    struct timespec it_interval;
+    struct timespec it_value;
+  };
+
+
+struct sigevent;
+# 180 "/usr/include/time.h" 3 4
+
+
+
+extern clock_t clock (void) throw ();
+
+
+extern time_t time (time_t *__timer) throw ();
+
+
+extern double difftime (time_t __time1, time_t __time0)
+     throw () __attribute__ ((__const__));
+
+
+extern time_t mktime (struct tm *__tp) throw ();
+
+
+
+
+
+extern size_t strftime (char *__restrict __s, size_t __maxsize,
+   __const char *__restrict __format,
+   __const struct tm *__restrict __tp) throw ();
+
+
+
+
+
+extern char *strptime (__const char *__restrict __s,
+         __const char *__restrict __fmt, struct tm *__tp)
+     throw ();
+
+
+
+
+
+# 1 "/usr/include/xlocale.h" 1 3 4
+# 28 "/usr/include/xlocale.h" 3 4
+typedef struct __locale_struct
+{
+
+  struct locale_data *__locales[13];
+
+
+  const unsigned short int *__ctype_b;
+  const int *__ctype_tolower;
+  const int *__ctype_toupper;
+
+
+  const char *__names[13];
+} *__locale_t;
+
+
+typedef __locale_t locale_t;
+# 216 "/usr/include/time.h" 2 3 4
+
+extern size_t strftime_l (char *__restrict __s, size_t __maxsize,
+     __const char *__restrict __format,
+     __const struct tm *__restrict __tp,
+     __locale_t __loc) throw ();
+
+
+
+extern char *strptime_l (__const char *__restrict __s,
+    __const char *__restrict __fmt, struct tm *__tp,
+    __locale_t __loc) throw ();
+
+
+
+
+
+
+extern struct tm *gmtime (__const time_t *__timer) throw ();
+
+
+
+extern struct tm *localtime (__const time_t *__timer) throw ();
+
+
+
+
+
+extern struct tm *gmtime_r (__const time_t *__restrict __timer,
+       struct tm *__restrict __tp) throw ();
+
+
+
+extern struct tm *localtime_r (__const time_t *__restrict __timer,
+          struct tm *__restrict __tp) throw ();
+
+
+
+
+
+extern char *asctime (__const struct tm *__tp) throw ();
+
+
+extern char *ctime (__const time_t *__timer) throw ();
+
+
+
+
+
+
+
+extern char *asctime_r (__const struct tm *__restrict __tp,
+   char *__restrict __buf) throw ();
+
+
+extern char *ctime_r (__const time_t *__restrict __timer,
+        char *__restrict __buf) throw ();
+
+
+
+
+extern char *__tzname[2];
+extern int __daylight;
+extern long int __timezone;
+
+
+
+
+extern char *tzname[2];
+
+
+
+extern void tzset (void) throw ();
+
+
+
+extern int daylight;
+extern long int timezone;
+
+
+
+
+
+extern int stime (__const time_t *__when) throw ();
+# 313 "/usr/include/time.h" 3 4
+extern time_t timegm (struct tm *__tp) throw ();
+
+
+extern time_t timelocal (struct tm *__tp) throw ();
+
+
+extern int dysize (int __year) throw () __attribute__ ((__const__));
+# 328 "/usr/include/time.h" 3 4
+extern int nanosleep (__const struct timespec *__requested_time,
+        struct timespec *__remaining);
+
+
+
+extern int clock_getres (clockid_t __clock_id, struct timespec *__res) throw ();
+
+
+extern int clock_gettime (clockid_t __clock_id, struct timespec *__tp) throw ();
+
+
+extern int clock_settime (clockid_t __clock_id, __const struct timespec *__tp)
+     throw ();
+
+
+
+
+
+
+extern int clock_nanosleep (clockid_t __clock_id, int __flags,
+       __const struct timespec *__req,
+       struct timespec *__rem);
+
+
+extern int clock_getcpuclockid (pid_t __pid, clockid_t *__clock_id) throw ();
+
+
+
+
+extern int timer_create (clockid_t __clock_id,
+    struct sigevent *__restrict __evp,
+    timer_t *__restrict __timerid) throw ();
+
+
+extern int timer_delete (timer_t __timerid) throw ();
+
+
+extern int timer_settime (timer_t __timerid, int __flags,
+     __const struct itimerspec *__restrict __value,
+     struct itimerspec *__restrict __ovalue) throw ();
+
+
+extern int timer_gettime (timer_t __timerid, struct itimerspec *__value)
+     throw ();
+
+
+extern int timer_getoverrun (timer_t __timerid) throw ();
+# 390 "/usr/include/time.h" 3 4
+extern int getdate_err;
+# 399 "/usr/include/time.h" 3 4
+extern struct tm *getdate (__const char *__string);
+# 413 "/usr/include/time.h" 3 4
+extern int getdate_r (__const char *__restrict __string,
+        struct tm *__restrict __resbufp);
+
+
+}
+# 27 "/usr/include/pthread.h" 2 3 4
+
+
+# 1 "/usr/include/signal.h" 1 3 4
+# 31 "/usr/include/signal.h" 3 4
+extern "C" {
+
+# 1 "/usr/include/bits/sigset.h" 1 3 4
+# 24 "/usr/include/bits/sigset.h" 3 4
+typedef int __sig_atomic_t;
+
+
+
+
+typedef struct
+  {
+    unsigned long int __val[(1024 / (8 * sizeof (unsigned long int)))];
+  } __sigset_t;
+# 34 "/usr/include/signal.h" 2 3 4
+# 50 "/usr/include/signal.h" 3 4
+typedef __sigset_t sigset_t;
+# 408 "/usr/include/signal.h" 3 4
+}
+# 30 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/bits/pthreadtypes.h" 1 3 4
+# 23 "/usr/include/bits/pthreadtypes.h" 3 4
+# 1 "/usr/include/bits/wordsize.h" 1 3 4
+# 24 "/usr/include/bits/pthreadtypes.h" 2 3 4
+# 50 "/usr/include/bits/pthreadtypes.h" 3 4
+typedef unsigned long int pthread_t;
+
+
+typedef union
+{
+  char __size[56];
+  long int __align;
+} pthread_attr_t;
+
+
+
+typedef struct __pthread_internal_list
+{
+  struct __pthread_internal_list *__prev;
+  struct __pthread_internal_list *__next;
+} __pthread_list_t;
+# 76 "/usr/include/bits/pthreadtypes.h" 3 4
+typedef union
+{
+  struct __pthread_mutex_s
+  {
+    int __lock;
+    unsigned int __count;
+    int __owner;
+
+    unsigned int __nusers;
+
+
+
+    int __kind;
+
+    int __spins;
+    __pthread_list_t __list;
+# 101 "/usr/include/bits/pthreadtypes.h" 3 4
+  } __data;
+  char __size[40];
+  long int __align;
+} pthread_mutex_t;
+
+typedef union
+{
+  char __size[4];
+  int __align;
+} pthread_mutexattr_t;
+
+
+
+
+typedef union
+{
+  struct
+  {
+    int __lock;
+    unsigned int __futex;
+    __extension__ unsigned long long int __total_seq;
+    __extension__ unsigned long long int __wakeup_seq;
+    __extension__ unsigned long long int __woken_seq;
+    void *__mutex;
+    unsigned int __nwaiters;
+    unsigned int __broadcast_seq;
+  } __data;
+  char __size[48];
+  __extension__ long long int __align;
+} pthread_cond_t;
+
+typedef union
+{
+  char __size[4];
+  int __align;
+} pthread_condattr_t;
+
+
+
+typedef unsigned int pthread_key_t;
+
+
+
+typedef int pthread_once_t;
+
+
+
+
+
+typedef union
+{
+
+  struct
+  {
+    int __lock;
+    unsigned int __nr_readers;
+    unsigned int __readers_wakeup;
+    unsigned int __writer_wakeup;
+    unsigned int __nr_readers_queued;
+    unsigned int __nr_writers_queued;
+    int __writer;
+    int __shared;
+    unsigned long int __pad1;
+    unsigned long int __pad2;
+
+
+    unsigned int __flags;
+  } __data;
+# 187 "/usr/include/bits/pthreadtypes.h" 3 4
+  char __size[56];
+  long int __align;
+} pthread_rwlock_t;
+
+typedef union
+{
+  char __size[8];
+  long int __align;
+} pthread_rwlockattr_t;
+
+
+
+
+
+typedef volatile int pthread_spinlock_t;
+
+
+
+
+typedef union
+{
+  char __size[32];
+  long int __align;
+} pthread_barrier_t;
+
+typedef union
+{
+  char __size[4];
+  int __align;
+} pthread_barrierattr_t;
+# 31 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/bits/setjmp.h" 1 3 4
+# 27 "/usr/include/bits/setjmp.h" 3 4
+# 1 "/usr/include/bits/wordsize.h" 1 3 4
+# 28 "/usr/include/bits/setjmp.h" 2 3 4
+
+
+
+
+typedef long int __jmp_buf[8];
+# 32 "/usr/include/pthread.h" 2 3 4
+# 1 "/usr/include/bits/wordsize.h" 1 3 4
+# 33 "/usr/include/pthread.h" 2 3 4
+
+
+
+enum
+{
+  PTHREAD_CREATE_JOINABLE,
+
+  PTHREAD_CREATE_DETACHED
+
+};
+
+
+
+enum
+{
+  PTHREAD_MUTEX_TIMED_NP,
+  PTHREAD_MUTEX_RECURSIVE_NP,
+  PTHREAD_MUTEX_ERRORCHECK_NP,
+  PTHREAD_MUTEX_ADAPTIVE_NP
+
+  ,
+  PTHREAD_MUTEX_NORMAL = PTHREAD_MUTEX_TIMED_NP,
+  PTHREAD_MUTEX_RECURSIVE = PTHREAD_MUTEX_RECURSIVE_NP,
+  PTHREAD_MUTEX_ERRORCHECK = PTHREAD_MUTEX_ERRORCHECK_NP,
+  PTHREAD_MUTEX_DEFAULT = PTHREAD_MUTEX_NORMAL
+
+
+
+  , PTHREAD_MUTEX_FAST_NP = PTHREAD_MUTEX_TIMED_NP
+
+};
+
+
+
+
+enum
+{
+  PTHREAD_MUTEX_STALLED,
+  PTHREAD_MUTEX_STALLED_NP = PTHREAD_MUTEX_STALLED,
+  PTHREAD_MUTEX_ROBUST,
+  PTHREAD_MUTEX_ROBUST_NP = PTHREAD_MUTEX_ROBUST
+};
+
+
+
+
+
+enum
+{
+  PTHREAD_PRIO_NONE,
+  PTHREAD_PRIO_INHERIT,
+  PTHREAD_PRIO_PROTECT
+};
+# 117 "/usr/include/pthread.h" 3 4
+enum
+{
+  PTHREAD_RWLOCK_PREFER_READER_NP,
+  PTHREAD_RWLOCK_PREFER_WRITER_NP,
+  PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP,
+  PTHREAD_RWLOCK_DEFAULT_NP = PTHREAD_RWLOCK_PREFER_READER_NP
+};
+# 149 "/usr/include/pthread.h" 3 4
+enum
+{
+  PTHREAD_INHERIT_SCHED,
+
+  PTHREAD_EXPLICIT_SCHED
+
+};
+
+
+
+enum
+{
+  PTHREAD_SCOPE_SYSTEM,
+
+  PTHREAD_SCOPE_PROCESS
+
+};
+
+
+
+enum
+{
+  PTHREAD_PROCESS_PRIVATE,
+
+  PTHREAD_PROCESS_SHARED
+
+};
+# 184 "/usr/include/pthread.h" 3 4
+struct _pthread_cleanup_buffer
+{
+  void (*__routine) (void *);
+  void *__arg;
+  int __canceltype;
+  struct _pthread_cleanup_buffer *__prev;
+};
+
+
+enum
+{
+  PTHREAD_CANCEL_ENABLE,
+
+  PTHREAD_CANCEL_DISABLE
+
+};
+enum
+{
+  PTHREAD_CANCEL_DEFERRED,
+
+  PTHREAD_CANCEL_ASYNCHRONOUS
+
+};
+# 222 "/usr/include/pthread.h" 3 4
+extern "C" {
+
+
+
+
+extern int pthread_create (pthread_t *__restrict __newthread,
+      __const pthread_attr_t *__restrict __attr,
+      void *(*__start_routine) (void *),
+      void *__restrict __arg) throw () __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+
+
+extern void pthread_exit (void *__retval) __attribute__ ((__noreturn__));
+
+
+
+
+
+
+
+extern int pthread_join (pthread_t __th, void **__thread_return);
+
+
+
+
+extern int pthread_tryjoin_np (pthread_t __th, void **__thread_return) throw ();
+
+
+
+
+
+
+
+extern int pthread_timedjoin_np (pthread_t __th, void **__thread_return,
+     __const struct timespec *__abstime);
+
+
+
+
+
+
+extern int pthread_detach (pthread_t __th) throw ();
+
+
+
+extern pthread_t pthread_self (void) throw () __attribute__ ((__const__));
+
+
+extern int pthread_equal (pthread_t __thread1, pthread_t __thread2) throw ();
+
+
+
+
+
+
+
+extern int pthread_attr_init (pthread_attr_t *__attr) throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_attr_destroy (pthread_attr_t *__attr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_attr_getdetachstate (__const pthread_attr_t *__attr,
+     int *__detachstate)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_attr_setdetachstate (pthread_attr_t *__attr,
+     int __detachstate)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_attr_getguardsize (__const pthread_attr_t *__attr,
+          size_t *__guardsize)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_attr_setguardsize (pthread_attr_t *__attr,
+          size_t __guardsize)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_attr_getschedparam (__const pthread_attr_t *__restrict
+           __attr,
+           struct sched_param *__restrict __param)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_attr_setschedparam (pthread_attr_t *__restrict __attr,
+           __const struct sched_param *__restrict
+           __param) throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_attr_getschedpolicy (__const pthread_attr_t *__restrict
+     __attr, int *__restrict __policy)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_attr_setschedpolicy (pthread_attr_t *__attr, int __policy)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_attr_getinheritsched (__const pthread_attr_t *__restrict
+      __attr, int *__restrict __inherit)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_attr_setinheritsched (pthread_attr_t *__attr,
+      int __inherit)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_attr_getscope (__const pthread_attr_t *__restrict __attr,
+      int *__restrict __scope)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_attr_setscope (pthread_attr_t *__attr, int __scope)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_attr_getstackaddr (__const pthread_attr_t *__restrict
+          __attr, void **__restrict __stackaddr)
+     throw () __attribute__ ((__nonnull__ (1, 2))) __attribute__ ((__deprecated__));
+
+
+
+
+
+extern int pthread_attr_setstackaddr (pthread_attr_t *__attr,
+          void *__stackaddr)
+     throw () __attribute__ ((__nonnull__ (1))) __attribute__ ((__deprecated__));
+
+
+extern int pthread_attr_getstacksize (__const pthread_attr_t *__restrict
+          __attr, size_t *__restrict __stacksize)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern int pthread_attr_setstacksize (pthread_attr_t *__attr,
+          size_t __stacksize)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_attr_getstack (__const pthread_attr_t *__restrict __attr,
+      void **__restrict __stackaddr,
+      size_t *__restrict __stacksize)
+     throw () __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+
+
+extern int pthread_attr_setstack (pthread_attr_t *__attr, void *__stackaddr,
+      size_t __stacksize) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int pthread_attr_setaffinity_np (pthread_attr_t *__attr,
+     size_t __cpusetsize,
+     __const cpu_set_t *__cpuset)
+     throw () __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+extern int pthread_attr_getaffinity_np (__const pthread_attr_t *__attr,
+     size_t __cpusetsize,
+     cpu_set_t *__cpuset)
+     throw () __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+
+
+extern int pthread_getattr_np (pthread_t __th, pthread_attr_t *__attr)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+
+
+extern int pthread_setschedparam (pthread_t __target_thread, int __policy,
+      __const struct sched_param *__param)
+     throw () __attribute__ ((__nonnull__ (3)));
+
+
+extern int pthread_getschedparam (pthread_t __target_thread,
+      int *__restrict __policy,
+      struct sched_param *__restrict __param)
+     throw () __attribute__ ((__nonnull__ (2, 3)));
+
+
+extern int pthread_setschedprio (pthread_t __target_thread, int __prio)
+     throw ();
+
+
+
+
+extern int pthread_getconcurrency (void) throw ();
+
+
+extern int pthread_setconcurrency (int __level) throw ();
+
+
+
+
+
+
+
+extern int pthread_yield (void) throw ();
+
+
+
+
+extern int pthread_setaffinity_np (pthread_t __th, size_t __cpusetsize,
+       __const cpu_set_t *__cpuset)
+     throw () __attribute__ ((__nonnull__ (3)));
+
+
+extern int pthread_getaffinity_np (pthread_t __th, size_t __cpusetsize,
+       cpu_set_t *__cpuset)
+     throw () __attribute__ ((__nonnull__ (3)));
+# 468 "/usr/include/pthread.h" 3 4
+extern int pthread_once (pthread_once_t *__once_control,
+    void (*__init_routine) (void)) __attribute__ ((__nonnull__ (1, 2)));
+# 480 "/usr/include/pthread.h" 3 4
+extern int pthread_setcancelstate (int __state, int *__oldstate);
+
+
+
+extern int pthread_setcanceltype (int __type, int *__oldtype);
+
+
+extern int pthread_cancel (pthread_t __th);
+
+
+
+
+extern void pthread_testcancel (void);
+
+
+
+
+typedef struct
+{
+  struct
+  {
+    __jmp_buf __cancel_jmp_buf;
+    int __mask_was_saved;
+  } __cancel_jmp_buf[1];
+  void *__pad[4];
+} __pthread_unwind_buf_t __attribute__ ((__aligned__));
+# 514 "/usr/include/pthread.h" 3 4
+struct __pthread_cleanup_frame
+{
+  void (*__cancel_routine) (void *);
+  void *__cancel_arg;
+  int __do_it;
+  int __cancel_type;
+};
+
+
+
+
+class __pthread_cleanup_class
+{
+  void (*__cancel_routine) (void *);
+  void *__cancel_arg;
+  int __do_it;
+  int __cancel_type;
+
+ public:
+  __pthread_cleanup_class (void (*__fct) (void *), void *__arg)
+    : __cancel_routine (__fct), __cancel_arg (__arg), __do_it (1) { }
+  ~__pthread_cleanup_class () { if (__do_it) __cancel_routine (__cancel_arg); }
+  void __setdoit (int __newval) { __do_it = __newval; }
+  void __defer () { pthread_setcanceltype (PTHREAD_CANCEL_DEFERRED,
+        &__cancel_type); }
+  void __restore () const { pthread_setcanceltype (__cancel_type, 0); }
+};
+# 716 "/usr/include/pthread.h" 3 4
+struct __jmp_buf_tag;
+extern int __sigsetjmp (struct __jmp_buf_tag *__env, int __savemask) throw ();
+
+
+
+
+
+extern int pthread_mutex_init (pthread_mutex_t *__mutex,
+          __const pthread_mutexattr_t *__mutexattr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutex_destroy (pthread_mutex_t *__mutex)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutex_trylock (pthread_mutex_t *__mutex)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutex_lock (pthread_mutex_t *__mutex)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_mutex_timedlock (pthread_mutex_t *__restrict __mutex,
+                                    __const struct timespec *__restrict
+                                    __abstime) throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern int pthread_mutex_unlock (pthread_mutex_t *__mutex)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int pthread_mutex_getprioceiling (__const pthread_mutex_t *
+      __restrict __mutex,
+      int *__restrict __prioceiling)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern int pthread_mutex_setprioceiling (pthread_mutex_t *__restrict __mutex,
+      int __prioceiling,
+      int *__restrict __old_ceiling)
+     throw () __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+
+
+extern int pthread_mutex_consistent_np (pthread_mutex_t *__mutex)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+extern int pthread_mutex_consistent_np (pthread_mutex_t *__mutex)
+     throw () __attribute__ ((__nonnull__ (1)));
+# 782 "/usr/include/pthread.h" 3 4
+extern int pthread_mutexattr_init (pthread_mutexattr_t *__attr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutexattr_destroy (pthread_mutexattr_t *__attr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutexattr_getpshared (__const pthread_mutexattr_t *
+      __restrict __attr,
+      int *__restrict __pshared)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_mutexattr_setpshared (pthread_mutexattr_t *__attr,
+      int __pshared)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_mutexattr_gettype (__const pthread_mutexattr_t *__restrict
+          __attr, int *__restrict __kind)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern int pthread_mutexattr_settype (pthread_mutexattr_t *__attr, int __kind)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutexattr_getprotocol (__const pthread_mutexattr_t *
+       __restrict __attr,
+       int *__restrict __protocol)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern int pthread_mutexattr_setprotocol (pthread_mutexattr_t *__attr,
+       int __protocol)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_mutexattr_getprioceiling (__const pthread_mutexattr_t *
+          __restrict __attr,
+          int *__restrict __prioceiling)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_mutexattr_setprioceiling (pthread_mutexattr_t *__attr,
+          int __prioceiling)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int pthread_mutexattr_getrobust (__const pthread_mutexattr_t *__attr,
+     int *__robustness)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+extern int pthread_mutexattr_getrobust_np (__const pthread_mutexattr_t *__attr,
+        int *__robustness)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern int pthread_mutexattr_setrobust (pthread_mutexattr_t *__attr,
+     int __robustness)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+extern int pthread_mutexattr_setrobust_np (pthread_mutexattr_t *__attr,
+        int __robustness)
+     throw () __attribute__ ((__nonnull__ (1)));
+# 864 "/usr/include/pthread.h" 3 4
+extern int pthread_rwlock_init (pthread_rwlock_t *__restrict __rwlock,
+    __const pthread_rwlockattr_t *__restrict
+    __attr) throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_rwlock_destroy (pthread_rwlock_t *__rwlock)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_rwlock_rdlock (pthread_rwlock_t *__rwlock)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_rwlock_tryrdlock (pthread_rwlock_t *__rwlock)
+  throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_rwlock_timedrdlock (pthread_rwlock_t *__restrict __rwlock,
+           __const struct timespec *__restrict
+           __abstime) throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern int pthread_rwlock_wrlock (pthread_rwlock_t *__rwlock)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_rwlock_trywrlock (pthread_rwlock_t *__rwlock)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_rwlock_timedwrlock (pthread_rwlock_t *__restrict __rwlock,
+           __const struct timespec *__restrict
+           __abstime) throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern int pthread_rwlock_unlock (pthread_rwlock_t *__rwlock)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int pthread_rwlockattr_init (pthread_rwlockattr_t *__attr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_rwlockattr_destroy (pthread_rwlockattr_t *__attr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_rwlockattr_getpshared (__const pthread_rwlockattr_t *
+       __restrict __attr,
+       int *__restrict __pshared)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_rwlockattr_setpshared (pthread_rwlockattr_t *__attr,
+       int __pshared)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_rwlockattr_getkind_np (__const pthread_rwlockattr_t *
+       __restrict __attr,
+       int *__restrict __pref)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_rwlockattr_setkind_np (pthread_rwlockattr_t *__attr,
+       int __pref) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+extern int pthread_cond_init (pthread_cond_t *__restrict __cond,
+         __const pthread_condattr_t *__restrict
+         __cond_attr) throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_cond_destroy (pthread_cond_t *__cond)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_cond_signal (pthread_cond_t *__cond)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_cond_broadcast (pthread_cond_t *__cond)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern int pthread_cond_wait (pthread_cond_t *__restrict __cond,
+         pthread_mutex_t *__restrict __mutex)
+     __attribute__ ((__nonnull__ (1, 2)));
+# 976 "/usr/include/pthread.h" 3 4
+extern int pthread_cond_timedwait (pthread_cond_t *__restrict __cond,
+       pthread_mutex_t *__restrict __mutex,
+       __const struct timespec *__restrict
+       __abstime) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+
+
+
+extern int pthread_condattr_init (pthread_condattr_t *__attr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_condattr_destroy (pthread_condattr_t *__attr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_condattr_getpshared (__const pthread_condattr_t *
+                                        __restrict __attr,
+                                        int *__restrict __pshared)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_condattr_setpshared (pthread_condattr_t *__attr,
+                                        int __pshared) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_condattr_getclock (__const pthread_condattr_t *
+          __restrict __attr,
+          __clockid_t *__restrict __clock_id)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_condattr_setclock (pthread_condattr_t *__attr,
+          __clockid_t __clock_id)
+     throw () __attribute__ ((__nonnull__ (1)));
+# 1020 "/usr/include/pthread.h" 3 4
+extern int pthread_spin_init (pthread_spinlock_t *__lock, int __pshared)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_spin_destroy (pthread_spinlock_t *__lock)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_spin_lock (pthread_spinlock_t *__lock)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_spin_trylock (pthread_spinlock_t *__lock)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_spin_unlock (pthread_spinlock_t *__lock)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern int pthread_barrier_init (pthread_barrier_t *__restrict __barrier,
+     __const pthread_barrierattr_t *__restrict
+     __attr, unsigned int __count)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_barrier_destroy (pthread_barrier_t *__barrier)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_barrier_wait (pthread_barrier_t *__barrier)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern int pthread_barrierattr_init (pthread_barrierattr_t *__attr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_barrierattr_destroy (pthread_barrierattr_t *__attr)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_barrierattr_getpshared (__const pthread_barrierattr_t *
+        __restrict __attr,
+        int *__restrict __pshared)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int pthread_barrierattr_setpshared (pthread_barrierattr_t *__attr,
+                                           int __pshared)
+     throw () __attribute__ ((__nonnull__ (1)));
+# 1087 "/usr/include/pthread.h" 3 4
+extern int pthread_key_create (pthread_key_t *__key,
+          void (*__destr_function) (void *))
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int pthread_key_delete (pthread_key_t __key) throw ();
+
+
+extern void *pthread_getspecific (pthread_key_t __key) throw ();
+
+
+extern int pthread_setspecific (pthread_key_t __key,
+    __const void *__pointer) throw () ;
+
+
+
+
+extern int pthread_getcpuclockid (pthread_t __thread_id,
+      __clockid_t *__clock_id)
+     throw () __attribute__ ((__nonnull__ (2)));
+# 1121 "/usr/include/pthread.h" 3 4
+extern int pthread_atfork (void (*__prepare) (void),
+      void (*__parent) (void),
+      void (*__child) (void)) throw ();
+# 1135 "/usr/include/pthread.h" 3 4
+}
+# 5 "CHttpThread.h" 2
+
+# 1 "CServiceData.h" 1
+
+
+
+# 1 "/usr/local/pgsql/include/libpq-fe.h" 1
+# 19 "/usr/local/pgsql/include/libpq-fe.h"
+extern "C"
+{
+
+
+# 1 "/usr/include/stdio.h" 1 3 4
+# 30 "/usr/include/stdio.h" 3 4
+extern "C" {
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h" 1 3 4
+# 35 "/usr/include/stdio.h" 2 3 4
+# 45 "/usr/include/stdio.h" 3 4
+struct _IO_FILE;
+
+
+
+typedef struct _IO_FILE FILE;
+
+
+
+
+
+# 65 "/usr/include/stdio.h" 3 4
+typedef struct _IO_FILE __FILE;
+# 75 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/libio.h" 1 3 4
+# 32 "/usr/include/libio.h" 3 4
+# 1 "/usr/include/_G_config.h" 1 3 4
+# 15 "/usr/include/_G_config.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h" 1 3 4
+# 16 "/usr/include/_G_config.h" 2 3 4
+
+
+
+
+# 1 "/usr/include/wchar.h" 1 3 4
+# 83 "/usr/include/wchar.h" 3 4
+typedef struct
+{
+  int __count;
+  union
+  {
+
+    unsigned int __wch;
+
+
+
+    char __wchb[4];
+  } __value;
+} __mbstate_t;
+# 21 "/usr/include/_G_config.h" 2 3 4
+
+typedef struct
+{
+  __off_t __pos;
+  __mbstate_t __state;
+} _G_fpos_t;
+typedef struct
+{
+  __off64_t __pos;
+  __mbstate_t __state;
+} _G_fpos64_t;
+# 53 "/usr/include/_G_config.h" 3 4
+typedef int _G_int16_t __attribute__ ((__mode__ (__HI__)));
+typedef int _G_int32_t __attribute__ ((__mode__ (__SI__)));
+typedef unsigned int _G_uint16_t __attribute__ ((__mode__ (__HI__)));
+typedef unsigned int _G_uint32_t __attribute__ ((__mode__ (__SI__)));
+# 33 "/usr/include/libio.h" 2 3 4
+# 53 "/usr/include/libio.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stdarg.h" 1 3 4
+# 40 "/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stdarg.h" 3 4
+typedef __builtin_va_list __gnuc_va_list;
+# 54 "/usr/include/libio.h" 2 3 4
+# 170 "/usr/include/libio.h" 3 4
+struct _IO_jump_t; struct _IO_FILE;
+# 180 "/usr/include/libio.h" 3 4
+typedef void _IO_lock_t;
+
+
+
+
+
+struct _IO_marker {
+  struct _IO_marker *_next;
+  struct _IO_FILE *_sbuf;
+
+
+
+  int _pos;
+# 203 "/usr/include/libio.h" 3 4
+};
+
+
+enum __codecvt_result
+{
+  __codecvt_ok,
+  __codecvt_partial,
+  __codecvt_error,
+  __codecvt_noconv
+};
+# 271 "/usr/include/libio.h" 3 4
+struct _IO_FILE {
+  int _flags;
+
+
+
+
+  char* _IO_read_ptr;
+  char* _IO_read_end;
+  char* _IO_read_base;
+  char* _IO_write_base;
+  char* _IO_write_ptr;
+  char* _IO_write_end;
+  char* _IO_buf_base;
+  char* _IO_buf_end;
+
+  char *_IO_save_base;
+  char *_IO_backup_base;
+  char *_IO_save_end;
+
+  struct _IO_marker *_markers;
+
+  struct _IO_FILE *_chain;
+
+  int _fileno;
+
+
+
+  int _flags2;
+
+  __off_t _old_offset;
+
+
+
+  unsigned short _cur_column;
+  signed char _vtable_offset;
+  char _shortbuf[1];
+
+
+
+  _IO_lock_t *_lock;
+# 319 "/usr/include/libio.h" 3 4
+  __off64_t _offset;
+# 328 "/usr/include/libio.h" 3 4
+  void *__pad1;
+  void *__pad2;
+  void *__pad3;
+  void *__pad4;
+  size_t __pad5;
+
+  int _mode;
+
+  char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];
+
+};
+
+
+
+
+
+struct _IO_FILE_plus;
+
+extern struct _IO_FILE_plus _IO_2_1_stdin_;
+extern struct _IO_FILE_plus _IO_2_1_stdout_;
+extern struct _IO_FILE_plus _IO_2_1_stderr_;
+# 364 "/usr/include/libio.h" 3 4
+typedef __ssize_t __io_read_fn (void *__cookie, char *__buf, size_t __nbytes);
+
+
+
+
+
+
+
+typedef __ssize_t __io_write_fn (void *__cookie, __const char *__buf,
+     size_t __n);
+
+
+
+
+
+
+
+typedef int __io_seek_fn (void *__cookie, __off64_t *__pos, int __w);
+
+
+typedef int __io_close_fn (void *__cookie);
+
+
+
+
+typedef __io_read_fn cookie_read_function_t;
+typedef __io_write_fn cookie_write_function_t;
+typedef __io_seek_fn cookie_seek_function_t;
+typedef __io_close_fn cookie_close_function_t;
+
+
+typedef struct
+{
+  __io_read_fn *read;
+  __io_write_fn *write;
+  __io_seek_fn *seek;
+  __io_close_fn *close;
+} _IO_cookie_io_functions_t;
+typedef _IO_cookie_io_functions_t cookie_io_functions_t;
+
+struct _IO_cookie_file;
+
+
+extern void _IO_cookie_init (struct _IO_cookie_file *__cfile, int __read_write,
+        void *__cookie, _IO_cookie_io_functions_t __fns);
+
+
+
+
+extern "C" {
+
+
+extern int __underflow (_IO_FILE *);
+extern int __uflow (_IO_FILE *);
+extern int __overflow (_IO_FILE *, int);
+# 460 "/usr/include/libio.h" 3 4
+extern int _IO_getc (_IO_FILE *__fp);
+extern int _IO_putc (int __c, _IO_FILE *__fp);
+extern int _IO_feof (_IO_FILE *__fp) throw ();
+extern int _IO_ferror (_IO_FILE *__fp) throw ();
+
+extern int _IO_peekc_locked (_IO_FILE *__fp);
+
+
+
+
+
+extern void _IO_flockfile (_IO_FILE *) throw ();
+extern void _IO_funlockfile (_IO_FILE *) throw ();
+extern int _IO_ftrylockfile (_IO_FILE *) throw ();
+# 490 "/usr/include/libio.h" 3 4
+extern int _IO_vfscanf (_IO_FILE * __restrict, const char * __restrict,
+   __gnuc_va_list, int *__restrict);
+extern int _IO_vfprintf (_IO_FILE *__restrict, const char *__restrict,
+    __gnuc_va_list);
+extern __ssize_t _IO_padn (_IO_FILE *, int, __ssize_t);
+extern size_t _IO_sgetn (_IO_FILE *, void *, size_t);
+
+extern __off64_t _IO_seekoff (_IO_FILE *, __off64_t, int, int);
+extern __off64_t _IO_seekpos (_IO_FILE *, __off64_t, int);
+
+extern void _IO_free_backup_area (_IO_FILE *) throw ();
+# 552 "/usr/include/libio.h" 3 4
+}
+# 76 "/usr/include/stdio.h" 2 3 4
+
+
+
+
+typedef __gnuc_va_list va_list;
+# 89 "/usr/include/stdio.h" 3 4
+
+
+typedef _G_fpos_t fpos_t;
+
+
+
+
+
+typedef _G_fpos64_t fpos64_t;
+# 141 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/bits/stdio_lim.h" 1 3 4
+# 142 "/usr/include/stdio.h" 2 3 4
+
+
+
+extern struct _IO_FILE *stdin;
+extern struct _IO_FILE *stdout;
+extern struct _IO_FILE *stderr;
+
+
+
+
+
+
+
+extern int remove (__const char *__filename) throw ();
+
+extern int rename (__const char *__old, __const char *__new) throw ();
+
+
+
+
+extern int renameat (int __oldfd, __const char *__old, int __newfd,
+       __const char *__new) throw ();
+
+
+
+
+
+
+
+
+extern FILE *tmpfile (void) ;
+# 182 "/usr/include/stdio.h" 3 4
+extern FILE *tmpfile64 (void) ;
+
+
+
+extern char *tmpnam (char *__s) throw () ;
+
+
+
+
+
+extern char *tmpnam_r (char *__s) throw () ;
+# 204 "/usr/include/stdio.h" 3 4
+extern char *tempnam (__const char *__dir, __const char *__pfx)
+     throw () __attribute__ ((__malloc__)) ;
+
+
+
+
+
+
+
+
+extern int fclose (FILE *__stream);
+
+
+
+
+extern int fflush (FILE *__stream);
+
+# 229 "/usr/include/stdio.h" 3 4
+extern int fflush_unlocked (FILE *__stream);
+# 239 "/usr/include/stdio.h" 3 4
+extern int fcloseall (void);
+
+
+
+
+
+
+
+
+
+extern FILE *fopen (__const char *__restrict __filename,
+      __const char *__restrict __modes) ;
+
+
+
+
+extern FILE *freopen (__const char *__restrict __filename,
+        __const char *__restrict __modes,
+        FILE *__restrict __stream) ;
+# 272 "/usr/include/stdio.h" 3 4
+
+
+extern FILE *fopen64 (__const char *__restrict __filename,
+        __const char *__restrict __modes) ;
+extern FILE *freopen64 (__const char *__restrict __filename,
+   __const char *__restrict __modes,
+   FILE *__restrict __stream) ;
+
+
+
+
+extern FILE *fdopen (int __fd, __const char *__modes) throw () ;
+
+
+
+
+
+extern FILE *fopencookie (void *__restrict __magic_cookie,
+     __const char *__restrict __modes,
+     _IO_cookie_io_functions_t __io_funcs) throw () ;
+
+
+
+
+extern FILE *fmemopen (void *__s, size_t __len, __const char *__modes)
+  throw () ;
+
+
+
+
+extern FILE *open_memstream (char **__bufloc, size_t *__sizeloc) throw () ;
+
+
+
+
+
+
+extern void setbuf (FILE *__restrict __stream, char *__restrict __buf) throw ();
+
+
+
+extern int setvbuf (FILE *__restrict __stream, char *__restrict __buf,
+      int __modes, size_t __n) throw ();
+
+
+
+
+
+extern void setbuffer (FILE *__restrict __stream, char *__restrict __buf,
+         size_t __size) throw ();
+
+
+extern void setlinebuf (FILE *__stream) throw ();
+
+
+
+
+
+
+
+
+extern int fprintf (FILE *__restrict __stream,
+      __const char *__restrict __format, ...);
+
+
+
+
+extern int printf (__const char *__restrict __format, ...);
+
+extern int sprintf (char *__restrict __s,
+      __const char *__restrict __format, ...) throw ();
+
+
+
+
+
+extern int vfprintf (FILE *__restrict __s, __const char *__restrict __format,
+       __gnuc_va_list __arg);
+
+
+
+
+extern int vprintf (__const char *__restrict __format, __gnuc_va_list __arg);
+
+extern int vsprintf (char *__restrict __s, __const char *__restrict __format,
+       __gnuc_va_list __arg) throw ();
+
+
+
+
+
+extern int snprintf (char *__restrict __s, size_t __maxlen,
+       __const char *__restrict __format, ...)
+     throw () __attribute__ ((__format__ (__printf__, 3, 4)));
+
+extern int vsnprintf (char *__restrict __s, size_t __maxlen,
+        __const char *__restrict __format, __gnuc_va_list __arg)
+     throw () __attribute__ ((__format__ (__printf__, 3, 0)));
+
+
+
+
+
+
+extern int vasprintf (char **__restrict __ptr, __const char *__restrict __f,
+        __gnuc_va_list __arg)
+     throw () __attribute__ ((__format__ (__printf__, 2, 0))) ;
+extern int __asprintf (char **__restrict __ptr,
+         __const char *__restrict __fmt, ...)
+     throw () __attribute__ ((__format__ (__printf__, 2, 3))) ;
+extern int asprintf (char **__restrict __ptr,
+       __const char *__restrict __fmt, ...)
+     throw () __attribute__ ((__format__ (__printf__, 2, 3))) ;
+# 394 "/usr/include/stdio.h" 3 4
+extern int vdprintf (int __fd, __const char *__restrict __fmt,
+       __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__printf__, 2, 0)));
+extern int dprintf (int __fd, __const char *__restrict __fmt, ...)
+     __attribute__ ((__format__ (__printf__, 2, 3)));
+
+
+
+
+
+
+
+
+extern int fscanf (FILE *__restrict __stream,
+     __const char *__restrict __format, ...) ;
+
+
+
+
+extern int scanf (__const char *__restrict __format, ...) ;
+
+extern int sscanf (__const char *__restrict __s,
+     __const char *__restrict __format, ...) throw ();
+# 445 "/usr/include/stdio.h" 3 4
+
+
+
+
+
+
+
+
+extern int vfscanf (FILE *__restrict __s, __const char *__restrict __format,
+      __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 2, 0))) ;
+
+
+
+
+
+extern int vscanf (__const char *__restrict __format, __gnuc_va_list __arg)
+     __attribute__ ((__format__ (__scanf__, 1, 0))) ;
+
+
+extern int vsscanf (__const char *__restrict __s,
+      __const char *__restrict __format, __gnuc_va_list __arg)
+     throw () __attribute__ ((__format__ (__scanf__, 2, 0)));
+# 504 "/usr/include/stdio.h" 3 4
+
+
+
+
+
+
+
+
+
+extern int fgetc (FILE *__stream);
+extern int getc (FILE *__stream);
+
+
+
+
+
+extern int getchar (void);
+
+# 532 "/usr/include/stdio.h" 3 4
+extern int getc_unlocked (FILE *__stream);
+extern int getchar_unlocked (void);
+# 543 "/usr/include/stdio.h" 3 4
+extern int fgetc_unlocked (FILE *__stream);
+
+
+
+
+
+
+
+
+
+
+
+extern int fputc (int __c, FILE *__stream);
+extern int putc (int __c, FILE *__stream);
+
+
+
+
+
+extern int putchar (int __c);
+
+# 576 "/usr/include/stdio.h" 3 4
+extern int fputc_unlocked (int __c, FILE *__stream);
+
+
+
+
+
+
+
+extern int putc_unlocked (int __c, FILE *__stream);
+extern int putchar_unlocked (int __c);
+
+
+
+
+
+
+extern int getw (FILE *__stream);
+
+
+extern int putw (int __w, FILE *__stream);
+
+
+
+
+
+
+
+
+extern char *fgets (char *__restrict __s, int __n, FILE *__restrict __stream)
+     ;
+
+
+
+
+
+
+extern char *gets (char *__s) ;
+
+# 622 "/usr/include/stdio.h" 3 4
+extern char *fgets_unlocked (char *__restrict __s, int __n,
+        FILE *__restrict __stream) ;
+# 638 "/usr/include/stdio.h" 3 4
+extern __ssize_t __getdelim (char **__restrict __lineptr,
+          size_t *__restrict __n, int __delimiter,
+          FILE *__restrict __stream) ;
+extern __ssize_t getdelim (char **__restrict __lineptr,
+        size_t *__restrict __n, int __delimiter,
+        FILE *__restrict __stream) ;
+
+
+
+
+
+
+
+extern __ssize_t getline (char **__restrict __lineptr,
+       size_t *__restrict __n,
+       FILE *__restrict __stream) ;
+
+
+
+
+
+
+
+
+extern int fputs (__const char *__restrict __s, FILE *__restrict __stream);
+
+
+
+
+
+extern int puts (__const char *__s);
+
+
+
+
+
+
+extern int ungetc (int __c, FILE *__stream);
+
+
+
+
+
+
+extern size_t fread (void *__restrict __ptr, size_t __size,
+       size_t __n, FILE *__restrict __stream) ;
+
+
+
+
+extern size_t fwrite (__const void *__restrict __ptr, size_t __size,
+        size_t __n, FILE *__restrict __s);
+
+# 699 "/usr/include/stdio.h" 3 4
+extern int fputs_unlocked (__const char *__restrict __s,
+      FILE *__restrict __stream);
+# 710 "/usr/include/stdio.h" 3 4
+extern size_t fread_unlocked (void *__restrict __ptr, size_t __size,
+         size_t __n, FILE *__restrict __stream) ;
+extern size_t fwrite_unlocked (__const void *__restrict __ptr, size_t __size,
+          size_t __n, FILE *__restrict __stream);
+
+
+
+
+
+
+
+
+extern int fseek (FILE *__stream, long int __off, int __whence);
+
+
+
+
+extern long int ftell (FILE *__stream) ;
+
+
+
+
+extern void rewind (FILE *__stream);
+
+# 746 "/usr/include/stdio.h" 3 4
+extern int fseeko (FILE *__stream, __off_t __off, int __whence);
+
+
+
+
+extern __off_t ftello (FILE *__stream) ;
+# 765 "/usr/include/stdio.h" 3 4
+
+
+
+
+
+
+extern int fgetpos (FILE *__restrict __stream, fpos_t *__restrict __pos);
+
+
+
+
+extern int fsetpos (FILE *__stream, __const fpos_t *__pos);
+# 788 "/usr/include/stdio.h" 3 4
+
+
+
+extern int fseeko64 (FILE *__stream, __off64_t __off, int __whence);
+extern __off64_t ftello64 (FILE *__stream) ;
+extern int fgetpos64 (FILE *__restrict __stream, fpos64_t *__restrict __pos);
+extern int fsetpos64 (FILE *__stream, __const fpos64_t *__pos);
+
+
+
+
+extern void clearerr (FILE *__stream) throw ();
+
+extern int feof (FILE *__stream) throw () ;
+
+extern int ferror (FILE *__stream) throw () ;
+
+
+
+
+extern void clearerr_unlocked (FILE *__stream) throw ();
+extern int feof_unlocked (FILE *__stream) throw () ;
+extern int ferror_unlocked (FILE *__stream) throw () ;
+
+
+
+
+
+
+
+
+extern void perror (__const char *__s);
+
+
+
+
+
+
+# 1 "/usr/include/bits/sys_errlist.h" 1 3 4
+# 27 "/usr/include/bits/sys_errlist.h" 3 4
+extern int sys_nerr;
+extern __const char *__const sys_errlist[];
+
+
+extern int _sys_nerr;
+extern __const char *__const _sys_errlist[];
+# 827 "/usr/include/stdio.h" 2 3 4
+
+
+
+
+extern int fileno (FILE *__stream) throw () ;
+
+
+
+
+extern int fileno_unlocked (FILE *__stream) throw () ;
+# 846 "/usr/include/stdio.h" 3 4
+extern FILE *popen (__const char *__command, __const char *__modes) ;
+
+
+
+
+
+extern int pclose (FILE *__stream);
+
+
+
+
+
+extern char *ctermid (char *__s) throw ();
+
+
+
+
+
+extern char *cuserid (char *__s);
+
+
+
+
+struct obstack;
+
+
+extern int obstack_printf (struct obstack *__restrict __obstack,
+      __const char *__restrict __format, ...)
+     throw () __attribute__ ((__format__ (__printf__, 2, 3)));
+extern int obstack_vprintf (struct obstack *__restrict __obstack,
+       __const char *__restrict __format,
+       __gnuc_va_list __args)
+     throw () __attribute__ ((__format__ (__printf__, 2, 0)));
+
+
+
+
+
+
+
+extern void flockfile (FILE *__stream) throw ();
+
+
+
+extern int ftrylockfile (FILE *__stream) throw () ;
+
+
+extern void funlockfile (FILE *__stream) throw ();
+# 916 "/usr/include/stdio.h" 3 4
+}
+# 24 "/usr/local/pgsql/include/libpq-fe.h" 2
+
+
+
+
+
+# 1 "/usr/local/pgsql/include/postgres_ext.h" 1
+# 29 "/usr/local/pgsql/include/postgres_ext.h"
+typedef unsigned int Oid;
+# 30 "/usr/local/pgsql/include/libpq-fe.h" 2
+# 41 "/usr/local/pgsql/include/libpq-fe.h"
+typedef enum
+{
+
+
+
+
+
+ CONNECTION_OK,
+ CONNECTION_BAD,
+
+
+
+
+
+
+ CONNECTION_STARTED,
+ CONNECTION_MADE,
+ CONNECTION_AWAITING_RESPONSE,
+
+ CONNECTION_AUTH_OK,
+
+ CONNECTION_SETENV,
+ CONNECTION_SSL_STARTUP,
+ CONNECTION_NEEDED
+} ConnStatusType;
+
+typedef enum
+{
+ PGRES_POLLING_FAILED = 0,
+ PGRES_POLLING_READING,
+ PGRES_POLLING_WRITING,
+ PGRES_POLLING_OK,
+ PGRES_POLLING_ACTIVE
+
+} PostgresPollingStatusType;
+
+typedef enum
+{
+ PGRES_EMPTY_QUERY = 0,
+ PGRES_COMMAND_OK,
+
+
+ PGRES_TUPLES_OK,
+
+
+ PGRES_COPY_OUT,
+ PGRES_COPY_IN,
+ PGRES_BAD_RESPONSE,
+
+ PGRES_NONFATAL_ERROR,
+ PGRES_FATAL_ERROR
+} ExecStatusType;
+
+typedef enum
+{
+ PQTRANS_IDLE,
+ PQTRANS_ACTIVE,
+ PQTRANS_INTRANS,
+ PQTRANS_INERROR,
+ PQTRANS_UNKNOWN
+} PGTransactionStatusType;
+
+typedef enum
+{
+ PQERRORS_TERSE,
+ PQERRORS_DEFAULT,
+ PQERRORS_VERBOSE
+} PGVerbosity;
+
+
+
+
+typedef struct pg_conn PGconn;
+
+
+
+
+
+
+typedef struct pg_result PGresult;
+
+
+
+
+
+typedef struct pg_cancel PGcancel;
+
+
+
+
+
+
+
+typedef struct pgNotify
+{
+ char *relname;
+ int be_pid;
+ char *extra;
+
+ struct pgNotify *next;
+} PGnotify;
+
+
+typedef void (*PQnoticeReceiver) (void *arg, const PGresult *res);
+typedef void (*PQnoticeProcessor) (void *arg, const char *message);
+
+
+typedef char pqbool;
+
+typedef struct _PQprintOpt
+{
+ pqbool header;
+ pqbool align;
+ pqbool standard;
+ pqbool html3;
+ pqbool expanded;
+ pqbool pager;
+ char *fieldSep;
+ char *tableOpt;
+ char *caption;
+ char **fieldName;
+
+} PQprintOpt;
+# 174 "/usr/local/pgsql/include/libpq-fe.h"
+typedef struct _PQconninfoOption
+{
+ char *keyword;
+ char *envvar;
+ char *compiled;
+ char *val;
+ char *label;
+ char *dispchar;
+
+
+
+
+ int dispsize;
+} PQconninfoOption;
+
+
+
+
+
+typedef struct
+{
+ int len;
+ int isint;
+ union
+ {
+  int *ptr;
+  int integer;
+ } u;
+} PQArgBlock;
+
+
+
+
+
+typedef struct pgresAttDesc
+{
+ char *name;
+ Oid tableid;
+ int columnid;
+ int format;
+ Oid typid;
+ int typlen;
+ int atttypmod;
+} PGresAttDesc;
+# 228 "/usr/local/pgsql/include/libpq-fe.h"
+extern PGconn *PQconnectStart(const char *conninfo);
+extern PGconn *PQconnectStartParams(const char **keywords,
+      const char **values, int expand_dbname);
+extern PostgresPollingStatusType PQconnectPoll(PGconn *conn);
+
+
+extern PGconn *PQconnectdb(const char *conninfo);
+extern PGconn *PQconnectdbParams(const char **keywords,
+      const char **values, int expand_dbname);
+extern PGconn *PQsetdbLogin(const char *pghost, const char *pgport,
+    const char *pgoptions, const char *pgtty,
+    const char *dbName,
+    const char *login, const char *pwd);
+
+
+
+
+
+extern void PQfinish(PGconn *conn);
+
+
+extern PQconninfoOption *PQconndefaults(void);
+
+
+extern PQconninfoOption *PQconninfoParse(const char *conninfo, char **errmsg);
+
+
+extern void PQconninfoFree(PQconninfoOption *connOptions);
+
+
+
+
+
+
+extern int PQresetStart(PGconn *conn);
+extern PostgresPollingStatusType PQresetPoll(PGconn *conn);
+
+
+extern void PQreset(PGconn *conn);
+
+
+extern PGcancel *PQgetCancel(PGconn *conn);
+
+
+extern void PQfreeCancel(PGcancel *cancel);
+
+
+extern int PQcancel(PGcancel *cancel, char *errbuf, int errbufsize);
+
+
+extern int PQrequestCancel(PGconn *conn);
+
+
+extern char *PQdb(const PGconn *conn);
+extern char *PQuser(const PGconn *conn);
+extern char *PQpass(const PGconn *conn);
+extern char *PQhost(const PGconn *conn);
+extern char *PQport(const PGconn *conn);
+extern char *PQtty(const PGconn *conn);
+extern char *PQoptions(const PGconn *conn);
+extern ConnStatusType PQstatus(const PGconn *conn);
+extern PGTransactionStatusType PQtransactionStatus(const PGconn *conn);
+extern const char *PQparameterStatus(const PGconn *conn,
+      const char *paramName);
+extern int PQprotocolVersion(const PGconn *conn);
+extern int PQserverVersion(const PGconn *conn);
+extern char *PQerrorMessage(const PGconn *conn);
+extern int PQsocket(const PGconn *conn);
+extern int PQbackendPID(const PGconn *conn);
+extern int PQconnectionNeedsPassword(const PGconn *conn);
+extern int PQconnectionUsedPassword(const PGconn *conn);
+extern int PQclientEncoding(const PGconn *conn);
+extern int PQsetClientEncoding(PGconn *conn, const char *encoding);
+
+
+
+extern void *PQgetssl(PGconn *conn);
+
+
+extern void PQinitSSL(int do_init);
+
+
+extern void PQinitOpenSSL(int do_ssl, int do_crypto);
+
+
+extern PGVerbosity PQsetErrorVerbosity(PGconn *conn, PGVerbosity verbosity);
+
+
+extern void PQtrace(PGconn *conn, FILE *debug_port);
+extern void PQuntrace(PGconn *conn);
+
+
+extern PQnoticeReceiver PQsetNoticeReceiver(PGconn *conn,
+     PQnoticeReceiver proc,
+     void *arg);
+extern PQnoticeProcessor PQsetNoticeProcessor(PGconn *conn,
+      PQnoticeProcessor proc,
+      void *arg);
+# 334 "/usr/local/pgsql/include/libpq-fe.h"
+typedef void (*pgthreadlock_t) (int acquire);
+
+extern pgthreadlock_t PQregisterThreadLock(pgthreadlock_t newhandler);
+
+
+
+
+extern PGresult *PQexec(PGconn *conn, const char *query);
+extern PGresult *PQexecParams(PGconn *conn,
+    const char *command,
+    int nParams,
+    const Oid *paramTypes,
+    const char *const * paramValues,
+    const int *paramLengths,
+    const int *paramFormats,
+    int resultFormat);
+extern PGresult *PQprepare(PGconn *conn, const char *stmtName,
+    const char *query, int nParams,
+    const Oid *paramTypes);
+extern PGresult *PQexecPrepared(PGconn *conn,
+      const char *stmtName,
+      int nParams,
+      const char *const * paramValues,
+      const int *paramLengths,
+      const int *paramFormats,
+      int resultFormat);
+
+
+extern int PQsendQuery(PGconn *conn, const char *query);
+extern int PQsendQueryParams(PGconn *conn,
+      const char *command,
+      int nParams,
+      const Oid *paramTypes,
+      const char *const * paramValues,
+      const int *paramLengths,
+      const int *paramFormats,
+      int resultFormat);
+extern int PQsendPrepare(PGconn *conn, const char *stmtName,
+     const char *query, int nParams,
+     const Oid *paramTypes);
+extern int PQsendQueryPrepared(PGconn *conn,
+     const char *stmtName,
+     int nParams,
+     const char *const * paramValues,
+     const int *paramLengths,
+     const int *paramFormats,
+     int resultFormat);
+extern PGresult *PQgetResult(PGconn *conn);
+
+
+extern int PQisBusy(PGconn *conn);
+extern int PQconsumeInput(PGconn *conn);
+
+
+extern PGnotify *PQnotifies(PGconn *conn);
+
+
+extern int PQputCopyData(PGconn *conn, const char *buffer, int nbytes);
+extern int PQputCopyEnd(PGconn *conn, const char *errormsg);
+extern int PQgetCopyData(PGconn *conn, char **buffer, int async);
+
+
+extern int PQgetline(PGconn *conn, char *string, int length);
+extern int PQputline(PGconn *conn, const char *string);
+extern int PQgetlineAsync(PGconn *conn, char *buffer, int bufsize);
+extern int PQputnbytes(PGconn *conn, const char *buffer, int nbytes);
+extern int PQendcopy(PGconn *conn);
+
+
+extern int PQsetnonblocking(PGconn *conn, int arg);
+extern int PQisnonblocking(const PGconn *conn);
+extern int PQisthreadsafe(void);
+
+
+extern int PQflush(PGconn *conn);
+
+
+
+
+
+extern PGresult *PQfn(PGconn *conn,
+  int fnid,
+  int *result_buf,
+  int *result_len,
+  int result_is_int,
+  const PQArgBlock *args,
+  int nargs);
+
+
+extern ExecStatusType PQresultStatus(const PGresult *res);
+extern char *PQresStatus(ExecStatusType status);
+extern char *PQresultErrorMessage(const PGresult *res);
+extern char *PQresultErrorField(const PGresult *res, int fieldcode);
+extern int PQntuples(const PGresult *res);
+extern int PQnfields(const PGresult *res);
+extern int PQbinaryTuples(const PGresult *res);
+extern char *PQfname(const PGresult *res, int field_num);
+extern int PQfnumber(const PGresult *res, const char *field_name);
+extern Oid PQftable(const PGresult *res, int field_num);
+extern int PQftablecol(const PGresult *res, int field_num);
+extern int PQfformat(const PGresult *res, int field_num);
+extern Oid PQftype(const PGresult *res, int field_num);
+extern int PQfsize(const PGresult *res, int field_num);
+extern int PQfmod(const PGresult *res, int field_num);
+extern char *PQcmdStatus(PGresult *res);
+extern char *PQoidStatus(const PGresult *res);
+extern Oid PQoidValue(const PGresult *res);
+extern char *PQcmdTuples(PGresult *res);
+extern char *PQgetvalue(const PGresult *res, int tup_num, int field_num);
+extern int PQgetlength(const PGresult *res, int tup_num, int field_num);
+extern int PQgetisnull(const PGresult *res, int tup_num, int field_num);
+extern int PQnparams(const PGresult *res);
+extern Oid PQparamtype(const PGresult *res, int param_num);
+
+
+extern PGresult *PQdescribePrepared(PGconn *conn, const char *stmt);
+extern PGresult *PQdescribePortal(PGconn *conn, const char *portal);
+extern int PQsendDescribePrepared(PGconn *conn, const char *stmt);
+extern int PQsendDescribePortal(PGconn *conn, const char *portal);
+
+
+extern void PQclear(PGresult *res);
+
+
+extern void PQfreemem(void *ptr);
+# 468 "/usr/local/pgsql/include/libpq-fe.h"
+extern PGresult *PQmakeEmptyPGresult(PGconn *conn, ExecStatusType status);
+extern PGresult *PQcopyResult(const PGresult *src, int flags);
+extern int PQsetResultAttrs(PGresult *res, int numAttributes, PGresAttDesc *attDescs);
+extern void *PQresultAlloc(PGresult *res, size_t nBytes);
+extern int PQsetvalue(PGresult *res, int tup_num, int field_num, char *value, int len);
+
+
+extern size_t PQescapeStringConn(PGconn *conn,
+       char *to, const char *from, size_t length,
+       int *error);
+extern char *PQescapeLiteral(PGconn *conn, const char *str, size_t len);
+extern char *PQescapeIdentifier(PGconn *conn, const char *str, size_t len);
+extern unsigned char *PQescapeByteaConn(PGconn *conn,
+      const unsigned char *from, size_t from_length,
+      size_t *to_length);
+extern unsigned char *PQunescapeBytea(const unsigned char *strtext,
+    size_t *retbuflen);
+
+
+extern size_t PQescapeString(char *to, const char *from, size_t length);
+extern unsigned char *PQescapeBytea(const unsigned char *from, size_t from_length,
+     size_t *to_length);
+
+
+
+
+
+extern void
+PQprint(FILE *fout,
+  const PGresult *res,
+  const PQprintOpt *ps);
+
+
+
+
+extern void
+PQdisplayTuples(const PGresult *res,
+    FILE *fp,
+    int fillAlign,
+    const char *fieldSep,
+    int printHeader,
+    int quiet);
+
+extern void
+PQprintTuples(const PGresult *res,
+     FILE *fout,
+     int printAttName,
+     int terseOutput,
+     int width);
+
+
+
+
+
+extern int lo_open(PGconn *conn, Oid lobjId, int mode);
+extern int lo_close(PGconn *conn, int fd);
+extern int lo_read(PGconn *conn, int fd, char *buf, size_t len);
+extern int lo_write(PGconn *conn, int fd, const char *buf, size_t len);
+extern int lo_lseek(PGconn *conn, int fd, int offset, int whence);
+extern Oid lo_creat(PGconn *conn, int mode);
+extern Oid lo_create(PGconn *conn, Oid lobjId);
+extern int lo_tell(PGconn *conn, int fd);
+extern int lo_truncate(PGconn *conn, int fd, size_t len);
+extern int lo_unlink(PGconn *conn, Oid lobjId);
+extern Oid lo_import(PGconn *conn, const char *filename);
+extern Oid lo_import_with_oid(PGconn *conn, const char *filename, Oid lobjId);
+extern int lo_export(PGconn *conn, Oid lobjId, const char *filename);
+
+
+
+
+extern int PQmblen(const char *s, int encoding);
+
+
+extern int PQdsplen(const char *s, int encoding);
+
+
+extern int PQenv2encoding(void);
+
+
+
+extern char *PQencryptPassword(const char *passwd, const char *user);
+
+
+
+extern int pg_char_to_encoding(const char *name);
+extern const char *pg_encoding_to_char(int encoding);
+extern int pg_valid_server_encoding_id(int encoding);
+
+
+}
+# 5 "CServiceData.h" 2
+
+
+typedef struct
+{
+ int id;
+ char svcname[40];
+ int auth;
+ char * sql;
+ int sqltype;
+}SERVICEDATA;
+
+class CServiceData
+{
+public:
+    CServiceData();
+    ~CServiceData();
+    int Load(PGconn * pg);
+
+    SERVICEDATA * m_pData;
+    int m_datacnt;
+
+    int SvcIsNeedAuth(char * svcname);
+    SERVICEDATA * GetService(char * svcname);
+
+};
+# 7 "CHttpThread.h" 2
+# 1 "CHttpSession.h" 1
+
+
+
+# 1 "CRdWrtLock.h" 1
+
+
+
+
+
+
+
+class CRdWrtLock
+{
+public:
+    CRdWrtLock();
+
+ ~CRdWrtLock();
+
+
+
+
+
+
+    void lockread();
+
+
+
+
+
+
+    void lockwrite();
+
+    void unlock();
+
+
+protected:
+    pthread_rwlock_t m_rwlock;
+
+};
+# 5 "CHttpSession.h" 2
+
+
+typedef struct
+{
+    time_t expired_time;
+ char id[64];
+}SESSIONDATA;
+
+
+
+class CHttpSession
+{
+public:
+    CHttpSession();
+
+    virtual ~CHttpSession();
+
+    SESSIONDATA m_session[512];
+ int CreateSession(int seconds,char * sessionid);
+ int GetRandom(int &num1,int &num2);
+
+ int DeleteSession(char * sessionid);
+
+ int UpdateSession(char * sessionid,int seconds);
+
+private:
+    CRdWrtLock m_Lock;
+};
+# 8 "CHttpThread.h" 2
+# 1 "simplefunc.h" 1
+# 9 "simplefunc.h"
+int SQLEncode(const char * szSrcStr,char * szDstStr,const int resultSize);
+int GetUtf8ByteNumForWord(char firstCh);
+bool IsHexChar(char ch);
+char Char2Num(char ch);
+
+char * trim(char * s);
+void StrToLower(char * s);
+
+int escape(const char* argstr, const int strSize, char* argresult, const int resultSize);
+int unescape(const char * argstr, const int strSize, char * argresult, const int resultSize);
+int URLEncode(const char* str, const int strSize, char* result, const int resultSize);
+int URLDecode(const char* str, const int strSize, char* result, const int resultSize);
+
+double time_so_far();
+
+int SocketRead(int sockfd,char * p,int len);
+
+
+int GetMaxBindIdx(char * szSQL,char pre);
+# 9 "CHttpThread.h" 2
+# 1 "httpparse.h" 1
+# 10 "httpparse.h"
+enum HTTPMETHOD {ENUM_GET,ENUM_POST,ENUM_HEAD,ENUM_UNKNOW};
+typedef struct
+{
+    enum HTTPMETHOD m_Method;
+    char * m_Url;
+    char * m_ExtName;
+    char * m_Host;
+
+    char * m_Connection;
+    char * m_User_Agent;
+    char * m_Accept;
+    char * m_Accept_Encoding;
+    char * m_Accept_Language;
+    char * m_HttpVersion;
+ char * m_Cookie;
+
+ char * m_ContentType;
+    int m_ContentLength;
+
+}HTTPHEAD;
+
+
+int ParseHttpHead(char * szHttpHead,HTTPHEAD * pHead);
+
+int ParseHttpPara(char * url,int &argc,char * * urlargv);
+int GetSessionId(char * szCookie,char * szSessionId);
+# 10 "CHttpThread.h" 2
+# 1 "CReqQueue.h" 1
+# 9 "CReqQueue.h"
+class CReqQueue
+{
+
+public:
+    CReqQueue(int queueSize=1024);
+    virtual ~CReqQueue();
+
+    int getq();
+
+    void putq(int data);
+
+ int GetQueueSize();
+
+private:
+    pthread_mutex_t m_mutex;
+    pthread_cond_t condGet;
+    pthread_cond_t condPut;
+
+    int * buffer;
+    int sizeQueue;
+    int lput;
+    int lget;
+    int nFullThread;
+    int nEmptyThread;
+    int nData;
+};
+# 11 "CHttpThread.h" 2
+# 1 "/usr/include/mysql/mysql.h" 1
+# 43 "/usr/include/mysql/mysql.h"
+extern "C" {
+
+
+
+# 1 "/usr/include/sys/types.h" 1 3 4
+# 29 "/usr/include/sys/types.h" 3 4
+extern "C" {
+
+
+
+
+
+typedef __u_char u_char;
+typedef __u_short u_short;
+typedef __u_int u_int;
+typedef __u_long u_long;
+typedef __quad_t quad_t;
+typedef __u_quad_t u_quad_t;
+typedef __fsid_t fsid_t;
+
+
+
+
+typedef __loff_t loff_t;
+
+
+
+typedef __ino_t ino_t;
+
+
+
+
+
+
+typedef __ino64_t ino64_t;
+
+
+
+
+typedef __dev_t dev_t;
+# 72 "/usr/include/sys/types.h" 3 4
+typedef __mode_t mode_t;
+
+
+
+
+typedef __nlink_t nlink_t;
+# 105 "/usr/include/sys/types.h" 3 4
+typedef __id_t id_t;
+# 116 "/usr/include/sys/types.h" 3 4
+typedef __daddr_t daddr_t;
+typedef __caddr_t caddr_t;
+
+
+
+
+
+typedef __key_t key_t;
+# 141 "/usr/include/sys/types.h" 3 4
+typedef __suseconds_t suseconds_t;
+
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h" 1 3 4
+# 148 "/usr/include/sys/types.h" 2 3 4
+
+
+
+typedef unsigned long int ulong;
+typedef unsigned short int ushort;
+typedef unsigned int uint;
+# 195 "/usr/include/sys/types.h" 3 4
+typedef int int8_t __attribute__ ((__mode__ (__QI__)));
+typedef int int16_t __attribute__ ((__mode__ (__HI__)));
+typedef int int32_t __attribute__ ((__mode__ (__SI__)));
+typedef int int64_t __attribute__ ((__mode__ (__DI__)));
+
+
+typedef unsigned int u_int8_t __attribute__ ((__mode__ (__QI__)));
+typedef unsigned int u_int16_t __attribute__ ((__mode__ (__HI__)));
+typedef unsigned int u_int32_t __attribute__ ((__mode__ (__SI__)));
+typedef unsigned int u_int64_t __attribute__ ((__mode__ (__DI__)));
+
+typedef int register_t __attribute__ ((__mode__ (__word__)));
+# 220 "/usr/include/sys/types.h" 3 4
+# 1 "/usr/include/sys/select.h" 1 3 4
+# 31 "/usr/include/sys/select.h" 3 4
+# 1 "/usr/include/bits/select.h" 1 3 4
+# 23 "/usr/include/bits/select.h" 3 4
+# 1 "/usr/include/bits/wordsize.h" 1 3 4
+# 24 "/usr/include/bits/select.h" 2 3 4
+# 32 "/usr/include/sys/select.h" 2 3 4
+
+
+# 1 "/usr/include/bits/sigset.h" 1 3 4
+# 35 "/usr/include/sys/select.h" 2 3 4
+# 46 "/usr/include/sys/select.h" 3 4
+# 1 "/usr/include/bits/time.h" 1 3 4
+# 69 "/usr/include/bits/time.h" 3 4
+struct timeval
+  {
+    __time_t tv_sec;
+    __suseconds_t tv_usec;
+  };
+# 47 "/usr/include/sys/select.h" 2 3 4
+# 55 "/usr/include/sys/select.h" 3 4
+typedef long int __fd_mask;
+# 67 "/usr/include/sys/select.h" 3 4
+typedef struct
+  {
+
+
+
+    __fd_mask fds_bits[1024 / (8 * (int) sizeof (__fd_mask))];
+
+
+
+
+
+  } fd_set;
+
+
+
+
+
+
+typedef __fd_mask fd_mask;
+# 99 "/usr/include/sys/select.h" 3 4
+extern "C" {
+# 109 "/usr/include/sys/select.h" 3 4
+extern int select (int __nfds, fd_set *__restrict __readfds,
+     fd_set *__restrict __writefds,
+     fd_set *__restrict __exceptfds,
+     struct timeval *__restrict __timeout);
+# 121 "/usr/include/sys/select.h" 3 4
+extern int pselect (int __nfds, fd_set *__restrict __readfds,
+      fd_set *__restrict __writefds,
+      fd_set *__restrict __exceptfds,
+      const struct timespec *__restrict __timeout,
+      const __sigset_t *__restrict __sigmask);
+
+
+}
+# 221 "/usr/include/sys/types.h" 2 3 4
+
+
+# 1 "/usr/include/sys/sysmacros.h" 1 3 4
+# 30 "/usr/include/sys/sysmacros.h" 3 4
+__extension__
+extern unsigned int gnu_dev_major (unsigned long long int __dev)
+     throw ();
+__extension__
+extern unsigned int gnu_dev_minor (unsigned long long int __dev)
+     throw ();
+__extension__
+extern unsigned long long int gnu_dev_makedev (unsigned int __major,
+            unsigned int __minor)
+     throw ();
+# 224 "/usr/include/sys/types.h" 2 3 4
+
+
+
+
+typedef __blksize_t blksize_t;
+
+
+
+
+
+
+typedef __blkcnt_t blkcnt_t;
+
+
+
+typedef __fsblkcnt_t fsblkcnt_t;
+
+
+
+typedef __fsfilcnt_t fsfilcnt_t;
+# 262 "/usr/include/sys/types.h" 3 4
+typedef __blkcnt64_t blkcnt64_t;
+typedef __fsblkcnt64_t fsblkcnt64_t;
+typedef __fsfilcnt64_t fsfilcnt64_t;
+# 273 "/usr/include/sys/types.h" 3 4
+}
+# 48 "/usr/include/mysql/mysql.h" 2
+
+
+
+typedef char my_bool;
+# 65 "/usr/include/mysql/mysql.h"
+typedef int my_socket;
+
+
+
+
+# 1 "/usr/include/mysql/mysql_version.h" 1
+# 71 "/usr/include/mysql/mysql.h" 2
+# 1 "/usr/include/mysql/mysql_com.h" 1
+# 55 "/usr/include/mysql/mysql_com.h"
+enum enum_server_command
+{
+  COM_SLEEP, COM_QUIT, COM_INIT_DB, COM_QUERY, COM_FIELD_LIST,
+  COM_CREATE_DB, COM_DROP_DB, COM_REFRESH, COM_SHUTDOWN, COM_STATISTICS,
+  COM_PROCESS_INFO, COM_CONNECT, COM_PROCESS_KILL, COM_DEBUG, COM_PING,
+  COM_TIME, COM_DELAYED_INSERT, COM_CHANGE_USER, COM_BINLOG_DUMP,
+  COM_TABLE_DUMP, COM_CONNECT_OUT, COM_REGISTER_SLAVE,
+  COM_STMT_PREPARE, COM_STMT_EXECUTE, COM_STMT_SEND_LONG_DATA, COM_STMT_CLOSE,
+  COM_STMT_RESET, COM_SET_OPTION, COM_STMT_FETCH, COM_DAEMON,
+
+
+
+  COM_END
+};
+# 228 "/usr/include/mysql/mysql_com.h"
+struct st_vio;
+typedef struct st_vio Vio;
+# 239 "/usr/include/mysql/mysql_com.h"
+typedef struct st_net {
+
+  Vio *vio;
+  unsigned char *buff,*buff_end,*write_pos,*read_pos;
+  my_socket fd;
+
+
+
+
+
+  unsigned long remain_in_buf,length, buf_length, where_b;
+  unsigned long max_packet,max_packet_size;
+  unsigned int pkt_nr,compress_pkt_nr;
+  unsigned int write_timeout, read_timeout, retry_count;
+  int fcntl;
+  unsigned int *return_status;
+  unsigned char reading_or_writing;
+  char save_char;
+  my_bool unused0;
+  my_bool unused;
+  my_bool compress;
+  my_bool unused1;
+# 270 "/usr/include/mysql/mysql_com.h"
+  unsigned char *query_cache_query;
+  unsigned int last_errno;
+  unsigned char error;
+  my_bool unused2;
+  my_bool return_errno;
+
+  char last_error[512];
+
+  char sqlstate[5 +1];
+  void *extension;
+# 290 "/usr/include/mysql/mysql_com.h"
+} NET;
+
+
+
+
+enum enum_field_types { MYSQL_TYPE_DECIMAL, MYSQL_TYPE_TINY,
+   MYSQL_TYPE_SHORT, MYSQL_TYPE_LONG,
+   MYSQL_TYPE_FLOAT, MYSQL_TYPE_DOUBLE,
+   MYSQL_TYPE_NULL, MYSQL_TYPE_TIMESTAMP,
+   MYSQL_TYPE_LONGLONG,MYSQL_TYPE_INT24,
+   MYSQL_TYPE_DATE, MYSQL_TYPE_TIME,
+   MYSQL_TYPE_DATETIME, MYSQL_TYPE_YEAR,
+   MYSQL_TYPE_NEWDATE, MYSQL_TYPE_VARCHAR,
+   MYSQL_TYPE_BIT,
+                        MYSQL_TYPE_NEWDECIMAL=246,
+   MYSQL_TYPE_ENUM=247,
+   MYSQL_TYPE_SET=248,
+   MYSQL_TYPE_TINY_BLOB=249,
+   MYSQL_TYPE_MEDIUM_BLOB=250,
+   MYSQL_TYPE_LONG_BLOB=251,
+   MYSQL_TYPE_BLOB=252,
+   MYSQL_TYPE_VAR_STRING=253,
+   MYSQL_TYPE_STRING=254,
+   MYSQL_TYPE_GEOMETRY=255
+
+};
+# 357 "/usr/include/mysql/mysql_com.h"
+enum mysql_enum_shutdown_level {
+
+
+
+
+
+  SHUTDOWN_DEFAULT = 0,
+
+  SHUTDOWN_WAIT_CONNECTIONS= (unsigned char)(1 << 0),
+
+  SHUTDOWN_WAIT_TRANSACTIONS= (unsigned char)(1 << 1),
+
+  SHUTDOWN_WAIT_UPDATES= (unsigned char)(1 << 3),
+
+  SHUTDOWN_WAIT_ALL_BUFFERS= ((unsigned char)(1 << 3) << 1),
+
+  SHUTDOWN_WAIT_CRITICAL_BUFFERS= ((unsigned char)(1 << 3) << 1) + 1,
+
+
+  KILL_QUERY= 254,
+
+  KILL_CONNECTION= 255
+};
+
+
+enum enum_cursor_type
+{
+  CURSOR_TYPE_NO_CURSOR= 0,
+  CURSOR_TYPE_READ_ONLY= 1,
+  CURSOR_TYPE_FOR_UPDATE= 2,
+  CURSOR_TYPE_SCROLLABLE= 4
+};
+
+
+
+enum enum_mysql_set_option
+{
+  MYSQL_OPTION_MULTI_STATEMENTS_ON,
+  MYSQL_OPTION_MULTI_STATEMENTS_OFF
+};
+
+
+
+
+extern "C" {
+
+
+my_bool my_net_init(NET *net, Vio* vio);
+void my_net_local_init(NET *net);
+void net_end(NET *net);
+  void net_clear(NET *net, my_bool clear_buffer);
+my_bool net_realloc(NET *net, size_t length);
+my_bool net_flush(NET *net);
+my_bool my_net_write(NET *net,const unsigned char *packet, size_t len);
+my_bool net_write_command(NET *net,unsigned char command,
+     const unsigned char *header, size_t head_len,
+     const unsigned char *packet, size_t len);
+int net_real_write(NET *net,const unsigned char *packet, size_t len);
+unsigned long my_net_read(NET *net);
+# 426 "/usr/include/mysql/mysql_com.h"
+struct sockaddr;
+int my_connect(my_socket s, const struct sockaddr *name, unsigned int namelen,
+        unsigned int timeout);
+
+struct rand_struct {
+  unsigned long seed1,seed2,max_value;
+  double max_value_dbl;
+};
+
+
+}
+
+
+
+
+enum Item_result {STRING_RESULT=0, REAL_RESULT, INT_RESULT, ROW_RESULT,
+                  DECIMAL_RESULT};
+
+typedef struct st_udf_args
+{
+  unsigned int arg_count;
+  enum Item_result *arg_type;
+  char **args;
+  unsigned long *lengths;
+  char *maybe_null;
+  char **attributes;
+  unsigned long *attribute_lengths;
+  void *extension;
+} UDF_ARGS;
+
+
+
+typedef struct st_udf_init
+{
+  my_bool maybe_null;
+  unsigned int decimals;
+  unsigned long max_length;
+  char *ptr;
+  my_bool const_item;
+  void *extension;
+} UDF_INIT;
+# 479 "/usr/include/mysql/mysql_com.h"
+extern "C" {
+
+
+
+
+
+
+
+void randominit(struct rand_struct *, unsigned long seed1,
+                unsigned long seed2);
+double my_rnd(struct rand_struct *);
+void create_random_string(char *to, unsigned int length, struct rand_struct *rand_st);
+
+void hash_password(unsigned long *to, const char *password, unsigned int password_len);
+void make_scrambled_password_323(char *to, const char *password);
+void scramble_323(char *to, const char *message, const char *password);
+my_bool check_scramble_323(const char *, const char *message,
+                           unsigned long *salt);
+void get_salt_from_password_323(unsigned long *res, const char *password);
+void make_password_from_salt_323(char *to, const unsigned long *salt);
+
+void make_scrambled_password(char *to, const char *password);
+void scramble(char *to, const char *message, const char *password);
+my_bool check_scramble(const char *reply, const char *message,
+                       const unsigned char *hash_stage2);
+void get_salt_from_password(unsigned char *res, const char *password);
+void make_password_from_salt(char *to, const unsigned char *hash_stage2);
+char *octet2hex(char *to, const char *str, unsigned int len);
+
+
+
+char *get_tty_password(const char *opt_message);
+const char *mysql_errno_to_sqlstate(unsigned int mysql_errno);
+
+
+
+my_bool my_thread_init(void);
+void my_thread_end(void);
+# 525 "/usr/include/mysql/mysql_com.h"
+}
+# 72 "/usr/include/mysql/mysql.h" 2
+# 1 "/usr/include/mysql/mysql_time.h" 1
+# 28 "/usr/include/mysql/mysql_time.h"
+enum enum_mysql_timestamp_type
+{
+  MYSQL_TIMESTAMP_NONE= -2, MYSQL_TIMESTAMP_ERROR= -1,
+  MYSQL_TIMESTAMP_DATE= 0, MYSQL_TIMESTAMP_DATETIME= 1, MYSQL_TIMESTAMP_TIME= 2
+};
+# 47 "/usr/include/mysql/mysql_time.h"
+typedef struct st_mysql_time
+{
+  unsigned int year, month, day, hour, minute, second;
+  unsigned long second_part;
+  my_bool neg;
+  enum enum_mysql_timestamp_type time_type;
+} MYSQL_TIME;
+# 73 "/usr/include/mysql/mysql.h" 2
+
+# 1 "/usr/include/mysql/my_list.h" 1
+# 20 "/usr/include/mysql/my_list.h"
+extern "C" {
+
+
+typedef struct st_list {
+  struct st_list *prev,*next;
+  void *data;
+} LIST;
+
+typedef int (*list_walk_action)(void *,void *);
+
+extern LIST *list_add(LIST *root,LIST *element);
+extern LIST *list_delete(LIST *root,LIST *element);
+extern LIST *list_cons(void *data,LIST *root);
+extern LIST *list_reverse(LIST *root);
+extern void list_free(LIST *root,unsigned int free_data);
+extern unsigned int list_length(LIST *);
+extern int list_walk(LIST *,list_walk_action action,unsigned char * argument);
+
+
+
+
+
+
+}
+# 75 "/usr/include/mysql/mysql.h" 2
+
+extern unsigned int mysql_port;
+extern char *mysql_unix_port;
+# 95 "/usr/include/mysql/mysql.h"
+typedef struct st_mysql_field {
+  char *name;
+  char *org_name;
+  char *table;
+  char *org_table;
+  char *db;
+  char *catalog;
+  char *def;
+  unsigned long length;
+  unsigned long max_length;
+  unsigned int name_length;
+  unsigned int org_name_length;
+  unsigned int table_length;
+  unsigned int org_table_length;
+  unsigned int db_length;
+  unsigned int catalog_length;
+  unsigned int def_length;
+  unsigned int flags;
+  unsigned int decimals;
+  unsigned int charsetnr;
+  enum enum_field_types type;
+  void *extension;
+} MYSQL_FIELD;
+
+typedef char **MYSQL_ROW;
+typedef unsigned int MYSQL_FIELD_OFFSET;
+
+
+
+
+
+
+
+typedef unsigned long long my_ulonglong;
+
+
+
+# 1 "/usr/include/mysql/typelib.h" 1
+# 20 "/usr/include/mysql/typelib.h"
+# 1 "/usr/include/mysql/my_alloc.h" 1
+# 26 "/usr/include/mysql/my_alloc.h"
+typedef struct st_used_mem
+{
+  struct st_used_mem *next;
+  unsigned int left;
+  unsigned int size;
+} USED_MEM;
+
+
+typedef struct st_mem_root
+{
+  USED_MEM *free;
+  USED_MEM *used;
+  USED_MEM *pre_alloc;
+
+  size_t min_malloc;
+  size_t block_size;
+  unsigned int block_num;
+
+
+
+
+  unsigned int first_block_usage;
+
+  void (*error_handler)(void);
+} MEM_ROOT;
+# 21 "/usr/include/mysql/typelib.h" 2
+
+typedef struct st_typelib {
+  unsigned int count;
+  const char *name;
+  const char **type_names;
+  unsigned int *type_lengths;
+} TYPELIB;
+
+extern my_ulonglong find_typeset(char *x, TYPELIB *typelib,int *error_position);
+extern int find_type_or_exit(const char *x, TYPELIB *typelib,
+                             const char *option);
+extern int find_type(char *x, const TYPELIB *typelib, unsigned int full_name);
+extern void make_type(char *to,unsigned int nr,TYPELIB *typelib);
+extern const char *get_type(TYPELIB *typelib,unsigned int nr);
+extern TYPELIB *copy_typelib(MEM_ROOT *root, TYPELIB *from);
+
+extern TYPELIB sql_protocol_typelib;
+# 133 "/usr/include/mysql/mysql.h" 2
+
+
+
+
+
+
+typedef struct st_mysql_rows {
+  struct st_mysql_rows *next;
+  MYSQL_ROW data;
+  unsigned long length;
+} MYSQL_ROWS;
+
+typedef MYSQL_ROWS *MYSQL_ROW_OFFSET;
+
+
+
+typedef struct embedded_query_result EMBEDDED_QUERY_RESULT;
+typedef struct st_mysql_data {
+  MYSQL_ROWS *data;
+  struct embedded_query_result *embedded_info;
+  MEM_ROOT alloc;
+  my_ulonglong rows;
+  unsigned int fields;
+
+  void *extension;
+} MYSQL_DATA;
+
+enum mysql_option
+{
+  MYSQL_OPT_CONNECT_TIMEOUT, MYSQL_OPT_COMPRESS, MYSQL_OPT_NAMED_PIPE,
+  MYSQL_INIT_COMMAND, MYSQL_READ_DEFAULT_FILE, MYSQL_READ_DEFAULT_GROUP,
+  MYSQL_SET_CHARSET_DIR, MYSQL_SET_CHARSET_NAME, MYSQL_OPT_LOCAL_INFILE,
+  MYSQL_OPT_PROTOCOL, MYSQL_SHARED_MEMORY_BASE_NAME, MYSQL_OPT_READ_TIMEOUT,
+  MYSQL_OPT_WRITE_TIMEOUT, MYSQL_OPT_USE_RESULT,
+  MYSQL_OPT_USE_REMOTE_CONNECTION, MYSQL_OPT_USE_EMBEDDED_CONNECTION,
+  MYSQL_OPT_GUESS_CONNECTION, MYSQL_SET_CLIENT_IP, MYSQL_SECURE_AUTH,
+  MYSQL_REPORT_DATA_TRUNCATION, MYSQL_OPT_RECONNECT,
+  MYSQL_OPT_SSL_VERIFY_SERVER_CERT
+};
+
+struct st_mysql_options {
+  unsigned int connect_timeout, read_timeout, write_timeout;
+  unsigned int port, protocol;
+  unsigned long client_flag;
+  char *host,*user,*password,*unix_socket,*db;
+  struct st_dynamic_array *init_commands;
+  char *my_cnf_file,*my_cnf_group, *charset_dir, *charset_name;
+  char *ssl_key;
+  char *ssl_cert;
+  char *ssl_ca;
+  char *ssl_capath;
+  char *ssl_cipher;
+  char *shared_memory_base_name;
+  unsigned long max_allowed_packet;
+  my_bool use_ssl;
+  my_bool compress,named_pipe;
+
+
+
+
+  my_bool rpl_probe;
+
+
+
+
+  my_bool rpl_parse;
+
+
+
+
+  my_bool no_master_reads;
+
+  my_bool separate_thread;
+
+  enum mysql_option methods_to_use;
+  char *client_ip;
+
+  my_bool secure_auth;
+
+  my_bool report_data_truncation;
+
+
+  int (*local_infile_init)(void **, const char *, void *);
+  int (*local_infile_read)(void *, char *, unsigned int);
+  void (*local_infile_end)(void *);
+  int (*local_infile_error)(void *, char *, unsigned int);
+  void *local_infile_userdata;
+  void *extension;
+};
+
+enum mysql_status
+{
+  MYSQL_STATUS_READY,MYSQL_STATUS_GET_RESULT,MYSQL_STATUS_USE_RESULT
+};
+
+enum mysql_protocol_type
+{
+  MYSQL_PROTOCOL_DEFAULT, MYSQL_PROTOCOL_TCP, MYSQL_PROTOCOL_SOCKET,
+  MYSQL_PROTOCOL_PIPE, MYSQL_PROTOCOL_MEMORY
+};
+
+
+
+
+
+enum mysql_rpl_type
+{
+  MYSQL_RPL_MASTER, MYSQL_RPL_SLAVE, MYSQL_RPL_ADMIN
+};
+
+typedef struct character_set
+{
+  unsigned int number;
+  unsigned int state;
+  const char *csname;
+  const char *name;
+  const char *comment;
+  const char *dir;
+  unsigned int mbminlen;
+  unsigned int mbmaxlen;
+} MY_CHARSET_INFO;
+
+struct st_mysql_methods;
+struct st_mysql_stmt;
+
+typedef struct st_mysql
+{
+  NET net;
+  unsigned char *connector_fd;
+  char *host,*user,*passwd,*unix_socket,*server_version,*host_info;
+  char *info, *db;
+  struct charset_info_st *charset;
+  MYSQL_FIELD *fields;
+  MEM_ROOT field_alloc;
+  my_ulonglong affected_rows;
+  my_ulonglong insert_id;
+  my_ulonglong extra_info;
+  unsigned long thread_id;
+  unsigned long packet_length;
+  unsigned int port;
+  unsigned long client_flag,server_capabilities;
+  unsigned int protocol_version;
+  unsigned int field_count;
+  unsigned int server_status;
+  unsigned int server_language;
+  unsigned int warning_count;
+  struct st_mysql_options options;
+  enum mysql_status status;
+  my_bool free_me;
+  my_bool reconnect;
+
+
+  char scramble[20 +1];
+
+
+
+
+
+  my_bool rpl_pivot;
+
+
+
+
+  struct st_mysql* master, *next_slave;
+
+  struct st_mysql* last_used_slave;
+
+  struct st_mysql* last_used_con;
+
+  LIST *stmts;
+  const struct st_mysql_methods *methods;
+  void *thd;
+
+
+
+
+  my_bool *unbuffered_fetch_owner;
+
+  char *info_buffer;
+  void *extension;
+} MYSQL;
+
+
+typedef struct st_mysql_res {
+  my_ulonglong row_count;
+  MYSQL_FIELD *fields;
+  MYSQL_DATA *data;
+  MYSQL_ROWS *data_cursor;
+  unsigned long *lengths;
+  MYSQL *handle;
+  const struct st_mysql_methods *methods;
+  MYSQL_ROW row;
+  MYSQL_ROW current_row;
+  MEM_ROOT field_alloc;
+  unsigned int field_count, current_field;
+  my_bool eof;
+
+  my_bool unbuffered_fetch_cancelled;
+  void *extension;
+} MYSQL_RES;
+# 348 "/usr/include/mysql/mysql.h"
+typedef struct st_mysql_manager
+{
+  NET net;
+  char *host, *user, *passwd;
+  char *net_buf, *net_buf_pos, *net_data_end;
+  unsigned int port;
+  int cmd_status;
+  int last_errno;
+  int net_buf_size;
+  my_bool free_me;
+  my_bool eof;
+  char last_error[256];
+  void *extension;
+} MYSQL_MANAGER;
+
+typedef struct st_mysql_parameters
+{
+  unsigned long *p_max_allowed_packet;
+  unsigned long *p_net_buffer_length;
+  void *extension;
+} MYSQL_PARAMETERS;
+# 380 "/usr/include/mysql/mysql.h"
+int mysql_server_init(int argc, char **argv, char **groups);
+void mysql_server_end(void);
+# 395 "/usr/include/mysql/mysql.h"
+MYSQL_PARAMETERS * mysql_get_parameters(void);
+
+
+
+
+
+
+
+my_bool mysql_thread_init(void);
+void mysql_thread_end(void);
+
+
+
+
+
+
+my_ulonglong mysql_num_rows(MYSQL_RES *res);
+unsigned int mysql_num_fields(MYSQL_RES *res);
+my_bool mysql_eof(MYSQL_RES *res);
+MYSQL_FIELD * mysql_fetch_field_direct(MYSQL_RES *res,
+           unsigned int fieldnr);
+MYSQL_FIELD * mysql_fetch_fields(MYSQL_RES *res);
+MYSQL_ROW_OFFSET mysql_row_tell(MYSQL_RES *res);
+MYSQL_FIELD_OFFSET mysql_field_tell(MYSQL_RES *res);
+
+unsigned int mysql_field_count(MYSQL *mysql);
+my_ulonglong mysql_affected_rows(MYSQL *mysql);
+my_ulonglong mysql_insert_id(MYSQL *mysql);
+unsigned int mysql_errno(MYSQL *mysql);
+const char * mysql_error(MYSQL *mysql);
+const char * mysql_sqlstate(MYSQL *mysql);
+unsigned int mysql_warning_count(MYSQL *mysql);
+const char * mysql_info(MYSQL *mysql);
+unsigned long mysql_thread_id(MYSQL *mysql);
+const char * mysql_character_set_name(MYSQL *mysql);
+int mysql_set_character_set(MYSQL *mysql, const char *csname);
+
+MYSQL * mysql_init(MYSQL *mysql);
+my_bool mysql_ssl_set(MYSQL *mysql, const char *key,
+          const char *cert, const char *ca,
+          const char *capath, const char *cipher);
+const char * mysql_get_ssl_cipher(MYSQL *mysql);
+my_bool mysql_change_user(MYSQL *mysql, const char *user,
+       const char *passwd, const char *db);
+MYSQL * mysql_real_connect(MYSQL *mysql, const char *host,
+        const char *user,
+        const char *passwd,
+        const char *db,
+        unsigned int port,
+        const char *unix_socket,
+        unsigned long clientflag);
+int mysql_select_db(MYSQL *mysql, const char *db);
+int mysql_query(MYSQL *mysql, const char *q);
+int mysql_send_query(MYSQL *mysql, const char *q,
+      unsigned long length);
+int mysql_real_query(MYSQL *mysql, const char *q,
+     unsigned long length);
+MYSQL_RES * mysql_store_result(MYSQL *mysql);
+MYSQL_RES * mysql_use_result(MYSQL *mysql);
+
+
+my_bool mysql_master_query(MYSQL *mysql, const char *q,
+        unsigned long length);
+my_bool mysql_master_send_query(MYSQL *mysql, const char *q,
+      unsigned long length);
+
+my_bool mysql_slave_query(MYSQL *mysql, const char *q,
+       unsigned long length);
+my_bool mysql_slave_send_query(MYSQL *mysql, const char *q,
+            unsigned long length);
+void mysql_get_character_set_info(MYSQL *mysql,
+                           MY_CHARSET_INFO *charset);
+
+
+
+
+
+void
+mysql_set_local_infile_handler(MYSQL *mysql,
+                               int (*local_infile_init)(void **, const char *,
+                            void *),
+                               int (*local_infile_read)(void *, char *,
+       unsigned int),
+                               void (*local_infile_end)(void *),
+                               int (*local_infile_error)(void *, char*,
+        unsigned int),
+                               void *);
+
+void
+mysql_set_local_infile_default(MYSQL *mysql);
+
+
+
+
+
+
+void mysql_enable_rpl_parse(MYSQL* mysql);
+void mysql_disable_rpl_parse(MYSQL* mysql);
+
+int mysql_rpl_parse_enabled(MYSQL* mysql);
+
+
+void mysql_enable_reads_from_master(MYSQL* mysql);
+void mysql_disable_reads_from_master(MYSQL* mysql);
+
+my_bool mysql_reads_from_master_enabled(MYSQL* mysql);
+
+enum mysql_rpl_type mysql_rpl_query_type(const char* q, int len);
+
+
+my_bool mysql_rpl_probe(MYSQL* mysql);
+
+
+int mysql_set_master(MYSQL* mysql, const char* host,
+      unsigned int port,
+      const char* user,
+      const char* passwd);
+int mysql_add_slave(MYSQL* mysql, const char* host,
+     unsigned int port,
+     const char* user,
+     const char* passwd);
+
+int mysql_shutdown(MYSQL *mysql,
+                                       enum mysql_enum_shutdown_level
+                                       shutdown_level);
+int mysql_dump_debug_info(MYSQL *mysql);
+int mysql_refresh(MYSQL *mysql,
+         unsigned int refresh_options);
+int mysql_kill(MYSQL *mysql,unsigned long pid);
+int mysql_set_server_option(MYSQL *mysql,
+      enum enum_mysql_set_option
+      option);
+int mysql_ping(MYSQL *mysql);
+const char * mysql_stat(MYSQL *mysql);
+const char * mysql_get_server_info(MYSQL *mysql);
+const char * mysql_get_client_info(void);
+unsigned long mysql_get_client_version(void);
+const char * mysql_get_host_info(MYSQL *mysql);
+unsigned long mysql_get_server_version(MYSQL *mysql);
+unsigned int mysql_get_proto_info(MYSQL *mysql);
+MYSQL_RES * mysql_list_dbs(MYSQL *mysql,const char *wild);
+MYSQL_RES * mysql_list_tables(MYSQL *mysql,const char *wild);
+MYSQL_RES * mysql_list_processes(MYSQL *mysql);
+int mysql_options(MYSQL *mysql,enum mysql_option option,
+          const void *arg);
+void mysql_free_result(MYSQL_RES *result);
+void mysql_data_seek(MYSQL_RES *result,
+     my_ulonglong offset);
+MYSQL_ROW_OFFSET mysql_row_seek(MYSQL_RES *result,
+      MYSQL_ROW_OFFSET offset);
+MYSQL_FIELD_OFFSET mysql_field_seek(MYSQL_RES *result,
+        MYSQL_FIELD_OFFSET offset);
+MYSQL_ROW mysql_fetch_row(MYSQL_RES *result);
+unsigned long * mysql_fetch_lengths(MYSQL_RES *result);
+MYSQL_FIELD * mysql_fetch_field(MYSQL_RES *result);
+MYSQL_RES * mysql_list_fields(MYSQL *mysql, const char *table,
+       const char *wild);
+unsigned long mysql_escape_string(char *to,const char *from,
+         unsigned long from_length);
+unsigned long mysql_hex_string(char *to,const char *from,
+                                         unsigned long from_length);
+unsigned long mysql_real_escape_string(MYSQL *mysql,
+            char *to,const char *from,
+            unsigned long length);
+void mysql_debug(const char *debug);
+char * mysql_odbc_escape_string(MYSQL *mysql,
+       char *to,
+       unsigned long to_length,
+       const char *from,
+       unsigned long from_length,
+       void *param,
+       char *
+       (*extend_buffer)
+       (void *, char *to,
+        unsigned long *length));
+void myodbc_remove_escape(MYSQL *mysql,char *name);
+unsigned int mysql_thread_safe(void);
+my_bool mysql_embedded(void);
+MYSQL_MANAGER* mysql_manager_init(MYSQL_MANAGER* con);
+MYSQL_MANAGER* mysql_manager_connect(MYSQL_MANAGER* con,
+           const char* host,
+           const char* user,
+           const char* passwd,
+           unsigned int port);
+void mysql_manager_close(MYSQL_MANAGER* con);
+int mysql_manager_command(MYSQL_MANAGER* con,
+      const char* cmd, int cmd_len);
+int mysql_manager_fetch_line(MYSQL_MANAGER* con,
+        char* res_buf,
+       int res_buf_size);
+my_bool mysql_read_query_result(MYSQL *mysql);
+# 594 "/usr/include/mysql/mysql.h"
+enum enum_mysql_stmt_state
+{
+  MYSQL_STMT_INIT_DONE= 1, MYSQL_STMT_PREPARE_DONE, MYSQL_STMT_EXECUTE_DONE,
+  MYSQL_STMT_FETCH_DONE
+};
+# 664 "/usr/include/mysql/mysql.h"
+typedef struct st_mysql_bind
+{
+  unsigned long *length;
+  my_bool *is_null;
+  void *buffer;
+
+  my_bool *error;
+  unsigned char *row_ptr;
+  void (*store_param_func)(NET *net, struct st_mysql_bind *param);
+  void (*fetch_result)(struct st_mysql_bind *, MYSQL_FIELD *,
+                       unsigned char **row);
+  void (*skip_result)(struct st_mysql_bind *, MYSQL_FIELD *,
+        unsigned char **row);
+
+  unsigned long buffer_length;
+  unsigned long offset;
+  unsigned long length_value;
+  unsigned int param_number;
+  unsigned int pack_length;
+  enum enum_field_types buffer_type;
+  my_bool error_value;
+  my_bool is_unsigned;
+  my_bool long_data_used;
+  my_bool is_null_value;
+  void *extension;
+} MYSQL_BIND;
+
+
+
+typedef struct st_mysql_stmt
+{
+  MEM_ROOT mem_root;
+  LIST list;
+  MYSQL *mysql;
+  MYSQL_BIND *params;
+  MYSQL_BIND *bind;
+  MYSQL_FIELD *fields;
+  MYSQL_DATA result;
+  MYSQL_ROWS *data_cursor;
+
+
+
+
+  int (*read_row_func)(struct st_mysql_stmt *stmt,
+                                  unsigned char **row);
+
+  my_ulonglong affected_rows;
+  my_ulonglong insert_id;
+  unsigned long stmt_id;
+  unsigned long flags;
+  unsigned long prefetch_rows;
+
+
+
+
+  unsigned int server_status;
+  unsigned int last_errno;
+  unsigned int param_count;
+  unsigned int field_count;
+  enum enum_mysql_stmt_state state;
+  char last_error[512];
+  char sqlstate[5 +1];
+
+  my_bool send_types_to_server;
+  my_bool bind_param_done;
+  unsigned char bind_result_done;
+
+  my_bool unbuffered_fetch_cancelled;
+
+
+
+
+  my_bool update_max_length;
+  void *extension;
+} MYSQL_STMT;
+
+enum enum_stmt_attr_type
+{
+
+
+
+
+
+
+
+  STMT_ATTR_UPDATE_MAX_LENGTH,
+
+
+
+
+  STMT_ATTR_CURSOR_TYPE,
+
+
+
+
+  STMT_ATTR_PREFETCH_ROWS
+};
+
+
+typedef struct st_mysql_methods
+{
+  my_bool (*read_query_result)(MYSQL *mysql);
+  my_bool (*advanced_command)(MYSQL *mysql,
+         enum enum_server_command command,
+         const unsigned char *header,
+         unsigned long header_length,
+         const unsigned char *arg,
+         unsigned long arg_length,
+         my_bool skip_check,
+                              MYSQL_STMT *stmt);
+  MYSQL_DATA *(*read_rows)(MYSQL *mysql,MYSQL_FIELD *mysql_fields,
+      unsigned int fields);
+  MYSQL_RES * (*use_result)(MYSQL *mysql);
+  void (*fetch_lengths)(unsigned long *to,
+   MYSQL_ROW column, unsigned int field_count);
+  void (*flush_use_result)(MYSQL *mysql);
+
+  MYSQL_FIELD * (*list_fields)(MYSQL *mysql);
+  my_bool (*read_prepare_result)(MYSQL *mysql, MYSQL_STMT *stmt);
+  int (*stmt_execute)(MYSQL_STMT *stmt);
+  int (*read_binary_rows)(MYSQL_STMT *stmt);
+  int (*unbuffered_fetch)(MYSQL *mysql, char **row);
+  void (*free_embedded_thd)(MYSQL *mysql);
+  const char *(*read_statistics)(MYSQL *mysql);
+  my_bool (*next_result)(MYSQL *mysql);
+  int (*read_change_user_result)(MYSQL *mysql, char *buff, const char *passwd);
+  int (*read_rows_from_cursor)(MYSQL_STMT *stmt);
+
+} MYSQL_METHODS;
+
+
+MYSQL_STMT * mysql_stmt_init(MYSQL *mysql);
+int mysql_stmt_prepare(MYSQL_STMT *stmt, const char *query,
+                               unsigned long length);
+int mysql_stmt_execute(MYSQL_STMT *stmt);
+int mysql_stmt_fetch(MYSQL_STMT *stmt);
+int mysql_stmt_fetch_column(MYSQL_STMT *stmt, MYSQL_BIND *bind_arg,
+                                    unsigned int column,
+                                    unsigned long offset);
+int mysql_stmt_store_result(MYSQL_STMT *stmt);
+unsigned long mysql_stmt_param_count(MYSQL_STMT * stmt);
+my_bool mysql_stmt_attr_set(MYSQL_STMT *stmt,
+                                    enum enum_stmt_attr_type attr_type,
+                                    const void *attr);
+my_bool mysql_stmt_attr_get(MYSQL_STMT *stmt,
+                                    enum enum_stmt_attr_type attr_type,
+                                    void *attr);
+my_bool mysql_stmt_bind_param(MYSQL_STMT * stmt, MYSQL_BIND * bnd);
+my_bool mysql_stmt_bind_result(MYSQL_STMT * stmt, MYSQL_BIND * bnd);
+my_bool mysql_stmt_close(MYSQL_STMT * stmt);
+my_bool mysql_stmt_reset(MYSQL_STMT * stmt);
+my_bool mysql_stmt_free_result(MYSQL_STMT *stmt);
+my_bool mysql_stmt_send_long_data(MYSQL_STMT *stmt,
+                                          unsigned int param_number,
+                                          const char *data,
+                                          unsigned long length);
+MYSQL_RES * mysql_stmt_result_metadata(MYSQL_STMT *stmt);
+MYSQL_RES * mysql_stmt_param_metadata(MYSQL_STMT *stmt);
+unsigned int mysql_stmt_errno(MYSQL_STMT * stmt);
+const char * mysql_stmt_error(MYSQL_STMT * stmt);
+const char * mysql_stmt_sqlstate(MYSQL_STMT * stmt);
+MYSQL_ROW_OFFSET mysql_stmt_row_seek(MYSQL_STMT *stmt,
+                                             MYSQL_ROW_OFFSET offset);
+MYSQL_ROW_OFFSET mysql_stmt_row_tell(MYSQL_STMT *stmt);
+void mysql_stmt_data_seek(MYSQL_STMT *stmt, my_ulonglong offset);
+my_ulonglong mysql_stmt_num_rows(MYSQL_STMT *stmt);
+my_ulonglong mysql_stmt_affected_rows(MYSQL_STMT *stmt);
+my_ulonglong mysql_stmt_insert_id(MYSQL_STMT *stmt);
+unsigned int mysql_stmt_field_count(MYSQL_STMT *stmt);
+
+my_bool mysql_commit(MYSQL * mysql);
+my_bool mysql_rollback(MYSQL * mysql);
+my_bool mysql_autocommit(MYSQL * mysql, my_bool auto_mode);
+my_bool mysql_more_results(MYSQL *mysql);
+int mysql_next_result(MYSQL *mysql);
+void mysql_close(MYSQL *sock);
+# 874 "/usr/include/mysql/mysql.h"
+}
+# 12 "CHttpThread.h" 2
+
+
+
+class CHttpThread
+{
+public:
+    CHttpThread(int id);
+    ~CHttpThread();
+
+    pthread_attr_t m_Attr;
+    pthread_t m_Thread;
+ int m_id;
+
+    virtual void Run();
+
+    CServiceData * m_pSvcData;
+
+    int m_sockfd;
+
+ char m_szHttpHead[8192];
+ HTTPHEAD m_HttpHead;
+
+ char m_szHttpContent[32000];
+
+ char m_buff[32000];
+
+ int ReadHttpReq();
+
+ void ReplyHttpReq(const char * info,const char * sessionid=__null);
+
+    MYSQL m_mysql;
+
+    PGconn * m_pq;
+
+
+    int ExecuteSQL(char * szSQL,char * errmsg);
+
+
+    int QuerySQL(const char * szSQL,char * szRes,char * errmsg);
+
+    int CallService(int argc,char ** urlargv);
+
+
+
+    int SendDBData(char * szSQL);
+    int SendFileData(const char * szFileName);
+
+ int Url2FileName(const char * szUrl,char * szFile);
+
+
+    static void RunCtrl(CHttpThread *pthread)
+    {
+        pthread->Run();
+        return;
+    }
+
+public:
+
+    static int m_bExitFlag;
+
+    static CHttpSession m_session;
+    static int m_ThreadCnt;
+    static CReqQueue m_Reqque;
+
+    static int m_dbtype;
+
+    static char m_session_dir[256];
+    static char m_loginhtml[256];
+    static char m_reloginhtml[256];
+
+
+    static char m_dbip[128];
+    static int m_dbport;
+    static char m_dbname[128];
+    static char m_dbuser[64];
+    static char m_dbpass[128];
+    static char m_adminuser[128];
+    static char m_adminpass[128];
+    static int m_httpport;
+    static int m_session_timeouts;
+
+private:
+
+};
+# 2 "CHttpThread.cpp" 2
+
+
+# 1 "/usr/include/string.h" 1 3 4
+# 28 "/usr/include/string.h" 3 4
+extern "C" {
+
+
+
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h" 1 3 4
+# 34 "/usr/include/string.h" 2 3 4
+
+
+
+
+
+
+
+
+
+extern void *memcpy (void *__restrict __dest,
+       __const void *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void *memmove (void *__dest, __const void *__src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+
+extern void *memccpy (void *__restrict __dest, __const void *__restrict __src,
+        int __c, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+extern void *memset (void *__s, int __c, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int memcmp (__const void *__s1, __const void *__s2, size_t __n)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern "C++"
+{
+extern void *memchr (void *__s, int __c, size_t __n)
+      throw () __asm ("memchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern __const void *memchr (__const void *__s, int __c, size_t __n)
+      throw () __asm ("memchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 92 "/usr/include/string.h" 3 4
+}
+
+
+
+
+
+
+
+
+
+
+extern "C++" void *rawmemchr (void *__s, int __c)
+     throw () __asm ("rawmemchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern "C++" __const void *rawmemchr (__const void *__s, int __c)
+     throw () __asm ("rawmemchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+extern "C++" void *memrchr (void *__s, int __c, size_t __n)
+      throw () __asm ("memrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern "C++" __const void *memrchr (__const void *__s, int __c, size_t __n)
+      throw () __asm ("memrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+
+
+extern char *strcpy (char *__restrict __dest, __const char *__restrict __src)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncpy (char *__restrict __dest,
+        __const char *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern char *strcat (char *__restrict __dest, __const char *__restrict __src)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+extern char *strncat (char *__restrict __dest, __const char *__restrict __src,
+        size_t __n) throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcmp (__const char *__s1, __const char *__s2)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern int strncmp (__const char *__s1, __const char *__s2, size_t __n)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strcoll (__const char *__s1, __const char *__s2)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+extern size_t strxfrm (char *__restrict __dest,
+         __const char *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+# 164 "/usr/include/string.h" 3 4
+extern int strcoll_l (__const char *__s1, __const char *__s2, __locale_t __l)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+extern size_t strxfrm_l (char *__dest, __const char *__src, size_t __n,
+    __locale_t __l) throw () __attribute__ ((__nonnull__ (2, 4)));
+
+
+
+
+extern char *strdup (__const char *__s)
+     throw () __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern char *strndup (__const char *__string, size_t __n)
+     throw () __attribute__ ((__malloc__)) __attribute__ ((__nonnull__ (1)));
+# 208 "/usr/include/string.h" 3 4
+
+
+
+extern "C++"
+{
+extern char *strchr (char *__s, int __c)
+     throw () __asm ("strchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern __const char *strchr (__const char *__s, int __c)
+     throw () __asm ("strchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 231 "/usr/include/string.h" 3 4
+}
+
+
+
+
+
+
+extern "C++"
+{
+extern char *strrchr (char *__s, int __c)
+     throw () __asm ("strrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern __const char *strrchr (__const char *__s, int __c)
+     throw () __asm ("strrchr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 258 "/usr/include/string.h" 3 4
+}
+
+
+
+
+
+
+
+
+
+
+extern "C++" char *strchrnul (char *__s, int __c)
+     throw () __asm ("strchrnul") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern "C++" __const char *strchrnul (__const char *__s, int __c)
+     throw () __asm ("strchrnul") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+
+
+extern size_t strcspn (__const char *__s, __const char *__reject)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern size_t strspn (__const char *__s, __const char *__accept)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern "C++"
+{
+extern char *strpbrk (char *__s, __const char *__accept)
+     throw () __asm ("strpbrk") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern __const char *strpbrk (__const char *__s, __const char *__accept)
+     throw () __asm ("strpbrk") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 310 "/usr/include/string.h" 3 4
+}
+
+
+
+
+
+
+extern "C++"
+{
+extern char *strstr (char *__haystack, __const char *__needle)
+     throw () __asm ("strstr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern __const char *strstr (__const char *__haystack,
+        __const char *__needle)
+     throw () __asm ("strstr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 338 "/usr/include/string.h" 3 4
+}
+
+
+
+
+
+
+
+extern char *strtok (char *__restrict __s, __const char *__restrict __delim)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+
+extern char *__strtok_r (char *__restrict __s,
+    __const char *__restrict __delim,
+    char **__restrict __save_ptr)
+     throw () __attribute__ ((__nonnull__ (2, 3)));
+
+extern char *strtok_r (char *__restrict __s, __const char *__restrict __delim,
+         char **__restrict __save_ptr)
+     throw () __attribute__ ((__nonnull__ (2, 3)));
+
+
+
+
+
+extern "C++" char *strcasestr (char *__haystack, __const char *__needle)
+     throw () __asm ("strcasestr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+extern "C++" __const char *strcasestr (__const char *__haystack,
+           __const char *__needle)
+     throw () __asm ("strcasestr") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+# 380 "/usr/include/string.h" 3 4
+extern void *memmem (__const void *__haystack, size_t __haystacklen,
+       __const void *__needle, size_t __needlelen)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 3)));
+
+
+
+extern void *__mempcpy (void *__restrict __dest,
+   __const void *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+extern void *mempcpy (void *__restrict __dest,
+        __const void *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+extern size_t strlen (__const char *__s)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern size_t strnlen (__const char *__string, size_t __maxlen)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern char *strerror (int __errnum) throw ();
+
+# 436 "/usr/include/string.h" 3 4
+extern char *strerror_r (int __errnum, char *__buf, size_t __buflen)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+extern char *strerror_l (int __errnum, __locale_t __l) throw ();
+
+
+
+
+
+extern void __bzero (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+extern void bcopy (__const void *__src, void *__dest, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern void bzero (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern int bcmp (__const void *__s1, __const void *__s2, size_t __n)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern "C++"
+{
+extern char *index (char *__s, int __c)
+     throw () __asm ("index") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern __const char *index (__const char *__s, int __c)
+     throw () __asm ("index") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 485 "/usr/include/string.h" 3 4
+}
+
+
+
+
+
+
+
+extern "C++"
+{
+extern char *rindex (char *__s, int __c)
+     throw () __asm ("rindex") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+extern __const char *rindex (__const char *__s, int __c)
+     throw () __asm ("rindex") __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1)));
+# 513 "/usr/include/string.h" 3 4
+}
+
+
+
+
+
+
+
+extern int ffs (int __i) throw () __attribute__ ((__const__));
+
+
+
+
+extern int ffsl (long int __l) throw () __attribute__ ((__const__));
+
+__extension__ extern int ffsll (long long int __ll)
+     throw () __attribute__ ((__const__));
+
+
+
+
+extern int strcasecmp (__const char *__s1, __const char *__s2)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int strncasecmp (__const char *__s1, __const char *__s2, size_t __n)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+extern int strcasecmp_l (__const char *__s1, __const char *__s2,
+    __locale_t __loc)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 3)));
+
+extern int strncasecmp_l (__const char *__s1, __const char *__s2,
+     size_t __n, __locale_t __loc)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2, 4)));
+
+
+
+
+
+extern char *strsep (char **__restrict __stringp,
+       __const char *__restrict __delim)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern char *strsignal (int __sig) throw ();
+
+
+extern char *__stpcpy (char *__restrict __dest, __const char *__restrict __src)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpcpy (char *__restrict __dest, __const char *__restrict __src)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern char *__stpncpy (char *__restrict __dest,
+   __const char *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+extern char *stpncpy (char *__restrict __dest,
+        __const char *__restrict __src, size_t __n)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+extern int strverscmp (__const char *__s1, __const char *__s2)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern char *strfry (char *__string) throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern void *memfrob (void *__s, size_t __n) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+extern "C++" char *basename (char *__filename)
+     throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
+extern "C++" __const char *basename (__const char *__filename)
+     throw () __asm ("basename") __attribute__ ((__nonnull__ (1)));
+# 644 "/usr/include/string.h" 3 4
+}
+# 5 "CHttpThread.cpp" 2
+# 1 "/usr/include/stdlib.h" 1 3 4
+# 33 "/usr/include/stdlib.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h" 1 3 4
+# 34 "/usr/include/stdlib.h" 2 3 4
+
+extern "C" {
+
+
+
+
+
+
+# 1 "/usr/include/bits/waitflags.h" 1 3 4
+# 43 "/usr/include/stdlib.h" 2 3 4
+# 1 "/usr/include/bits/waitstatus.h" 1 3 4
+# 67 "/usr/include/bits/waitstatus.h" 3 4
+union wait
+  {
+    int w_status;
+    struct
+      {
+
+ unsigned int __w_termsig:7;
+ unsigned int __w_coredump:1;
+ unsigned int __w_retcode:8;
+ unsigned int:16;
+
+
+
+
+
+
+
+      } __wait_terminated;
+    struct
+      {
+
+ unsigned int __w_stopval:8;
+ unsigned int __w_stopsig:8;
+ unsigned int:16;
+
+
+
+
+
+
+      } __wait_stopped;
+  };
+# 44 "/usr/include/stdlib.h" 2 3 4
+# 96 "/usr/include/stdlib.h" 3 4
+
+
+typedef struct
+  {
+    int quot;
+    int rem;
+  } div_t;
+
+
+
+typedef struct
+  {
+    long int quot;
+    long int rem;
+  } ldiv_t;
+
+
+
+
+
+
+
+__extension__ typedef struct
+  {
+    long long int quot;
+    long long int rem;
+  } lldiv_t;
+
+
+# 140 "/usr/include/stdlib.h" 3 4
+extern size_t __ctype_get_mb_cur_max (void) throw () ;
+
+
+
+
+extern double atof (__const char *__nptr)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+extern int atoi (__const char *__nptr)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+extern long int atol (__const char *__nptr)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+
+__extension__ extern long long int atoll (__const char *__nptr)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+
+extern double strtod (__const char *__restrict __nptr,
+        char **__restrict __endptr)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+
+extern float strtof (__const char *__restrict __nptr,
+       char **__restrict __endptr) throw () __attribute__ ((__nonnull__ (1))) ;
+
+extern long double strtold (__const char *__restrict __nptr,
+       char **__restrict __endptr)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+
+extern long int strtol (__const char *__restrict __nptr,
+   char **__restrict __endptr, int __base)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+
+extern unsigned long int strtoul (__const char *__restrict __nptr,
+      char **__restrict __endptr, int __base)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+__extension__
+extern long long int strtoq (__const char *__restrict __nptr,
+        char **__restrict __endptr, int __base)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+
+__extension__
+extern unsigned long long int strtouq (__const char *__restrict __nptr,
+           char **__restrict __endptr, int __base)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+
+__extension__
+extern long long int strtoll (__const char *__restrict __nptr,
+         char **__restrict __endptr, int __base)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+
+__extension__
+extern unsigned long long int strtoull (__const char *__restrict __nptr,
+     char **__restrict __endptr, int __base)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+
+# 240 "/usr/include/stdlib.h" 3 4
+extern long int strtol_l (__const char *__restrict __nptr,
+     char **__restrict __endptr, int __base,
+     __locale_t __loc) throw () __attribute__ ((__nonnull__ (1, 4))) ;
+
+extern unsigned long int strtoul_l (__const char *__restrict __nptr,
+        char **__restrict __endptr,
+        int __base, __locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 4))) ;
+
+__extension__
+extern long long int strtoll_l (__const char *__restrict __nptr,
+    char **__restrict __endptr, int __base,
+    __locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 4))) ;
+
+__extension__
+extern unsigned long long int strtoull_l (__const char *__restrict __nptr,
+       char **__restrict __endptr,
+       int __base, __locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 4))) ;
+
+extern double strtod_l (__const char *__restrict __nptr,
+   char **__restrict __endptr, __locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 3))) ;
+
+extern float strtof_l (__const char *__restrict __nptr,
+         char **__restrict __endptr, __locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 3))) ;
+
+extern long double strtold_l (__const char *__restrict __nptr,
+         char **__restrict __endptr,
+         __locale_t __loc)
+     throw () __attribute__ ((__nonnull__ (1, 3))) ;
+# 311 "/usr/include/stdlib.h" 3 4
+extern char *l64a (long int __n) throw () ;
+
+
+extern long int a64l (__const char *__s)
+     throw () __attribute__ ((__pure__)) __attribute__ ((__nonnull__ (1))) ;
+# 327 "/usr/include/stdlib.h" 3 4
+extern long int random (void) throw ();
+
+
+extern void srandom (unsigned int __seed) throw ();
+
+
+
+
+
+extern char *initstate (unsigned int __seed, char *__statebuf,
+   size_t __statelen) throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+extern char *setstate (char *__statebuf) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+struct random_data
+  {
+    int32_t *fptr;
+    int32_t *rptr;
+    int32_t *state;
+    int rand_type;
+    int rand_deg;
+    int rand_sep;
+    int32_t *end_ptr;
+  };
+
+extern int random_r (struct random_data *__restrict __buf,
+       int32_t *__restrict __result) throw () __attribute__ ((__nonnull__ (1, 2)));
+
+extern int srandom_r (unsigned int __seed, struct random_data *__buf)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+extern int initstate_r (unsigned int __seed, char *__restrict __statebuf,
+   size_t __statelen,
+   struct random_data *__restrict __buf)
+     throw () __attribute__ ((__nonnull__ (2, 4)));
+
+extern int setstate_r (char *__restrict __statebuf,
+         struct random_data *__restrict __buf)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+
+extern int rand (void) throw ();
+
+extern void srand (unsigned int __seed) throw ();
+
+
+
+
+extern int rand_r (unsigned int *__seed) throw ();
+
+
+
+
+
+
+
+extern double drand48 (void) throw ();
+extern double erand48 (unsigned short int __xsubi[3]) throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern long int lrand48 (void) throw ();
+extern long int nrand48 (unsigned short int __xsubi[3])
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern long int mrand48 (void) throw ();
+extern long int jrand48 (unsigned short int __xsubi[3])
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+extern void srand48 (long int __seedval) throw ();
+extern unsigned short int *seed48 (unsigned short int __seed16v[3])
+     throw () __attribute__ ((__nonnull__ (1)));
+extern void lcong48 (unsigned short int __param[7]) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+struct drand48_data
+  {
+    unsigned short int __x[3];
+    unsigned short int __old_x[3];
+    unsigned short int __c;
+    unsigned short int __init;
+    unsigned long long int __a;
+  };
+
+
+extern int drand48_r (struct drand48_data *__restrict __buffer,
+        double *__restrict __result) throw () __attribute__ ((__nonnull__ (1, 2)));
+extern int erand48_r (unsigned short int __xsubi[3],
+        struct drand48_data *__restrict __buffer,
+        double *__restrict __result) throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int lrand48_r (struct drand48_data *__restrict __buffer,
+        long int *__restrict __result)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+extern int nrand48_r (unsigned short int __xsubi[3],
+        struct drand48_data *__restrict __buffer,
+        long int *__restrict __result)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int mrand48_r (struct drand48_data *__restrict __buffer,
+        long int *__restrict __result)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+extern int jrand48_r (unsigned short int __xsubi[3],
+        struct drand48_data *__restrict __buffer,
+        long int *__restrict __result)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+extern int srand48_r (long int __seedval, struct drand48_data *__buffer)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+extern int seed48_r (unsigned short int __seed16v[3],
+       struct drand48_data *__buffer) throw () __attribute__ ((__nonnull__ (1, 2)));
+
+extern int lcong48_r (unsigned short int __param[7],
+        struct drand48_data *__buffer)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+
+
+
+
+extern void *malloc (size_t __size) throw () __attribute__ ((__malloc__)) ;
+
+extern void *calloc (size_t __nmemb, size_t __size)
+     throw () __attribute__ ((__malloc__)) ;
+
+
+
+
+
+
+
+
+
+
+extern void *realloc (void *__ptr, size_t __size)
+     throw () __attribute__ ((__warn_unused_result__));
+
+extern void free (void *__ptr) throw ();
+
+
+
+
+extern void cfree (void *__ptr) throw ();
+
+
+
+# 1 "/usr/include/alloca.h" 1 3 4
+# 25 "/usr/include/alloca.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h" 1 3 4
+# 26 "/usr/include/alloca.h" 2 3 4
+
+extern "C" {
+
+
+
+
+
+extern void *alloca (size_t __size) throw ();
+
+
+
+
+
+}
+# 498 "/usr/include/stdlib.h" 2 3 4
+
+
+
+
+extern void *valloc (size_t __size) throw () __attribute__ ((__malloc__)) ;
+
+
+
+
+extern int posix_memalign (void **__memptr, size_t __alignment, size_t __size)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+extern void abort (void) throw () __attribute__ ((__noreturn__));
+
+
+
+extern int atexit (void (*__func) (void)) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern "C++" int at_quick_exit (void (*__func) (void))
+     throw () __asm ("at_quick_exit") __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+
+
+extern int on_exit (void (*__func) (int __status, void *__arg), void *__arg)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+extern void exit (int __status) throw () __attribute__ ((__noreturn__));
+
+
+
+
+
+
+
+extern void quick_exit (int __status) throw () __attribute__ ((__noreturn__));
+
+
+
+
+
+
+
+extern void _Exit (int __status) throw () __attribute__ ((__noreturn__));
+
+
+
+
+
+
+extern char *getenv (__const char *__name) throw () __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+extern char *__secure_getenv (__const char *__name)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+
+extern int putenv (char *__string) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int setenv (__const char *__name, __const char *__value, int __replace)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+
+extern int unsetenv (__const char *__name) throw ();
+
+
+
+
+
+
+extern int clearenv (void) throw ();
+# 604 "/usr/include/stdlib.h" 3 4
+extern char *mktemp (char *__template) throw () __attribute__ ((__nonnull__ (1))) ;
+# 615 "/usr/include/stdlib.h" 3 4
+extern int mkstemp (char *__template) __attribute__ ((__nonnull__ (1))) ;
+# 625 "/usr/include/stdlib.h" 3 4
+extern int mkstemp64 (char *__template) __attribute__ ((__nonnull__ (1))) ;
+# 637 "/usr/include/stdlib.h" 3 4
+extern int mkstemps (char *__template, int __suffixlen) __attribute__ ((__nonnull__ (1))) ;
+# 647 "/usr/include/stdlib.h" 3 4
+extern int mkstemps64 (char *__template, int __suffixlen)
+     __attribute__ ((__nonnull__ (1))) ;
+# 658 "/usr/include/stdlib.h" 3 4
+extern char *mkdtemp (char *__template) throw () __attribute__ ((__nonnull__ (1))) ;
+# 669 "/usr/include/stdlib.h" 3 4
+extern int mkostemp (char *__template, int __flags) __attribute__ ((__nonnull__ (1))) ;
+# 679 "/usr/include/stdlib.h" 3 4
+extern int mkostemp64 (char *__template, int __flags) __attribute__ ((__nonnull__ (1))) ;
+# 689 "/usr/include/stdlib.h" 3 4
+extern int mkostemps (char *__template, int __suffixlen, int __flags)
+     __attribute__ ((__nonnull__ (1))) ;
+# 701 "/usr/include/stdlib.h" 3 4
+extern int mkostemps64 (char *__template, int __suffixlen, int __flags)
+     __attribute__ ((__nonnull__ (1))) ;
+
+
+
+
+
+
+
+
+
+extern int system (__const char *__command) ;
+
+
+
+
+
+
+extern char *canonicalize_file_name (__const char *__name)
+     throw () __attribute__ ((__nonnull__ (1))) ;
+# 729 "/usr/include/stdlib.h" 3 4
+extern char *realpath (__const char *__restrict __name,
+         char *__restrict __resolved) throw () ;
+
+
+
+
+
+
+typedef int (*__compar_fn_t) (__const void *, __const void *);
+
+
+typedef __compar_fn_t comparison_fn_t;
+
+
+
+typedef int (*__compar_d_fn_t) (__const void *, __const void *, void *);
+
+
+
+
+
+extern void *bsearch (__const void *__key, __const void *__base,
+        size_t __nmemb, size_t __size, __compar_fn_t __compar)
+     __attribute__ ((__nonnull__ (1, 2, 5))) ;
+
+
+
+extern void qsort (void *__base, size_t __nmemb, size_t __size,
+     __compar_fn_t __compar) __attribute__ ((__nonnull__ (1, 4)));
+
+extern void qsort_r (void *__base, size_t __nmemb, size_t __size,
+       __compar_d_fn_t __compar, void *__arg)
+  __attribute__ ((__nonnull__ (1, 4)));
+
+
+
+
+extern int abs (int __x) throw () __attribute__ ((__const__)) ;
+extern long int labs (long int __x) throw () __attribute__ ((__const__)) ;
+
+
+
+__extension__ extern long long int llabs (long long int __x)
+     throw () __attribute__ ((__const__)) ;
+
+
+
+
+
+
+
+extern div_t div (int __numer, int __denom)
+     throw () __attribute__ ((__const__)) ;
+extern ldiv_t ldiv (long int __numer, long int __denom)
+     throw () __attribute__ ((__const__)) ;
+
+
+
+
+__extension__ extern lldiv_t lldiv (long long int __numer,
+        long long int __denom)
+     throw () __attribute__ ((__const__)) ;
+
+# 802 "/usr/include/stdlib.h" 3 4
+extern char *ecvt (double __value, int __ndigit, int *__restrict __decpt,
+     int *__restrict __sign) throw () __attribute__ ((__nonnull__ (3, 4))) ;
+
+
+
+
+extern char *fcvt (double __value, int __ndigit, int *__restrict __decpt,
+     int *__restrict __sign) throw () __attribute__ ((__nonnull__ (3, 4))) ;
+
+
+
+
+extern char *gcvt (double __value, int __ndigit, char *__buf)
+     throw () __attribute__ ((__nonnull__ (3))) ;
+
+
+
+
+extern char *qecvt (long double __value, int __ndigit,
+      int *__restrict __decpt, int *__restrict __sign)
+     throw () __attribute__ ((__nonnull__ (3, 4))) ;
+extern char *qfcvt (long double __value, int __ndigit,
+      int *__restrict __decpt, int *__restrict __sign)
+     throw () __attribute__ ((__nonnull__ (3, 4))) ;
+extern char *qgcvt (long double __value, int __ndigit, char *__buf)
+     throw () __attribute__ ((__nonnull__ (3))) ;
+
+
+
+
+extern int ecvt_r (double __value, int __ndigit, int *__restrict __decpt,
+     int *__restrict __sign, char *__restrict __buf,
+     size_t __len) throw () __attribute__ ((__nonnull__ (3, 4, 5)));
+extern int fcvt_r (double __value, int __ndigit, int *__restrict __decpt,
+     int *__restrict __sign, char *__restrict __buf,
+     size_t __len) throw () __attribute__ ((__nonnull__ (3, 4, 5)));
+
+extern int qecvt_r (long double __value, int __ndigit,
+      int *__restrict __decpt, int *__restrict __sign,
+      char *__restrict __buf, size_t __len)
+     throw () __attribute__ ((__nonnull__ (3, 4, 5)));
+extern int qfcvt_r (long double __value, int __ndigit,
+      int *__restrict __decpt, int *__restrict __sign,
+      char *__restrict __buf, size_t __len)
+     throw () __attribute__ ((__nonnull__ (3, 4, 5)));
+
+
+
+
+
+
+
+extern int mblen (__const char *__s, size_t __n) throw () ;
+
+
+extern int mbtowc (wchar_t *__restrict __pwc,
+     __const char *__restrict __s, size_t __n) throw () ;
+
+
+extern int wctomb (char *__s, wchar_t __wchar) throw () ;
+
+
+
+extern size_t mbstowcs (wchar_t *__restrict __pwcs,
+   __const char *__restrict __s, size_t __n) throw ();
+
+extern size_t wcstombs (char *__restrict __s,
+   __const wchar_t *__restrict __pwcs, size_t __n)
+     throw ();
+
+
+
+
+
+
+
+
+extern int rpmatch (__const char *__response) throw () __attribute__ ((__nonnull__ (1))) ;
+# 890 "/usr/include/stdlib.h" 3 4
+extern int getsubopt (char **__restrict __optionp,
+        char *__const *__restrict __tokens,
+        char **__restrict __valuep)
+     throw () __attribute__ ((__nonnull__ (1, 2, 3))) ;
+
+
+
+
+
+extern void setkey (__const char *__key) throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+
+
+extern int posix_openpt (int __oflag) ;
+
+
+
+
+
+
+
+extern int grantpt (int __fd) throw ();
+
+
+
+extern int unlockpt (int __fd) throw ();
+
+
+
+
+extern char *ptsname (int __fd) throw () ;
+
+
+
+
+
+
+extern int ptsname_r (int __fd, char *__buf, size_t __buflen)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+
+extern int getpt (void);
+
+
+
+
+
+
+extern int getloadavg (double __loadavg[], int __nelem)
+     throw () __attribute__ ((__nonnull__ (1)));
+# 958 "/usr/include/stdlib.h" 3 4
+}
+# 6 "CHttpThread.cpp" 2
+
+# 1 "/usr/include/fcntl.h" 1 3 4
+# 30 "/usr/include/fcntl.h" 3 4
+extern "C" {
+
+
+
+# 1 "/usr/include/bits/fcntl.h" 1 3 4
+# 25 "/usr/include/bits/fcntl.h" 3 4
+# 1 "/usr/include/bits/wordsize.h" 1 3 4
+# 26 "/usr/include/bits/fcntl.h" 2 3 4
+
+# 1 "/usr/include/bits/uio.h" 1 3 4
+# 44 "/usr/include/bits/uio.h" 3 4
+struct iovec
+  {
+    void *iov_base;
+    size_t iov_len;
+  };
+# 28 "/usr/include/bits/fcntl.h" 2 3 4
+# 160 "/usr/include/bits/fcntl.h" 3 4
+struct flock
+  {
+    short int l_type;
+    short int l_whence;
+
+    __off_t l_start;
+    __off_t l_len;
+
+
+
+
+    __pid_t l_pid;
+  };
+
+
+struct flock64
+  {
+    short int l_type;
+    short int l_whence;
+    __off64_t l_start;
+    __off64_t l_len;
+    __pid_t l_pid;
+  };
+
+
+
+
+enum __pid_type
+  {
+    F_OWNER_TID = 0,
+    F_OWNER_PID,
+    F_OWNER_GID
+  };
+
+
+struct f_owner_ex
+  {
+    enum __pid_type type;
+    __pid_t pid;
+  };
+# 257 "/usr/include/bits/fcntl.h" 3 4
+extern "C" {
+
+
+
+
+extern ssize_t readahead (int __fd, __off64_t __offset, size_t __count)
+    throw ();
+
+
+
+extern int sync_file_range (int __fd, __off64_t __from, __off64_t __to,
+       unsigned int __flags);
+
+
+
+extern ssize_t vmsplice (int __fdout, const struct iovec *__iov,
+    size_t __count, unsigned int __flags);
+
+
+extern ssize_t splice (int __fdin, __off64_t *__offin, int __fdout,
+         __off64_t *__offout, size_t __len,
+         unsigned int __flags);
+
+
+extern ssize_t tee (int __fdin, int __fdout, size_t __len,
+      unsigned int __flags);
+
+
+
+extern int fallocate (int __fd, int __mode, __off_t __offset, __off_t __len);
+# 297 "/usr/include/bits/fcntl.h" 3 4
+extern int fallocate64 (int __fd, int __mode, __off64_t __offset,
+   __off64_t __len);
+
+
+
+}
+# 35 "/usr/include/fcntl.h" 2 3 4
+
+
+
+# 1 "/usr/include/sys/stat.h" 1 3 4
+# 105 "/usr/include/sys/stat.h" 3 4
+extern "C" {
+
+# 1 "/usr/include/bits/stat.h" 1 3 4
+# 43 "/usr/include/bits/stat.h" 3 4
+struct stat
+  {
+    __dev_t st_dev;
+
+
+
+
+    __ino_t st_ino;
+
+
+
+
+
+
+
+    __nlink_t st_nlink;
+    __mode_t st_mode;
+
+    __uid_t st_uid;
+    __gid_t st_gid;
+
+    int __pad0;
+
+    __dev_t st_rdev;
+
+
+
+
+    __off_t st_size;
+
+
+
+    __blksize_t st_blksize;
+
+    __blkcnt_t st_blocks;
+# 88 "/usr/include/bits/stat.h" 3 4
+    struct timespec st_atim;
+    struct timespec st_mtim;
+    struct timespec st_ctim;
+# 103 "/usr/include/bits/stat.h" 3 4
+    long int __unused[3];
+# 112 "/usr/include/bits/stat.h" 3 4
+  };
+
+
+
+struct stat64
+  {
+    __dev_t st_dev;
+
+    __ino64_t st_ino;
+    __nlink_t st_nlink;
+    __mode_t st_mode;
+
+
+
+
+
+
+    __uid_t st_uid;
+    __gid_t st_gid;
+
+    int __pad0;
+    __dev_t st_rdev;
+    __off_t st_size;
+
+
+
+
+
+    __blksize_t st_blksize;
+    __blkcnt64_t st_blocks;
+
+
+
+
+
+
+
+    struct timespec st_atim;
+    struct timespec st_mtim;
+    struct timespec st_ctim;
+# 164 "/usr/include/bits/stat.h" 3 4
+    long int __unused[3];
+
+
+
+  };
+# 108 "/usr/include/sys/stat.h" 2 3 4
+# 209 "/usr/include/sys/stat.h" 3 4
+extern int stat (__const char *__restrict __file,
+   struct stat *__restrict __buf) throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+extern int fstat (int __fd, struct stat *__buf) throw () __attribute__ ((__nonnull__ (2)));
+# 228 "/usr/include/sys/stat.h" 3 4
+extern int stat64 (__const char *__restrict __file,
+     struct stat64 *__restrict __buf) throw () __attribute__ ((__nonnull__ (1, 2)));
+extern int fstat64 (int __fd, struct stat64 *__buf) throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+
+
+extern int fstatat (int __fd, __const char *__restrict __file,
+      struct stat *__restrict __buf, int __flag)
+     throw () __attribute__ ((__nonnull__ (2, 3)));
+# 253 "/usr/include/sys/stat.h" 3 4
+extern int fstatat64 (int __fd, __const char *__restrict __file,
+        struct stat64 *__restrict __buf, int __flag)
+     throw () __attribute__ ((__nonnull__ (2, 3)));
+
+
+
+
+
+
+
+extern int lstat (__const char *__restrict __file,
+    struct stat *__restrict __buf) throw () __attribute__ ((__nonnull__ (1, 2)));
+# 276 "/usr/include/sys/stat.h" 3 4
+extern int lstat64 (__const char *__restrict __file,
+      struct stat64 *__restrict __buf)
+     throw () __attribute__ ((__nonnull__ (1, 2)));
+
+
+
+
+
+extern int chmod (__const char *__file, __mode_t __mode)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int lchmod (__const char *__file, __mode_t __mode)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+extern int fchmod (int __fd, __mode_t __mode) throw ();
+
+
+
+
+
+extern int fchmodat (int __fd, __const char *__file, __mode_t __mode,
+       int __flag)
+     throw () __attribute__ ((__nonnull__ (2))) ;
+
+
+
+
+
+
+extern __mode_t umask (__mode_t __mask) throw ();
+
+
+
+
+extern __mode_t getumask (void) throw ();
+
+
+
+extern int mkdir (__const char *__path, __mode_t __mode)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int mkdirat (int __fd, __const char *__path, __mode_t __mode)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+
+extern int mknod (__const char *__path, __mode_t __mode, __dev_t __dev)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int mknodat (int __fd, __const char *__path, __mode_t __mode,
+      __dev_t __dev) throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+extern int mkfifo (__const char *__path, __mode_t __mode)
+     throw () __attribute__ ((__nonnull__ (1)));
+
+
+
+
+
+extern int mkfifoat (int __fd, __const char *__path, __mode_t __mode)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+
+
+extern int utimensat (int __fd, __const char *__path,
+        __const struct timespec __times[2],
+        int __flags)
+     throw () __attribute__ ((__nonnull__ (2)));
+
+
+
+
+extern int futimens (int __fd, __const struct timespec __times[2]) throw ();
+# 399 "/usr/include/sys/stat.h" 3 4
+extern int __fxstat (int __ver, int __fildes, struct stat *__stat_buf)
+     throw () __attribute__ ((__nonnull__ (3)));
+extern int __xstat (int __ver, __const char *__filename,
+      struct stat *__stat_buf) throw () __attribute__ ((__nonnull__ (2, 3)));
+extern int __lxstat (int __ver, __const char *__filename,
+       struct stat *__stat_buf) throw () __attribute__ ((__nonnull__ (2, 3)));
+extern int __fxstatat (int __ver, int __fildes, __const char *__filename,
+         struct stat *__stat_buf, int __flag)
+     throw () __attribute__ ((__nonnull__ (3, 4)));
+# 432 "/usr/include/sys/stat.h" 3 4
+extern int __fxstat64 (int __ver, int __fildes, struct stat64 *__stat_buf)
+     throw () __attribute__ ((__nonnull__ (3)));
+extern int __xstat64 (int __ver, __const char *__filename,
+        struct stat64 *__stat_buf) throw () __attribute__ ((__nonnull__ (2, 3)));
+extern int __lxstat64 (int __ver, __const char *__filename,
+         struct stat64 *__stat_buf) throw () __attribute__ ((__nonnull__ (2, 3)));
+extern int __fxstatat64 (int __ver, int __fildes, __const char *__filename,
+    struct stat64 *__stat_buf, int __flag)
+     throw () __attribute__ ((__nonnull__ (3, 4)));
+
+extern int __xmknod (int __ver, __const char *__path, __mode_t __mode,
+       __dev_t *__dev) throw () __attribute__ ((__nonnull__ (2, 4)));
+
+extern int __xmknodat (int __ver, int __fd, __const char *__path,
+         __mode_t __mode, __dev_t *__dev)
+     throw () __attribute__ ((__nonnull__ (3, 5)));
+# 534 "/usr/include/sys/stat.h" 3 4
+}
+# 39 "/usr/include/fcntl.h" 2 3 4
+# 64 "/usr/include/fcntl.h" 3 4
+extern int fcntl (int __fd, int __cmd, ...);
+# 73 "/usr/include/fcntl.h" 3 4
+extern int open (__const char *__file, int __oflag, ...) __attribute__ ((__nonnull__ (1)));
+# 83 "/usr/include/fcntl.h" 3 4
+extern int open64 (__const char *__file, int __oflag, ...) __attribute__ ((__nonnull__ (1)));
+# 97 "/usr/include/fcntl.h" 3 4
+extern int openat (int __fd, __const char *__file, int __oflag, ...)
+     __attribute__ ((__nonnull__ (2)));
+# 108 "/usr/include/fcntl.h" 3 4
+extern int openat64 (int __fd, __const char *__file, int __oflag, ...)
+     __attribute__ ((__nonnull__ (2)));
+# 118 "/usr/include/fcntl.h" 3 4
+extern int creat (__const char *__file, __mode_t __mode) __attribute__ ((__nonnull__ (1)));
+# 128 "/usr/include/fcntl.h" 3 4
+extern int creat64 (__const char *__file, __mode_t __mode) __attribute__ ((__nonnull__ (1)));
+# 164 "/usr/include/fcntl.h" 3 4
+extern int posix_fadvise (int __fd, __off_t __offset, __off_t __len,
+     int __advise) throw ();
+# 176 "/usr/include/fcntl.h" 3 4
+extern int posix_fadvise64 (int __fd, __off64_t __offset, __off64_t __len,
+       int __advise) throw ();
+# 186 "/usr/include/fcntl.h" 3 4
+extern int posix_fallocate (int __fd, __off_t __offset, __off_t __len);
+# 197 "/usr/include/fcntl.h" 3 4
+extern int posix_fallocate64 (int __fd, __off64_t __offset, __off64_t __len);
+# 208 "/usr/include/fcntl.h" 3 4
+}
+# 8 "CHttpThread.cpp" 2
+
+
+
+# 1 "/usr/include/sys/socket.h" 1 3 4
+# 26 "/usr/include/sys/socket.h" 3 4
+extern "C" {
+
+# 1 "/usr/include/sys/uio.h" 1 3 4
+# 26 "/usr/include/sys/uio.h" 3 4
+extern "C" {
+
+
+# 1 "/usr/include/bits/uio.h" 1 3 4
+# 30 "/usr/include/sys/uio.h" 2 3 4
+# 40 "/usr/include/sys/uio.h" 3 4
+extern ssize_t readv (int __fd, __const struct iovec *__iovec, int __count)
+  ;
+# 51 "/usr/include/sys/uio.h" 3 4
+extern ssize_t writev (int __fd, __const struct iovec *__iovec, int __count)
+  ;
+# 66 "/usr/include/sys/uio.h" 3 4
+extern ssize_t preadv (int __fd, __const struct iovec *__iovec, int __count,
+         __off_t __offset) ;
+# 78 "/usr/include/sys/uio.h" 3 4
+extern ssize_t pwritev (int __fd, __const struct iovec *__iovec, int __count,
+   __off_t __offset) ;
+# 104 "/usr/include/sys/uio.h" 3 4
+extern ssize_t preadv64 (int __fd, __const struct iovec *__iovec, int __count,
+    __off64_t __offset) ;
+# 116 "/usr/include/sys/uio.h" 3 4
+extern ssize_t pwritev64 (int __fd, __const struct iovec *__iovec, int __count,
+     __off64_t __offset) ;
+
+
+
+}
+# 29 "/usr/include/sys/socket.h" 2 3 4
+
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h" 1 3 4
+# 31 "/usr/include/sys/socket.h" 2 3 4
+
+
+# 1 "/usr/include/bits/sigset.h" 1 3 4
+# 34 "/usr/include/sys/socket.h" 2 3 4
+
+
+
+
+
+
+# 1 "/usr/include/bits/socket.h" 1 3 4
+# 29 "/usr/include/bits/socket.h" 3 4
+# 1 "/usr/lib/gcc/x86_64-linux-gnu/4.4.3/include/stddef.h" 1 3 4
+# 30 "/usr/include/bits/socket.h" 2 3 4
+# 40 "/usr/include/bits/socket.h" 3 4
+enum __socket_type
+{
+  SOCK_STREAM = 1,
+
+
+  SOCK_DGRAM = 2,
+
+
+  SOCK_RAW = 3,
+
+  SOCK_RDM = 4,
+
+  SOCK_SEQPACKET = 5,
+
+
+  SOCK_DCCP = 6,
+
+  SOCK_PACKET = 10,
+
+
+
+
+
+
+
+  SOCK_CLOEXEC = 02000000,
+
+
+  SOCK_NONBLOCK = 04000
+
+
+};
+# 171 "/usr/include/bits/socket.h" 3 4
+# 1 "/usr/include/bits/sockaddr.h" 1 3 4
+# 29 "/usr/include/bits/sockaddr.h" 3 4
+typedef unsigned short int sa_family_t;
+# 172 "/usr/include/bits/socket.h" 2 3 4
+
+
+struct sockaddr
+  {
+    sa_family_t sa_family;
+    char sa_data[14];
+  };
+# 187 "/usr/include/bits/socket.h" 3 4
+struct sockaddr_storage
+  {
+    sa_family_t ss_family;
+    unsigned long int __ss_align;
+    char __ss_padding[(128 - (2 * sizeof (unsigned long int)))];
+  };
+
+
+
+enum
+  {
+    MSG_OOB = 0x01,
+
+    MSG_PEEK = 0x02,
+
+    MSG_DONTROUTE = 0x04,
+
+
+
+    MSG_TRYHARD = MSG_DONTROUTE,
+
+
+    MSG_CTRUNC = 0x08,
+
+    MSG_PROXY = 0x10,
+
+    MSG_TRUNC = 0x20,
+
+    MSG_DONTWAIT = 0x40,
+
+    MSG_EOR = 0x80,
+
+    MSG_WAITALL = 0x100,
+
+    MSG_FIN = 0x200,
+
+    MSG_SYN = 0x400,
+
+    MSG_CONFIRM = 0x800,
+
+    MSG_RST = 0x1000,
+
+    MSG_ERRQUEUE = 0x2000,
+
+    MSG_NOSIGNAL = 0x4000,
+
+    MSG_MORE = 0x8000,
+
+
+    MSG_CMSG_CLOEXEC = 0x40000000
+
+
+
+  };
+
+
+
+
+struct msghdr
+  {
+    void *msg_name;
+    socklen_t msg_namelen;
+
+    struct iovec *msg_iov;
+    size_t msg_iovlen;
+
+    void *msg_control;
+    size_t msg_controllen;
+
+
+
+
+    int msg_flags;
+  };
+
+
+struct cmsghdr
+  {
+    size_t cmsg_len;
+
+
+
+
+    int cmsg_level;
+    int cmsg_type;
+
+    __extension__ unsigned char __cmsg_data [];
+
+  };
+# 293 "/usr/include/bits/socket.h" 3 4
+extern struct cmsghdr *__cmsg_nxthdr (struct msghdr *__mhdr,
+          struct cmsghdr *__cmsg) throw ();
+# 320 "/usr/include/bits/socket.h" 3 4
+enum
+  {
+    SCM_RIGHTS = 0x01
+
+
+    , SCM_CREDENTIALS = 0x02
+
+
+  };
+
+
+
+struct ucred
+{
+  pid_t pid;
+  uid_t uid;
+  gid_t gid;
+};
+# 366 "/usr/include/bits/socket.h" 3 4
+# 1 "/usr/include/asm/socket.h" 1 3 4
+# 1 "/usr/include/asm-generic/socket.h" 1 3 4
+
+
+
+# 1 "/usr/include/asm/sockios.h" 1 3 4
+# 1 "/usr/include/asm-generic/sockios.h" 1 3 4
+# 1 "/usr/include/asm/sockios.h" 2 3 4
+# 5 "/usr/include/asm-generic/socket.h" 2 3 4
+# 1 "/usr/include/asm/socket.h" 2 3 4
+# 367 "/usr/include/bits/socket.h" 2 3 4
+# 400 "/usr/include/bits/socket.h" 3 4
+struct linger
+  {
+    int l_onoff;
+    int l_linger;
+  };
+# 41 "/usr/include/sys/socket.h" 2 3 4
+
+
+
+
+struct osockaddr
+  {
+    unsigned short int sa_family;
+    unsigned char sa_data[14];
+  };
+
+
+
+
+enum
+{
+  SHUT_RD = 0,
+
+  SHUT_WR,
+
+  SHUT_RDWR
+
+};
+# 105 "/usr/include/sys/socket.h" 3 4
+extern int socket (int __domain, int __type, int __protocol) throw ();
+
+
+
+
+
+extern int socketpair (int __domain, int __type, int __protocol,
+         int __fds[2]) throw ();
+
+
+extern int bind (int __fd, __const struct sockaddr * __addr, socklen_t __len)
+     throw ();
+
+
+extern int getsockname (int __fd, struct sockaddr *__restrict __addr,
+   socklen_t *__restrict __len) throw ();
+# 129 "/usr/include/sys/socket.h" 3 4
+extern int connect (int __fd, __const struct sockaddr * __addr, socklen_t __len);
+
+
+
+extern int getpeername (int __fd, struct sockaddr *__restrict __addr,
+   socklen_t *__restrict __len) throw ();
+
+
+
+
+
+
+extern ssize_t send (int __fd, __const void *__buf, size_t __n, int __flags);
+
+
+
+
+
+
+extern ssize_t recv (int __fd, void *__buf, size_t __n, int __flags);
+
+
+
+
+
+
+extern ssize_t sendto (int __fd, __const void *__buf, size_t __n,
+         int __flags, __const struct sockaddr * __addr,
+         socklen_t __addr_len);
+# 166 "/usr/include/sys/socket.h" 3 4
+extern ssize_t recvfrom (int __fd, void *__restrict __buf, size_t __n,
+    int __flags, struct sockaddr *__restrict __addr,
+    socklen_t *__restrict __addr_len);
+
+
+
+
+
+
+
+extern ssize_t sendmsg (int __fd, __const struct msghdr *__message,
+   int __flags);
+
+
+
+
+
+
+extern ssize_t recvmsg (int __fd, struct msghdr *__message, int __flags);
+
+
+
+
+
+extern int getsockopt (int __fd, int __level, int __optname,
+         void *__restrict __optval,
+         socklen_t *__restrict __optlen) throw ();
+
+
+
+
+extern int setsockopt (int __fd, int __level, int __optname,
+         __const void *__optval, socklen_t __optlen) throw ();
+
+
+
+
+
+extern int listen (int __fd, int __n) throw ();
+# 214 "/usr/include/sys/socket.h" 3 4
+extern int accept (int __fd, struct sockaddr *__restrict __addr,
+     socklen_t *__restrict __addr_len);
+
+
+
+
+
+
+extern int accept4 (int __fd, struct sockaddr *__restrict __addr,
+      socklen_t *__restrict __addr_len, int __flags);
+# 232 "/usr/include/sys/socket.h" 3 4
+extern int shutdown (int __fd, int __how) throw ();
+
+
+
+
+extern int sockatmark (int __fd) throw ();
+
+
+
+
+
+
+
+extern int isfdtype (int __fd, int __fdtype) throw ();
+# 254 "/usr/include/sys/socket.h" 3 4
+}
+# 12 "CHttpThread.cpp" 2
+# 1 "/usr/include/netinet/in.h" 1 3 4
+# 24 "/usr/include/netinet/in.h" 3 4
+# 1 "/usr/include/stdint.h" 1 3 4
+# 27 "/usr/include/stdint.h" 3 4
+# 1 "/usr/include/bits/wchar.h" 1 3 4
+# 28 "/usr/include/stdint.h" 2 3 4
+# 1 "/usr/include/bits/wordsize.h" 1 3 4
+# 29 "/usr/include/stdint.h" 2 3 4
+# 49 "/usr/include/stdint.h" 3 4
+typedef unsigned char uint8_t;
+typedef unsigned short int uint16_t;
+
+typedef unsigned int uint32_t;
+
+
+
+typedef unsigned long int uint64_t;
+# 66 "/usr/include/stdint.h" 3 4
+typedef signed char int_least8_t;
+typedef short int int_least16_t;
+typedef int int_least32_t;
+
+typedef long int int_least64_t;
+
+
+
+
+
+
+typedef unsigned char uint_least8_t;
+typedef unsigned short int uint_least16_t;
+typedef unsigned int uint_least32_t;
+
+typedef unsigned long int uint_least64_t;
+# 91 "/usr/include/stdint.h" 3 4
+typedef signed char int_fast8_t;
+
+typedef long int int_fast16_t;
+typedef long int int_fast32_t;
+typedef long int int_fast64_t;
+# 104 "/usr/include/stdint.h" 3 4
+typedef unsigned char uint_fast8_t;
+
+typedef unsigned long int uint_fast16_t;
+typedef unsigned long int uint_fast32_t;
+typedef unsigned long int uint_fast64_t;
+# 123 "/usr/include/stdint.h" 3 4
+typedef unsigned long int uintptr_t;
+# 135 "/usr/include/stdint.h" 3 4
+typedef long int intmax_t;
+typedef unsigned long int uintmax_t;
+# 25 "/usr/include/netinet/in.h" 2 3 4
+
+
+
+
+extern "C" {
+
+
+enum
+  {
+    IPPROTO_IP = 0,
+
+    IPPROTO_HOPOPTS = 0,
+
+    IPPROTO_ICMP = 1,
+
+    IPPROTO_IGMP = 2,
+
+    IPPROTO_IPIP = 4,
+
+    IPPROTO_TCP = 6,
+
+    IPPROTO_EGP = 8,
+
+    IPPROTO_PUP = 12,
+
+    IPPROTO_UDP = 17,
+
+    IPPROTO_IDP = 22,
+
+    IPPROTO_TP = 29,
+
+    IPPROTO_DCCP = 33,
+
+    IPPROTO_IPV6 = 41,
+
+    IPPROTO_ROUTING = 43,
+
+    IPPROTO_FRAGMENT = 44,
+
+    IPPROTO_RSVP = 46,
+
+    IPPROTO_GRE = 47,
+
+    IPPROTO_ESP = 50,
+
+    IPPROTO_AH = 51,
+
+    IPPROTO_ICMPV6 = 58,
+
+    IPPROTO_NONE = 59,
+
+    IPPROTO_DSTOPTS = 60,
+
+    IPPROTO_MTP = 92,
+
+    IPPROTO_ENCAP = 98,
+
+    IPPROTO_PIM = 103,
+
+    IPPROTO_COMP = 108,
+
+    IPPROTO_SCTP = 132,
+
+    IPPROTO_UDPLITE = 136,
+
+    IPPROTO_RAW = 255,
+
+    IPPROTO_MAX
+  };
+
+
+
+typedef uint16_t in_port_t;
+
+
+enum
+  {
+    IPPORT_ECHO = 7,
+    IPPORT_DISCARD = 9,
+    IPPORT_SYSTAT = 11,
+    IPPORT_DAYTIME = 13,
+    IPPORT_NETSTAT = 15,
+    IPPORT_FTP = 21,
+    IPPORT_TELNET = 23,
+    IPPORT_SMTP = 25,
+    IPPORT_TIMESERVER = 37,
+    IPPORT_NAMESERVER = 42,
+    IPPORT_WHOIS = 43,
+    IPPORT_MTP = 57,
+
+    IPPORT_TFTP = 69,
+    IPPORT_RJE = 77,
+    IPPORT_FINGER = 79,
+    IPPORT_TTYLINK = 87,
+    IPPORT_SUPDUP = 95,
+
+
+    IPPORT_EXECSERVER = 512,
+    IPPORT_LOGINSERVER = 513,
+    IPPORT_CMDSERVER = 514,
+    IPPORT_EFSSERVER = 520,
+
+
+    IPPORT_BIFFUDP = 512,
+    IPPORT_WHOSERVER = 513,
+    IPPORT_ROUTESERVER = 520,
+
+
+    IPPORT_RESERVED = 1024,
+
+
+    IPPORT_USERRESERVED = 5000
+  };
+
+
+
+typedef uint32_t in_addr_t;
+struct in_addr
+  {
+    in_addr_t s_addr;
+  };
+# 198 "/usr/include/netinet/in.h" 3 4
+struct in6_addr
+  {
+    union
+      {
+ uint8_t __u6_addr8[16];
+
+ uint16_t __u6_addr16[8];
+ uint32_t __u6_addr32[4];
+
+      } __in6_u;
+
+
+
+
+
+  };
+
+extern const struct in6_addr in6addr_any;
+extern const struct in6_addr in6addr_loopback;
+# 225 "/usr/include/netinet/in.h" 3 4
+struct sockaddr_in
+  {
+    sa_family_t sin_family;
+    in_port_t sin_port;
+    struct in_addr sin_addr;
+
+
+    unsigned char sin_zero[sizeof (struct sockaddr) -
+      (sizeof (unsigned short int)) -
+      sizeof (in_port_t) -
+      sizeof (struct in_addr)];
+  };
+
+
+struct sockaddr_in6
+  {
+    sa_family_t sin6_family;
+    in_port_t sin6_port;
+    uint32_t sin6_flowinfo;
+    struct in6_addr sin6_addr;
+    uint32_t sin6_scope_id;
+  };
+
+
+
+
+struct ip_mreq
+  {
+
+    struct in_addr imr_multiaddr;
+
+
+    struct in_addr imr_interface;
+  };
+
+struct ip_mreq_source
+  {
+
+    struct in_addr imr_multiaddr;
+
+
+    struct in_addr imr_interface;
+
+
+    struct in_addr imr_sourceaddr;
+  };
+
+
+
+
+struct ipv6_mreq
+  {
+
+    struct in6_addr ipv6mr_multiaddr;
+
+
+    unsigned int ipv6mr_interface;
+  };
+
+
+
+
+struct group_req
+  {
+
+    uint32_t gr_interface;
+
+
+    struct sockaddr_storage gr_group;
+  };
+
+struct group_source_req
+  {
+
+    uint32_t gsr_interface;
+
+
+    struct sockaddr_storage gsr_group;
+
+
+    struct sockaddr_storage gsr_source;
+  };
+
+
+
+struct ip_msfilter
+  {
+
+    struct in_addr imsf_multiaddr;
+
+
+    struct in_addr imsf_interface;
+
+
+    uint32_t imsf_fmode;
+
+
+    uint32_t imsf_numsrc;
+
+    struct in_addr imsf_slist[1];
+  };
+
+
+
+
+
+struct group_filter
+  {
+
+    uint32_t gf_interface;
+
+
+    struct sockaddr_storage gf_group;
+
+
+    uint32_t gf_fmode;
+
+
+    uint32_t gf_numsrc;
+
+    struct sockaddr_storage gf_slist[1];
+};
+# 356 "/usr/include/netinet/in.h" 3 4
+# 1 "/usr/include/bits/in.h" 1 3 4
+# 86 "/usr/include/bits/in.h" 3 4
+struct ip_opts
+  {
+    struct in_addr ip_dst;
+    char ip_opts[40];
+  };
+
+
+struct ip_mreqn
+  {
+    struct in_addr imr_multiaddr;
+    struct in_addr imr_address;
+    int imr_ifindex;
+  };
+
+
+struct in_pktinfo
+  {
+    int ipi_ifindex;
+    struct in_addr ipi_spec_dst;
+    struct in_addr ipi_addr;
+  };
+# 357 "/usr/include/netinet/in.h" 2 3 4
+# 365 "/usr/include/netinet/in.h" 3 4
+extern uint32_t ntohl (uint32_t __netlong) throw () __attribute__ ((__const__));
+extern uint16_t ntohs (uint16_t __netshort)
+     throw () __attribute__ ((__const__));
+extern uint32_t htonl (uint32_t __hostlong)
+     throw () __attribute__ ((__const__));
+extern uint16_t htons (uint16_t __hostshort)
+     throw () __attribute__ ((__const__));
+
+
+
+
+# 1 "/usr/include/bits/byteswap.h" 1 3 4
+# 377 "/usr/include/netinet/in.h" 2 3 4
+# 440 "/usr/include/netinet/in.h" 3 4
+extern int bindresvport (int __sockfd, struct sockaddr_in *__sock_in) throw ();
+
+
+extern int bindresvport6 (int __sockfd, struct sockaddr_in6 *__sock_in)
+     throw ();
+# 471 "/usr/include/netinet/in.h" 3 4
+struct in6_pktinfo
+  {
+    struct in6_addr ipi6_addr;
+    unsigned int ipi6_ifindex;
+  };
+
+
+struct ip6_mtuinfo
+  {
+    struct sockaddr_in6 ip6m_addr;
+    uint32_t ip6m_mtu;
+  };
+
+
+
+extern int inet6_option_space (int __nbytes)
+     throw () __attribute__ ((__deprecated__));
+extern int inet6_option_init (void *__bp, struct cmsghdr **__cmsgp,
+         int __type) throw () __attribute__ ((__deprecated__));
+extern int inet6_option_append (struct cmsghdr *__cmsg,
+    __const uint8_t *__typep, int __multx,
+    int __plusy) throw () __attribute__ ((__deprecated__));
+extern uint8_t *inet6_option_alloc (struct cmsghdr *__cmsg, int __datalen,
+        int __multx, int __plusy)
+     throw () __attribute__ ((__deprecated__));
+extern int inet6_option_next (__const struct cmsghdr *__cmsg,
+         uint8_t **__tptrp)
+     throw () __attribute__ ((__deprecated__));
+extern int inet6_option_find (__const struct cmsghdr *__cmsg,
+         uint8_t **__tptrp, int __type)
+     throw () __attribute__ ((__deprecated__));
+
+
+
+extern int inet6_opt_init (void *__extbuf, socklen_t __extlen) throw ();
+extern int inet6_opt_append (void *__extbuf, socklen_t __extlen, int __offset,
+        uint8_t __type, socklen_t __len, uint8_t __align,
+        void **__databufp) throw ();
+extern int inet6_opt_finish (void *__extbuf, socklen_t __extlen, int __offset)
+     throw ();
+extern int inet6_opt_set_val (void *__databuf, int __offset, void *__val,
+         socklen_t __vallen) throw ();
+extern int inet6_opt_next (void *__extbuf, socklen_t __extlen, int __offset,
+      uint8_t *__typep, socklen_t *__lenp,
+      void **__databufp) throw ();
+extern int inet6_opt_find (void *__extbuf, socklen_t __extlen, int __offset,
+      uint8_t __type, socklen_t *__lenp,
+      void **__databufp) throw ();
+extern int inet6_opt_get_val (void *__databuf, int __offset, void *__val,
+         socklen_t __vallen) throw ();
+
+
+
+extern socklen_t inet6_rth_space (int __type, int __segments) throw ();
+extern void *inet6_rth_init (void *__bp, socklen_t __bp_len, int __type,
+        int __segments) throw ();
+extern int inet6_rth_add (void *__bp, __const struct in6_addr *__addr) throw ();
+extern int inet6_rth_reverse (__const void *__in, void *__out) throw ();
+extern int inet6_rth_segments (__const void *__bp) throw ();
+extern struct in6_addr *inet6_rth_getaddr (__const void *__bp, int __index)
+     throw ();
+
+
+
+
+
+extern int getipv4sourcefilter (int __s, struct in_addr __interface_addr,
+    struct in_addr __group, uint32_t *__fmode,
+    uint32_t *__numsrc, struct in_addr *__slist)
+     throw ();
+
+
+extern int setipv4sourcefilter (int __s, struct in_addr __interface_addr,
+    struct in_addr __group, uint32_t __fmode,
+    uint32_t __numsrc,
+    __const struct in_addr *__slist)
+     throw ();
+
+
+
+extern int getsourcefilter (int __s, uint32_t __interface_addr,
+       __const struct sockaddr *__group,
+       socklen_t __grouplen, uint32_t *__fmode,
+       uint32_t *__numsrc,
+       struct sockaddr_storage *__slist) throw ();
+
+
+extern int setsourcefilter (int __s, uint32_t __interface_addr,
+       __const struct sockaddr *__group,
+       socklen_t __grouplen, uint32_t __fmode,
+       uint32_t __numsrc,
+       __const struct sockaddr_storage *__slist) throw ();
+
+
+}
+# 13 "CHttpThread.cpp" 2
+# 1 "/usr/include/arpa/inet.h" 1 3 4
+# 31 "/usr/include/arpa/inet.h" 3 4
+extern "C" {
+
+
+
+extern in_addr_t inet_addr (__const char *__cp) throw ();
+
+
+extern in_addr_t inet_lnaof (struct in_addr __in) throw ();
+
+
+
+extern struct in_addr inet_makeaddr (in_addr_t __net, in_addr_t __host)
+     throw ();
+
+
+extern in_addr_t inet_netof (struct in_addr __in) throw ();
+
+
+
+extern in_addr_t inet_network (__const char *__cp) throw ();
+
+
+
+extern char *inet_ntoa (struct in_addr __in) throw ();
+
+
+
+
+extern int inet_pton (int __af, __const char *__restrict __cp,
+        void *__restrict __buf) throw ();
+
+
+
+
+extern __const char *inet_ntop (int __af, __const void *__restrict __cp,
+    char *__restrict __buf, socklen_t __len)
+     throw ();
+
+
+
+
+
+
+extern int inet_aton (__const char *__cp, struct in_addr *__inp) throw ();
+
+
+
+extern char *inet_neta (in_addr_t __net, char *__buf, size_t __len) throw ();
+
+
+
+
+extern char *inet_net_ntop (int __af, __const void *__cp, int __bits,
+       char *__buf, size_t __len) throw ();
+
+
+
+
+extern int inet_net_pton (int __af, __const char *__cp,
+     void *__buf, size_t __len) throw ();
+
+
+
+
+extern unsigned int inet_nsap_addr (__const char *__cp,
+        unsigned char *__buf, int __len) throw ();
+
+
+
+extern char *inet_nsap_ntoa (int __len, __const unsigned char *__cp,
+        char *__buf) throw ();
+
+
+}
+# 14 "CHttpThread.cpp" 2
+
+# 1 "CAutoFreeMalloc.h" 1
+
+
+
+
+
+
+
+class CAutoFreeMalloc
+{
+public:
+    CAutoFreeMalloc(int size)
+    {
+        ptr=malloc(size);
+    }
+
+    ~CAutoFreeMalloc()
+    {
+        free(ptr);
+    }
+    void * ptr;
+};
+# 16 "CHttpThread.cpp" 2
+
+
+CHttpSession CHttpThread::m_session;
+CReqQueue CHttpThread::m_Reqque;
+
+int CHttpThread::m_dbtype=2;
+
+char CHttpThread::m_dbip[128];
+int CHttpThread::m_dbport;
+char CHttpThread::m_dbname[128];
+char CHttpThread::m_dbuser[64];
+char CHttpThread::m_dbpass[128];
+char CHttpThread::m_adminuser[128];
+char CHttpThread::m_adminpass[128];
+int CHttpThread::m_session_timeouts=300;
+
+char CHttpThread::m_session_dir[256];
+char CHttpThread::m_loginhtml[256];
+char CHttpThread::m_reloginhtml[256];
+
+int CHttpThread::m_bExitFlag=0;
+
+const char * szReplyBadReq="HTTP/1.1 400 Bad Request\r\nContent-Type: text/html\r\nContent-Length: 48\r\n\r\n<html><body><h1>400 Bad Request</h1></body></html>";
+
+
+CHttpThread::CHttpThread(int id)
+{
+    m_id=id;
+    m_Thread=0;
+
+    m_pSvcData=__null;
+
+ pthread_attr_init(&m_Attr);
+}
+
+CHttpThread::~CHttpThread()
+{
+ pthread_attr_destroy(&m_Attr);
+    if(m_pSvcData!=__null)
+    {
+        delete m_pSvcData;
+    }
+}
+
+int CHttpThread::ReadHttpReq()
+{
+    int iRet;
+ int pos;
+ int len;
+ char * p;
+ int contentpos;
+ int i,j;
+
+ m_szHttpHead[0]='\0';
+    pos=0;
+ p=strstr(m_szHttpHead,"\r\n\r\n");
+    while (p==__null)
+    {
+        len=recv(m_sockfd,&m_szHttpHead[pos],1023,0);
+  if(len<=0)
+  {
+      return -1;
+  }
+
+        pos+=len;
+  m_szHttpHead[pos]=0;
+  p=strstr(m_szHttpHead,"\r\n\r\n");
+    }
+ if(pos==0)
+ {
+     return -1;
+ }
+ m_szHttpHead[pos]=0;
+ contentpos=p - m_szHttpHead + 4;
+ p[2]=0;
+
+ printf("========================http head begin =================================\n");
+ printf("%s",m_szHttpHead);
+ printf("========================http head end =================================\n");
+
+ m_szHttpContent[0]=0;
+ for(j=0,i=contentpos;i<pos;i++)
+ {
+     m_szHttpContent[j]=m_szHttpHead[i];
+  j++;
+ }
+ m_szHttpContent[j]=0;
+ iRet= ParseHttpHead(m_szHttpHead,&m_HttpHead);
+
+ if(m_HttpHead.m_ContentLength<0 || m_HttpHead.m_ContentLength>32000)
+ {
+     return -1;
+ }
+
+ if(m_HttpHead.m_ContentLength==0)
+ {
+     return 0;
+ }
+
+ if(m_HttpHead.m_ContentLength - j>0)
+ {
+  iRet=SocketRead(m_sockfd,&m_szHttpContent[j],m_HttpHead.m_ContentLength - j);
+  if(iRet<=0)
+  {
+   return -1;
+  }
+  m_szHttpContent[iRet+j]=0;
+ }
+
+ printf("============================http content begin ===============================\n");
+ printf("%s\n",m_szHttpContent);
+ printf("============================http content end   ===============================\n");
+
+ return 0;
+}
+
+void CHttpThread::ReplyHttpReq(const char * info,const char * sessionid)
+{
+ if(sessionid==__null)
+ {
+  sprintf(m_buff,
+  "HTTP/1.1 200 OK\r\n" "Server: TangCheng Data Server1.0\r\n" "Connection: close\r\n" "Cache-Control: no-cache\r\n" "Content-Type: text/html; charset=UTF-8\r\n" "Content-Length: %d\r\n\r\n%s",(int)strlen(info),info);
+
+
+
+
+
+ }
+ else
+ {
+  sprintf(m_buff,
+  "HTTP/1.1 200 OK\r\n" "Server: TangCheng Data Server1.0\r\n" "Connection: close\r\n" "Cache-Control: no-cache\r\n" "Set-Cookie: OSDBASESSIONID=%s\r\n" "Content-Type: text/html; charset=gb2312\r\n" "Content-Length: %d\r\n\r\n%s",sessionid,(int)strlen(info),info);
+
+
+
+
+
+
+ }
+ send(m_sockfd,m_buff,strlen(m_buff),0);
+}
+
+
+void CHttpThread::Run()
+{
+
+    char szSQL[2048];
+ char szFile[512];
+
+    char * svcname;
+    char * urlargv[256];
+    int argc;
+
+    unsigned long bindparalen[256];
+    char sql_in[2048];
+
+    int pos;
+    int len;
+    int start_time;
+    int stat_id;
+    int i;
+ int iRet;
+
+ char sessionid[64];
+ char errinfo[256];
+    int isneedauth;
+
+
+    printf("Thread %d is starting...\n",m_id);
+
+    m_pSvcData = new CServiceData;
+
+
+    if(m_dbtype==1)
+    {
+
+        if(mysql_init(&m_mysql) == __null)
+        {
+            printf("Thread %d init mysql data stauct fail\n",m_id);
+            return;
+        }
+
+        iRet=mysql_thread_init();
+        printf("mysql_thread_init return:%d\n",iRet);
+
+        iRet=mysql_thread_safe();
+        printf("thread_safe=%d\n",iRet);
+
+        if(__null == mysql_real_connect(&m_mysql,m_dbip,m_dbuser,m_dbpass,m_dbname,m_dbport,__null,0))
+        {
+            printf("Thread %d connect database fail:%s\n",m_id,mysql_error(&m_mysql));
+            return;
+        }
+        else
+        {
+            char szSQL[256];
+            strcpy(szSQL,"set names utf8");
+
+            if(mysql_query(&m_mysql,szSQL) != 0)
+            {
+                printf("Execute SQL failed:%s\n%s",mysql_error(&m_mysql),szSQL);
+                return;
+            }
+            printf("Thread %d connect database success!\n",m_id);
+        }
+    }
+    else if(m_dbtype==2)
+    {
+        ConnStatusType pgstatus;
+        char connstr[1024];
+        sprintf(connstr,"hostaddr=%s dbname=%s port=%d user=%s password=%s",
+                m_dbip,m_dbname,m_dbport,m_dbuser,m_dbpass);
+        m_pq=PQconnectdb(connstr);
+        pgstatus=PQstatus(m_pq);
+        if(pgstatus==CONNECTION_OK)
+        {
+            printf("Thread %d connect database success!\n",m_id);
+        }
+        else
+        {
+            printf("Thread %d connect database fail:%s\n",m_id,PQerrorMessage(m_pq));
+            return;
+        }
+
+        m_pSvcData->Load(m_pq);
+    }
+
+
+
+    while(!m_bExitFlag)
+    {
+
+
+
+        m_sockfd=m_Reqque.getq();
+     printf("thread %d start to process job ...\n",m_id);
+
+  if(m_sockfd==-1)
+  {
+      break;
+  }
+
+
+  iRet=ReadHttpReq();
+  if(iRet<0)
+  {
+   send(m_sockfd,szReplyBadReq,strlen(szReplyBadReq),0);
+            goto next_flag;
+  }
+
+
+  if(m_HttpHead.m_Method!=ENUM_GET && m_HttpHead.m_Method!=ENUM_POST)
+  {
+   send(m_sockfd,szReplyBadReq,strlen(szReplyBadReq),0);
+            goto next_flag;
+  }
+
+  if(m_HttpHead.m_ContentLength<0)
+  {
+   printf("Content-length:%d can not less than zero!\n",m_HttpHead.m_ContentLength);
+   send(m_sockfd,szReplyBadReq,strlen(szReplyBadReq),0);
+            goto next_flag;
+  }
+
+  Url2FileName(m_HttpHead.m_Url,szFile);
+
+  if(m_HttpHead.m_Method==ENUM_GET)
+        {
+
+            if(strstr(szFile,m_session_dir)!=__null )
+   {
+    iRet=GetSessionId(m_HttpHead.m_Cookie,sessionid);
+    if(iRet==0)
+    {
+     iRet=m_session.UpdateSession(sessionid,m_session_timeouts);
+    }
+    if(iRet!=0)
+    {
+     if(m_HttpHead.m_Method==ENUM_GET)
+     {
+      iRet=SendFileData(m_reloginhtml);
+         if(iRet>0)
+         {
+             send(m_sockfd,szReplyBadReq,strlen(szReplyBadReq),0);
+         }
+                  goto next_flag;
+     }
+     goto next_flag;
+    }
+            }
+   iRet=SendFileData(szFile);
+   if(iRet>0)
+   {
+       send(m_sockfd,szReplyBadReq,strlen(szReplyBadReq),0);
+   }
+            goto next_flag;
+        }
+        else
+        {
+   iRet=ParseHttpPara(m_szHttpContent,argc,urlargv);
+   if(iRet<0 || argc<1 )
+   {
+    ReplyHttpReq("9POST验证请求中的参数不正确!");
+    goto next_flag;
+   }
+            svcname=urlargv[0];
+            isneedauth=m_pSvcData->SvcIsNeedAuth(svcname);
+            if(isneedauth)
+            {
+    iRet=GetSessionId(m_HttpHead.m_Cookie,sessionid);
+    if(iRet==0)
+    {
+     iRet=m_session.UpdateSession(sessionid,m_session_timeouts);
+    }
+    if(iRet!=0)
+    {
+                    ReplyHttpReq("9没有登陆，或登陆超时,请重新登陆!");
+     goto next_flag;
+    }
+            }
+            CallService(argc,urlargv);
+            goto next_flag;
+        }
+
+
+next_flag:
+        shutdown(m_sockfd,SHUT_RDWR);
+        close(m_sockfd);
+  printf("thread %d wait job ...\n",m_id);
+
+    }
+
+    if(m_dbtype==1)
+    {
+        mysql_thread_end();
+    }
+    else
+    {
+        PQfinish(m_pq);
+    }
+ printf("Thread %d is stop.\n",m_id);
+}
+
+int CHttpThread::CallService(int argc,char ** urlargv)
+{
+    char *svcname=urlargv[0];
+    SERVICEDATA * pSvcData;
+    char **paramValues;
+    int paramcnt;
+    char * szSQL;
+
+    int rowcount;
+    int fieldcnt;
+    int len;
+    int pos;
+
+    char szEscapeBuf[32000];
+ char szChunkHead[64];
+
+ char httpbuf[1024];
+ char szErrMsg[1024];
+
+
+
+    char szSendBuf[32000];
+ const int startpos=64;
+ int chunkheadlen;
+
+ int escape_result_len;
+
+ int collen;
+
+    int i,j;
+    int isfirstrow=1;
+    int ret;
+    int iRet=0;
+
+    PGresult *dataset;
+
+    char httphead[1024];
+
+    sprintf(httphead,
+        "HTTP/1.1 200 OK\r\n" "Server: TangCheng Data Server1.0\r\n" "Transfer-Encoding: chunked\r\n" "Connection: close\r\n" "Cache-Control: no-cache\r\n" "Content-Type: text/html; charset=UTF-8\r\n\r\n"
+
+
+
+
+
+        );
+    send(m_sockfd,httphead,strlen(httphead),0);
+
+
+    pSvcData = m_pSvcData->GetService(svcname);
+
+    if(pSvcData->sqltype ==0 || pSvcData->sqltype ==1 )
+    {
+        paramValues=&urlargv[1];
+        szSQL=pSvcData->sql;
+        paramcnt=argc-1;
+    }
+    else if (pSvcData->sqltype ==2)
+    {
+
+        char tablename[32];
+        char * szWhere;
+        CAutoFreeMalloc auto_free_szSQL( 256*1024 ) ; (void *)szSQL=auto_free_szSQL.ptr;
+
+        len=strlen(pSvcData->sql);
+        for(i=0;pSvcData->sql[i]!=' ' && pSvcData->sql[i]!='\t' && i<len;i++)
+        {
+            tablename[i]=pSvcData->sql[i];
+        }
+        tablename[i]='\0';
+        szWhere = &pSvcData->sql[i+1];
+        int NextBindIdx=GetMaxBindIdx(szWhere,'$')+1;
+        pos=sprintf(szSQL,"update %s set ",tablename);
+
+        paramValues=new char*[argc];
+
+        int WhereStart=0;
+        paramcnt=0;
+
+        int WhereParamCnt=atoi(urlargv[1]);
+
+        for(i=2;i<WhereParamCnt+2;i++)
+        {
+            paramValues[paramcnt]=urlargv[i];
+            paramcnt++;
+        }
+        for( ;i<argc;i++)
+        {
+
+            len=sprintf(&szSQL[pos],"%s=$%d,",urlargv[i],paramcnt+1);
+            pos+=len;
+            i++;
+            paramValues[paramcnt]=urlargv[i];
+            paramcnt++;
+        }
+        pos--;
+        len=sprintf(&szSQL[pos]," %s",szWhere);
+        pos+=len;
+        printf("SQL: %s\n",szSQL);
+    }
+
+sqlexecretry:
+    dataset = PQexecParams(m_pq,
+                       szSQL,
+                       paramcnt,
+                       __null,
+                       paramValues,
+                       __null,
+                       __null,
+                       0);
+
+    if( (PQresultStatus(dataset) == PGRES_COMMAND_OK && pSvcData->sqltype>0)
+       &&(PQresultStatus(dataset) == PGRES_TUPLES_OK && pSvcData->sqltype==0)
+      )
+    {
+         printf("Successfully execute SQL : %s\n",szSQL);
+    }
+    else
+    {
+        sprintf(szErrMsg,"Execute SQL failed : %s\n%s",szSQL,PQerrorMessage(m_pq));
+        printf("%s\n",szErrMsg);
+
+        PQclear(dataset);
+        if(PQstatus(m_pq) != CONNECTION_OK)
+        {
+            sleep(1);
+            PQreset(m_pq);
+
+            if(PQstatus(m_pq)!=CONNECTION_OK)
+            {
+                printf("Thread %d reconnect database fail!\n",m_id);
+                PQclear(dataset);
+                goto sqlexecretry;
+            }
+            else
+            {
+                printf("Thread %d reconnect database success!\n",m_id);
+            }
+        }
+        else
+        {
+            return -1;
+        }
+    }
+
+    if(pSvcData->sqltype >0)
+    {
+        if( iRet!= 0)
+        {
+            sprintf(httpbuf,"1Execute SQL failed:%s\n%s",pSvcData->sql,szErrMsg);
+            printf("%s",httpbuf);
+            ReplyHttpReq(httpbuf);
+        }
+        else
+        {
+            sprintf(httpbuf,"0\n");
+            printf("%s",httpbuf);
+            ReplyHttpReq(httpbuf);
+        }
+    }
+
+    pos=startpos;
+    isfirstrow=1;
+
+    int rowcnt=PQntuples(dataset);
+    const char * cell;
+
+    for (i = 0; i < rowcnt; i++)
+    {
+       if(!isfirstrow)
+       {
+           szSendBuf[pos]='\n';
+           pos++;
+       }
+       else
+       {
+           isfirstrow=0;
+       }
+
+       for (j = 0; j < PQnfields(dataset); j++)
+       {
+           cell = PQgetvalue(dataset, i, j);
+           if(cell!=__null)
+           {
+               collen=strlen(cell);
+           }
+           else
+           {
+               collen=0;
+           }
+           if(collen>0)
+           {
+               escape_result_len=escape(cell, collen, szEscapeBuf,32000);
+               if(escape_result_len==-1)
+               {
+                   printf("error in escape!!!!!\n");
+                   PQclear(dataset);
+                   return -1;
+               }
+           }
+           else
+           {
+               escape_result_len=0;
+               szEscapeBuf[0]=0;
+           }
+
+
+
+           if( 32000 - pos < escape_result_len +1+2 )
+           {
+               chunkheadlen=sprintf(szChunkHead,"%x\r\n",pos - startpos);
+               memcpy(&szSendBuf[startpos-chunkheadlen],szChunkHead,chunkheadlen);
+               szSendBuf[pos]='\r';
+               szSendBuf[pos+1]='\n';
+               pos+=2;
+               send(m_sockfd,&szSendBuf[startpos-chunkheadlen],pos -(startpos-chunkheadlen),0);
+
+               pos=startpos;
+           }
+
+           if(j==0)
+           {
+               len=sprintf(&szSendBuf[pos],"%s",szEscapeBuf);
+               printf("%s",szEscapeBuf);
+           }
+           else
+           {
+               len=sprintf(&szSendBuf[pos],"\t%s",szEscapeBuf);
+           }
+           pos+=len;
+        }
+        printf("\n");
+    }
+    PQclear(dataset);
+
+    if(pos>startpos)
+    {
+        chunkheadlen=sprintf(szChunkHead,"%x\r\n",pos - startpos);
+  memcpy(&szSendBuf[startpos-chunkheadlen],szChunkHead,chunkheadlen);
+  szSendBuf[pos]='\r';
+  szSendBuf[pos+1]='\n';
+  pos+=2;
+        send(m_sockfd,&szSendBuf[startpos-chunkheadlen],pos -(startpos-chunkheadlen),0);
+    }
+
+    sprintf(m_buff,"0\r\n\r\n");
+    send(m_sockfd,m_buff,strlen(m_buff),0);
+    return 0;
+
+}
+
+
+
+int CHttpThread::ExecuteSQL(char * szSQL,char * errmsg)
+{
+    int iRet;
+    if(m_dbtype==1)
+    {
+
+        iRet=mysql_query(&m_mysql,szSQL);
+        if( iRet!= 0)
+        {
+            strcpy(errmsg,mysql_error(&m_mysql));
+            return -1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    else if(m_dbtype==2)
+    {
+        PGresult * dataset;
+        dataset = PQexec(m_pq,szSQL);
+        if (PQresultStatus(dataset) != PGRES_COMMAND_OK)
+        {
+            strcpy(errmsg,PQerrorMessage(m_pq));
+            PQclear(dataset);
+            return -1;
+        }
+        return 0;
+    }
+    return 1;
+}
+
+
+int CHttpThread::QuerySQL(const char * szSQL,char * szRes,char * errmsg)
+{
+    int iRet;
+    int rowcnt;
+
+    if(m_dbtype==1)
+    {
+
+        iRet=mysql_query(&m_mysql,szSQL);
+        if( iRet!= 0)
+        {
+            strcpy(errmsg,mysql_error(&m_mysql));
+            return -1;
+        }
+        MYSQL_RES * myres=mysql_store_result(&m_mysql);
+        MYSQL_ROW row;
+        if(! myres)
+        {
+            strcpy(errmsg,mysql_error(&m_mysql));
+            return -1;
+        }
+        rowcnt= mysql_num_rows(myres);
+        if(rowcnt>=1)
+        {
+            row=mysql_fetch_row(myres);
+            strcpy(szRes,row[0]);
+        }
+        else
+        {
+             szRes[0]=0;
+        }
+        mysql_free_result(myres);
+        return 0;
+    }
+    else if(m_dbtype==2)
+    {
+        PGresult * dataset;
+        dataset = PQexec(m_pq,szSQL);
+        if (PQresultStatus(dataset) != PGRES_TUPLES_OK)
+        {
+            strcpy(errmsg,PQerrorMessage(m_pq));
+            PQclear(dataset);
+            return -1;
+        }
+        int rowcnt=PQntuples(dataset);
+        if(rowcnt>=1)
+        {
+            strcpy(szRes,PQgetvalue(dataset,0,0));
+        }
+        else
+        {
+             szRes[0]=0;
+        }
+        return 0;
+    }
+    return 1;
+}
+
+
+int CHttpThread::SendDBData(char * szSQL)
+{
+    MYSQL_RES *result;
+    int rowcount;
+    MYSQL_FIELD *fields = __null;
+    MYSQL_ROW currrow = __null;
+
+    int fieldcnt;
+    int len;
+    int pos;
+
+    char szEscapeBuf[32000];
+ char szChunkHead[64];
+
+
+
+    char szSendBuf[32000];
+ const int startpos=64;
+ int chunkheadlen;
+
+ int escape_result_len;
+
+ int collen;
+
+    int i,j;
+    int isfirstrow=1;
+    int ret;
+    int iRet;
+
+    printf("Execute SQL: %s\n",szSQL);
+
+    if(m_dbtype==1)
+    {
+        if(mysql_query(&m_mysql,szSQL) != 0)
+        {
+            printf("Execute SQL failed:%s\n%s",mysql_error(&m_mysql),szSQL);
+            if(mysql_ping(&m_mysql))
+            {
+                mysql_close(&m_mysql);
+                printf("Thread %d reconnect to mysql ...\n",m_id);
+                if(__null == mysql_real_connect(&m_mysql,m_dbip,m_dbuser,m_dbpass,m_dbname,m_dbport,__null,0))
+                {
+                    printf("Thread %d reconnect database fail:%s\n",m_id,mysql_error(&m_mysql));
+                    return -1;
+                }
+                else
+                {
+                    printf("Thread %d reconnect database success!\n",m_id);
+                    if(mysql_query(&m_mysql,szSQL) != 0)
+                    {
+                        printf("retry execute SQL still failed:%s",mysql_error(&m_mysql));
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        result = mysql_use_result(&m_mysql);
+        if(result==__null)
+        {
+            printf("Execute SQL failed(when get result):%s\n%s",mysql_error(&m_mysql),szSQL);
+            return -1;
+        }
+
+        fieldcnt=mysql_field_count(&m_mysql);
+
+        pos=startpos;
+        isfirstrow=1;
+        while((currrow = mysql_fetch_row(result)))
+        {
+           if(!isfirstrow)
+           {
+               szSendBuf[pos]='\n';
+               pos++;
+           }
+           else
+           {
+               isfirstrow=0;
+           }
+
+           for(i = 0; i < fieldcnt; i++)
+           {
+               if(currrow[i]!=__null)
+               {
+                   collen=strlen(currrow[i]);
+               }
+               else
+               {
+                   collen=0;
+               }
+               if(collen>0)
+               {
+                   escape_result_len=escape(currrow[i], collen, szEscapeBuf,32000);
+                   if(escape_result_len==-1)
+                   {
+                       printf("error in escape!!!!!\n");
+                       return -1;
+                   }
+               }
+               else
+               {
+                   escape_result_len=0;
+                   szEscapeBuf[0]=0;
+               }
+
+
+
+               if( 32000 - pos < escape_result_len +1+2 )
+               {
+                   chunkheadlen=sprintf(szChunkHead,"%x\r\n",pos - startpos);
+                   memcpy(&szSendBuf[startpos-chunkheadlen],szChunkHead,chunkheadlen);
+                   szSendBuf[pos]='\r';
+                   szSendBuf[pos+1]='\n';
+                   pos+=2;
+                   send(m_sockfd,&szSendBuf[startpos-chunkheadlen],pos -(startpos-chunkheadlen),0);
+
+                   pos=startpos;
+               }
+
+               if(i==0)
+               {
+                   len=sprintf(&szSendBuf[pos],"%s",szEscapeBuf);
+                   printf("%s",szEscapeBuf);
+               }
+               else
+               {
+                   len=sprintf(&szSendBuf[pos],"\t%s",szEscapeBuf);
+               }
+
+               pos+=len;
+            }
+            printf("\n");
+
+        }
+
+        mysql_free_result(result);
+    }
+
+    if(m_dbtype==2)
+    {
+        PGresult * dataset=__null;
+        dataset = PQexec(m_pq,szSQL);
+        if (PQresultStatus(dataset) != PGRES_TUPLES_OK)
+        {
+            printf("Execute SQL failed:%s\n%s",PQerrorMessage(m_pq),szSQL);
+            PQclear(dataset);
+            if(PQstatus(m_pq)!=CONNECTION_OK)
+            {
+                printf("Thread %d reconnect to PostgreSQL ...\n",m_id);
+                PQreset(m_pq);
+
+                if(PQstatus(m_pq)!=CONNECTION_OK)
+                {
+                    printf("Thread %d reconnect database fail!\n",m_id);
+                    PQclear(dataset);
+                    return -1;
+                }
+                else
+                {
+                    printf("Thread %d reconnect database success!\n",m_id);
+                    dataset = PQexec(m_pq,szSQL);
+                    if (PQresultStatus(dataset) != PGRES_COMMAND_OK)
+                    {
+                        printf("retry execute SQL still failed:%s",PQerrorMessage(m_pq));
+                        PQclear(dataset);
+                        return -1;
+                    }
+                }
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        pos=startpos;
+        isfirstrow=1;
+
+        int rowcnt=PQntuples(dataset);
+        const char * cell;
+
+        for (i = 0; i < rowcnt; i++)
+        {
+           if(!isfirstrow)
+           {
+               szSendBuf[pos]='\n';
+               pos++;
+           }
+           else
+           {
+               isfirstrow=0;
+           }
+
+        for (j = 0; j < PQnfields(dataset); j++)
+           {
+               cell = PQgetvalue(dataset, i, j);
+               if(cell!=__null)
+               {
+                   collen=strlen(cell);
+               }
+               else
+               {
+                   collen=0;
+               }
+               if(collen>0)
+               {
+                   escape_result_len=escape(cell, collen, szEscapeBuf,32000);
+                   if(escape_result_len==-1)
+                   {
+                       printf("error in escape!!!!!\n");
+                       PQclear(dataset);
+                       return -1;
+                   }
+               }
+               else
+               {
+                   escape_result_len=0;
+                   szEscapeBuf[0]=0;
+               }
+
+
+
+               if( 32000 - pos < escape_result_len +1+2 )
+               {
+                   chunkheadlen=sprintf(szChunkHead,"%x\r\n",pos - startpos);
+                   memcpy(&szSendBuf[startpos-chunkheadlen],szChunkHead,chunkheadlen);
+                   szSendBuf[pos]='\r';
+                   szSendBuf[pos+1]='\n';
+                   pos+=2;
+                   send(m_sockfd,&szSendBuf[startpos-chunkheadlen],pos -(startpos-chunkheadlen),0);
+
+                   pos=startpos;
+               }
+
+               if(j==0)
+               {
+                   len=sprintf(&szSendBuf[pos],"%s",szEscapeBuf);
+                   printf("%s",szEscapeBuf);
+               }
+               else
+               {
+                   len=sprintf(&szSendBuf[pos],"\t%s",szEscapeBuf);
+               }
+               pos+=len;
+            }
+            printf("\n");
+        }
+        PQclear(dataset);
+    }
+
+    if(pos>startpos)
+    {
+        chunkheadlen=sprintf(szChunkHead,"%x\r\n",pos - startpos);
+  memcpy(&szSendBuf[startpos-chunkheadlen],szChunkHead,chunkheadlen);
+  szSendBuf[pos]='\r';
+  szSendBuf[pos+1]='\n';
+  pos+=2;
+        send(m_sockfd,&szSendBuf[startpos-chunkheadlen],pos -(startpos-chunkheadlen),0);
+
+    }
+}
+
+int CHttpThread::Url2FileName(const char * szUrl,char * szFile)
+{
+    strcpy(szFile,"./htdocs/");
+    if(!strcmp(szUrl,"/"))
+    {
+        strcat(szFile,"index.htm");
+    }
+    else
+    {
+        if(szUrl[0]=='/')
+  {
+      strcat(szFile,&szUrl[1]);
+  }
+  else
+  {
+      strcat(szFile,szUrl);
+  }
+    }
+}
+
+int CHttpThread::SendFileData(const char * szFile)
+{
+
+    char szContentType[40];
+    const char * szExtName;
+    char * p;
+    char buf[4100];
+    char szTemp[256];
+    int iReadFileSize;
+    int fd;
+ int iRet;
+
+    p=rindex((char *)szFile,'.');
+    if(p==__null)
+    {
+        szExtName=__null;
+    }
+    else
+    {
+        szExtName=&p[1];
+    }
+
+
+    if ( (!strcasecmp(szExtName,"jpg"))
+      || (!strcasecmp(szExtName,"jpeg"))
+      || (!strcasecmp(szExtName,"bmp"))
+       )
+    {
+        strcpy(szContentType,"image/jpeg");
+    }
+ else if(!strcasecmp(szExtName,"jpg"))
+ {
+     strcpy(szContentType,"image/gif");
+ }
+    else if( (!strcasecmp(szExtName,"htm"))
+      || (!strcasecmp(szExtName,"html"))
+      || (!strcasecmp(szExtName,"txt"))
+       )
+    {
+        strcpy(szContentType,"text/html");
+    }
+ else if (!strcasecmp(szExtName,"css"))
+ {
+        strcpy(szContentType,"text/css");
+ }
+    else
+    {
+        strcpy(szContentType,"application/octet-stream");
+    }
+
+    fd=open(szFile,00);
+    if (fd==-1)
+    {
+        printf("Can not open %s\n",szFile);
+  return 1;
+    }
+
+    sprintf(buf,
+            "HTTP/1.1 200 OK\r\n" "Server: TangCheng Data Server1.0\r\n" "Transfer-Encoding: chunked\r\n" "Connection: close\r\n" "Cache-Control: no-cache\r\n" "Content-Type: %s; charset=UTF8\r\n\r\n",
+
+
+
+
+
+            szContentType
+            );
+    iRet=send(m_sockfd,buf,strlen(buf),0);
+ if(iRet<=0)
+ {
+     return -1;
+ }
+
+    while((iReadFileSize=read(fd,buf,4096))>0)
+    {
+        sprintf(szTemp,"%x\r\n",iReadFileSize);
+        iRet=send(m_sockfd,szTemp,strlen(szTemp),0);
+     if(iRet<=0)
+     {
+         close(fd);
+   return -1;
+     }
+        strcpy(&buf[iReadFileSize],"\r\n");
+        iRet=send(m_sockfd,buf,iReadFileSize+2,0);
+  if(iRet<=0)
+     {
+         close(fd);
+   return -1;
+     }
+    }
+    close(fd);
+    sprintf(szTemp,"0\r\n\r\n");
+    iRet=send(m_sockfd,szTemp,strlen(szTemp),0);
+ if(iRet>0)
+ {
+     return 0;
+ }
+ else
+ {
+     return -1;
+ }
+}

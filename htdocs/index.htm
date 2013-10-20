@@ -1,0 +1,976 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>fgstats
+    </title>
+<script type="text/javascript" src="wz_jsgraphics.js">
+</script>
+
+  </head>
+  <body style="background-color: rgb(255, 240, 255);">
+    <center>
+	  <a href="admin/adminlogin.htm">admin</a>
+      <table style="background-color: rgb(0, 0, 0); width: 800px; height: 80px;" col="1" sellspan="1" border="0" cellpadding="0" cellspacing="1">
+        <tbody>
+          <tr>
+            <td style="background-color: rgb(255, 255, 255);">Select Database:</td>
+            <td style="background-color: rgb(255, 255, 255);" colspan="3">
+              <select id="droplist_db" onchange="droplist_db_chg();">
+                <!-- <option value="crmcn">crmcn</option> <option value="db2_value">db2</option> -->
+              </select></td>
+            <td style="text-align: right;">
+              <br></td>
+          </tr>
+          <tr>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_0" value="cpu_user" onclick="stats_checkbox_click();" checked="true" type="checkbox">cpu_user </td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_1" value="cpu_sys" onclick="stats_checkbox_click();" checked="true" type="checkbox">cpu_sys </td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_2" value="cpu_wait" onclick="stats_checkbox_click();" checked="true" type="checkbox">cpu_wait </td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_7" value="execute_count" onclick="stats_checkbox_click();" type="checkbox">execute count </td>
+          </tr>
+          <tr>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_3" value="consistent_gets" onclick="stats_checkbox_click();" type="checkbox">consistent gets </td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_4" value="physical_reads" onclick="stats_checkbox_click();" type="checkbox">physical reads </td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_5" value="physical_writes" onclick="stats_checkbox_click();" type="checkbox">physical writes </td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_6" value="user_calls" onclick="stats_checkbox_click();" type="checkbox">user calls </td>
+          </tr>
+          <tr>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_11" value="user_commits" onclick="stats_checkbox_click();" type="checkbox">user commits</td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_12" value="user_rollbacks" onclick="stats_checkbox_click();" type="checkbox">user rollbacks</td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_13" value="redo_entries" onclick="stats_checkbox_click();" type="checkbox">redo entries</td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_14" value="redo_writes" onclick="stats_checkbox_click();" type="checkbox">redo writes</td>
+          </tr>
+          <tr>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_15" value="parse_count_(hard)" onclick="stats_checkbox_click();" type="checkbox">parse count (hard)</td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_16" value="parse_count_(total)" onclick="stats_checkbox_click();" type="checkbox">parse count (total)</td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_17" value="logons_cumulative" onclick="stats_checkbox_click();" type="checkbox">logons cumulative</td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_18" value="leaf_node_splits" onclick="stats_checkbox_click();" type="checkbox">leaf node splits</td>
+          </tr>
+          <tr>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_19" value="bytes_received_via_SQL*Net_from_client" onclick="stats_checkbox_click();" type="checkbox">bytes received via SQL*Net from client</td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_20" value="bytes_sent_via_SQL*Net_to_client" onclick="stats_checkbox_click();" type="checkbox">bytes sent via SQL*Net to client</td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_21" value="bytes_received_via_SQL*Net_from_dblink" onclick="stats_checkbox_click();" type="checkbox">bytes received via SQL*Net from dblink</td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_22" value="bytes_sent_via_SQL*Net_to_dblink" onclick="stats_checkbox_click();" type="checkbox">bytes sent via SQL*Net to dblink</td>
+          </tr>
+          <tr>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_8" value="db_file_sequential_read" onclick="stats_checkbox_click();" type="checkbox">db file sequential read(ms) </td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_9" value="db_file_scattered_read" onclick="stats_checkbox_click();" type="checkbox">db file scattered read(ms) </td>
+            <td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_10" value="log_file_sync" onclick="stats_checkbox_click();" type="checkbox">log file sync(ms)</td>
+			<td style="background-color: rgb(255, 255, 255);">
+              <input name="stats_checkbox" id="stats_cbx_11" value="log_file_parallel_write" onclick="stats_checkbox_click();" type="checkbox">log file parallel write(ms)
+</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="mychart" style="background: rgb(238, 238, 238) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: blue; left: 0px; overflow: visible; width: 800px; position: relative; top: 0px; height: 340px;" >
+      </div>
+      <table style="width: 800px;height: 40px">
+        <tbody>
+          <tr>
+            <td>
+            <input name="cbx_auto_maxy" id="cbx_auto_maxy" value="auto maxy" onclick="OnClick_cbx_auto_maxy();"  checked="true" type="checkbox">
+              auto maxy: <input type="text" name= "max_y" length=12 id="max_y"  />
+            </td>
+            <td>
+              select time: <input type="text" name= "select_start_time"  length=19 id="select_start_time"  />
+            </td>
+            <td style="text-align: center;">
+              <input id="mytestbutton" value="QueryCurrent" onclick="querycurrentdata();" type="button"></td>
+            <td style="text-align: center;">
+              <input id="mytestbutton" value="Query" onclick="querydata();" type="button"></td>
+            <td style="text-align: center;"> <input id="pretimebutton" value="<" onclick="showpretime();" type="button"></td>
+            <td style="text-align: center;"> <input id="nexttimebutton" value=">" onclick="shownexttime();" type="button"></td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+<script type="text/javascript">
+var jg = new jsGraphics("mychart");
+/* Create a new XMLHttpRequest object to talk to the Web server */
+var tangxmlHttp = false;
+
+///*@cc_on @*/
+///*@if (@_jscript_version >= 5)
+try
+{
+    tangxmlHttp = new ActiveXObject("Msxml2.xmlHttp");
+}catch (e)
+{
+    try
+    {
+        tangxmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    } catch (e2)
+    {
+        tangxmlHttp = false;
+    }
+}
+//@end @*/
+if (!tangxmlHttp && typeof XMLHttpRequest != 'undefined')
+{
+    tangxmlHttp = new XMLHttpRequest();
+}
+// tangxmlHttp.onload = xmlhttp_onload_handler;
+
+var g_xcoor_seconds=600;
+var g_initfinished = 0;
+var g_starttime;
+
+var obj;
+var i;
+
+var g_data_stats_name=[
+'cpu_user',
+'cpu_sys',
+'cpu_wait',
+'execute_count',
+'consistent_gets',
+'physical_reads',
+'physical_writes',
+'user_calls',
+'user_commits',
+'user_rollbacks',
+'redo_entries',
+'redo_writes',
+'parse_count_(hard)',
+'parse_count_(total)',
+'logons_cumulative',
+'leaf_node_splits',
+'bytes_received_via_SQL*Net_from_client',
+'bytes_sent_via_SQL*Net_to_client',
+'bytes_received_via_SQL*Net_from_dblink',
+'bytes_sent_via_SQL*Net_to_dblink',
+'db_file_sequential_read_total_waits',
+'db_file_sequential_read_time_waited',
+'db_file_scattered_read_total_waits',
+'db_file_scattered_read_time_waited',
+'log_file_sync_total_waits',
+'log_file_sync_time_waited',
+'log_file_parallel_write_total_waits',
+'log_file_parallel_write_time_waited'
+];
+
+var g_y1_stats_name=[
+'cpu_user',
+'cpu_sys',
+'cpu_wait'
+];
+
+var g_y1_stats_color=[
+"#FF0000",
+"#00FF00",
+"#0000FF"
+];
+
+var g_y2_stats_name=[
+'execute_count',
+'consistent_gets',
+'physical_reads',
+'physical_writes',
+'user_calls',
+'user_commits',
+'user_rollbacks',
+'redo_entries',
+'redo_writes',
+'parse_count_(hard)',
+'parse_count_(total)',
+'logons_cumulative',
+'leaf_node_splits',
+'bytes_received_via_SQL*Net_from_client',
+'bytes_sent_via_SQL*Net_to_client',
+'bytes_received_via_SQL*Net_from_dblink',
+'bytes_sent_via_SQL*Net_to_dblink',
+'db_file_sequential_read',
+'db_file_scattered_read',
+'log_file_sync',
+'log_file_parallel_write'
+];
+
+var g_y2_stats_color=[
+"#D0B000",
+"#FF8080",
+"#00FFFF",
+"#A00000",
+"#00A000",
+"#0000A0",
+"#A0A000",
+"#A000A0",
+"#00A0A0",
+"#800000",
+"#008000",
+"#000080",
+"#808000",
+"#800080",
+"#008080",
+"#8080FF",
+"#408080",
+"#804000",
+"#FF8000",
+"#0080F0",
+"#FF8080"
+];
+
+var g_data_index=new Array();
+
+for (i = 0; i < g_data_stats_name.length; i ++ )
+{
+    g_data_index[g_data_stats_name[i]] = i;
+}
+
+g_dbname = 'crmcn';
+g_starttime = (new Date().getTime()) / 1000;
+g_starttime = g_starttime - g_xcoor_seconds;
+if(g_starttime % 60 > 0)
+{
+    g_starttime = (parseInt(g_starttime / 60) + 1) * 60;
+}
+// timename = setInterval("callServer();", 2000);
+/*window.onload = function()
+{
+    RetrieveDBList();
+};*/
+
+document.getElementById("select_start_time").value=date2str(new Date());
+document.getElementById("max_y").value=10000;
+
+RetrieveDBList();
+
+function processHttpResponse(response)
+{
+
+    dataArray = response.split("\n");
+    if (dataArray.length <=0)
+    {
+        alert('异常，http没有返回任何数据!!!');
+        return {
+            errCode: -1,
+            errMsg: '异常，http没有返回任何数据!!!',
+            resArray: []
+        };
+    }
+    errInfo = dataArray.pop().split('\t');
+    if (errInfo.length <2)
+    {
+        alert('返回无效的数据: '+unescape(errInfo));
+        return {
+            errCode: -1,
+            errMsg: '返回无效的数据: '+unescape(errInfo),
+            resArray: []
+        };
+    }
+    if (errInfo[0] != '0')
+    {
+        alert('errCode='+errInfo[0]+':'+unescape(errInfo[1]));
+        if(errInfo[0]=='9')
+		{
+            xmlhttp=null;
+			window.location.href="adminlogin.htm";
+        }
+        
+        return {
+            errCode: parseInt(errInfo[0]),
+            errMsg: unescape(errInfo[1]),
+            resArray: []
+        };
+    }
+    return {
+        errCode: 0,
+        errMsg: '',
+        resArray:dataArray
+    };
+}
+
+
+function droplist_db_chg()
+{
+    querydata();
+}
+
+function OnClick_cbx_auto_maxy()
+{
+    ;
+}
+
+function querydata()
+{
+    var i;
+
+    var strtime=document.getElementById("select_start_time").value;
+    g_starttime = str2date(strtime).getTime()/1000;
+
+    g_starttime = g_starttime - g_xcoor_seconds;
+    if(g_starttime % 60 > 0)
+    {
+        g_starttime = (parseInt(g_starttime / 60) + 1) * 60;
+    }
+
+    callServer();
+}
+
+function querycurrentdata()
+{
+    currtime=new Date();
+    document.getElementById("select_start_time").value=date2str(currtime);
+    querydata();
+}
+
+function num2str(va)
+{
+   if(va<10)
+   {
+       return "0"+String(va);
+   }
+   else
+   {
+       return String(va);
+   }
+}
+
+function date2str(dt)
+{
+    var year=dt.getYear();
+    var month=dt.getMonth()+1;
+    var mydate=dt.getDate();
+    var hour=dt.getHours();
+    var minute=dt.getMinutes();
+    var second=dt.getSeconds();
+    if(year<1900)
+    {
+        year=year+1900;
+    }
+    return String(year)+"-"+num2str(month)+"-"+num2str(mydate)+" "+ num2str(hour)+":"+num2str(minute)+":"+num2str(second);
+}
+
+function str2date(strdt)
+{
+    var year=parseInt(strdt.substr(0,4),10);
+    var month=parseInt(strdt.substr(5,2),10);
+    var day=parseInt(strdt.substr(8,2),10);
+    var hour=parseInt(strdt.substr(11,2),10);
+    var minute=parseInt(strdt.substr(14,2),10);
+    var second=parseInt(strdt.substr(17,2),10);
+
+    return new Date(year,month-1,day,hour,minute,second);
+}
+
+
+function showpretime()
+{
+    var obj=document.getElementById("select_start_time");
+    var strtime=obj.value;
+    var dt=str2date(strtime);
+    dt.setTime(dt.getTime() - 60000);
+    obj.value=date2str(dt);
+    querydata();
+}
+function shownexttime()
+{
+    var obj=document.getElementById("select_start_time");
+    var strtime=obj.value;
+    var dt=str2date(strtime);
+    dt.setTime(dt.getTime() + 60000);
+    obj.value=date2str(dt);
+    querydata();
+}
+
+
+function stats_checkbox_click()
+{
+    callServer();
+}
+
+function RetrieveDBList()
+{
+    // Get the city and state from the web form
+    // Build the URL to connect to
+    var url;
+    var content;
+	url = "./";
+	//url = window.location.pathname;
+       //alert(window.location.pathname);
+	content="get_fine_grained_dblist";
+	/*
+    // Open a connection to the server
+    tangxmlHttp.open("GET", url, true);
+    // Setup a function for the server to run when it's done
+    tangxmlHttp.onreadystatechange = ReceiveData;
+    // Send the request
+    tangxmlHttp.send(null);
+	*/
+    tangxmlHttp.open("POST", url, true);
+    tangxmlHttp.onreadystatechange = ReceiveData;
+    tangxmlHttp.setRequestHeader("Content-Length",content.length);
+    tangxmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    tangxmlHttp.send(content);
+	
+}
+
+function ReceiveData()
+{
+    var cell;
+    var i;
+    var index;
+    var time_value;
+    var max_time_value;
+    // alert("g_initfinished=" + g_initfinished);
+    if (tangxmlHttp.readyState == 4)
+    {
+        if (tangxmlHttp.status != 200) // call server error
+        {
+            // alert(tangxmlHttp.responseText);
+            return ;
+        }
+
+        httpRes = processHttpResponse(tangxmlHttp.responseText)
+        if (httpRes.errCode!=0) //失败
+        {
+            return;
+        }
+
+        if(g_initfinished == 0)
+        {
+            SetDBList(httpRes.resArray);
+            g_initfinished = 1;
+            querycurrentdata();
+        }
+        else
+        {
+            updateMyPage();
+        }
+    }
+}
+function SetDBList(lineArray)
+{
+    max_time_value = 0;
+    for(i = 0; i < lineArray.length; i ++ )
+    {
+        cell = lineArray[i].split("\t");
+        droplist_db.options[droplist_db.length] = new Option(cell[1], cell[0]);
+    }
+}
+
+function array_max(myarray)
+{
+    var maxv;
+	if(myarray.length<1) 
+	{
+	    return 0;
+	}
+	
+	maxv=myarray[0];
+	for(i=1;i<myarray.length;i++)
+	{
+	    if(myarray[i]>maxv)
+		{
+		    maxv=myarray[i];
+		}
+	}
+    return maxv;
+}
+
+function array_min(myarray)
+{
+    var minv;
+	if(myarray.length<1) 
+	{
+	    return 0;
+	}
+	
+	minv=myarray[0];
+	for(i=1;i<myarray.length;i++)
+	{
+	    if(myarray[i]<minv)
+		{
+		    minv=myarray[i];
+		}
+	}
+    return minv;
+}
+
+
+function callServer()
+{
+    var url;
+    var i;
+    var obj;
+	var content;
+
+    obj = document.getElementsByName("stats_checkbox");
+    url = "./";
+	content="get_fine_grained_stats&"+ document.getElementById("droplist_db").value;
+    content=content+"&" + g_starttime;
+    for (i = 0; i < obj.length; i ++ )
+    {
+        if(obj[i].checked)
+        {
+			if(obj[i].value=='db_file_sequential_read')
+			{
+			    content = content + '&' + 'db_file_sequential_read_total_waits';
+			    content = content + '&' + 'db_file_sequential_read_time_waited';
+			}
+			else if(obj[i].value=='db_file_scattered_read')
+			{
+			    content = content + '&' + 'db_file_scattered_read_total_waits';
+			    content = content + '&' + 'db_file_scattered_read_time_waited';
+			}
+			else if(obj[i].value=='log_file_sync')
+			{
+			    content = content + '&' + 'log_file_sync_total_waits';
+			    content = content + '&' + 'log_file_sync_time_waited';
+			}
+			else if(obj[i].value=='log_file_parallel_write')
+			{
+			    content = content + '&' + 'log_file_parallel_write_total_waits';
+			    content = content + '&' + 'log_file_parallel_write_time_waited';
+			}
+		    else
+            {
+                content = content + '&' + obj[i].value;
+			}
+        }
+    }
+	
+    /*
+	// Open a connection to the server
+    tangxmlHttp.open("GET", url, true);
+    // Setup a function for the server to run when it's done
+    tangxmlHttp.onreadystatechange = ReceiveData;
+    // Send the request
+    tangxmlHttp.send(null);
+	*/
+	
+	tangxmlHttp.open("POST", url, true);
+    tangxmlHttp.onreadystatechange = ReceiveData;
+    tangxmlHttp.setRequestHeader("Content-Length",content.length);
+    tangxmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    tangxmlHttp.send(content);
+}
+
+function updateMyPage()
+{
+    var cell;
+    var i;
+	var j;
+    var index;
+    var time_value;
+    var max_time_value;
+    var response = unescape(tangxmlHttp.responseText);
+    var linearray = response.split("\n");
+	
+	//????????4?????
+	var data_time_series=new Array();
+	var data_value_series=new Array();
+	
+	//???y1?Д???????
+	var y1_time_series=new Array();
+	var y1_value_series=new Array();
+	
+	//???y2?Д???????
+	var y2_time_series=new Array();
+	var y2_value_series=new Array();
+	
+	for(i=0;i<g_data_stats_name.length;i++)
+	{
+	    data_time_series[i]=new Array();
+	    data_value_series[i]=new Array();		
+	}
+
+	for(i=0;i<g_y1_stats_name.length;i++)
+	{
+	    y1_time_series[i]=new Array();
+	    y1_value_series[i]=new Array();
+	}
+	
+	for(i=0;i<g_y2_stats_name.length;i++)
+	{
+	    y2_time_series[i]=new Array();
+	    y2_value_series[i]=new Array();
+	}
+	
+	
+    // alert(tangxmlHttp.responseText);
+	
+	//?ё??????data_time_series?data_value_series?c
+    max_time_value = 0;
+	for(i = 0; i < linearray.length - 1; i ++ )
+    {
+        if(linearray[i].length > 3)
+        {
+            cell = linearray[i].split("\t");
+            index = g_data_index[cell[0]];
+            time_value = parseFloat(cell[1]);
+
+			if(time_value>g_starttime + g_xcoor_seconds)
+            {
+                continue;
+            }
+
+            if(time_value > max_time_value)
+            {
+                max_time_value = time_value;
+            }
+            data_time_series[index].push(time_value);
+            data_value_series[index].push(parseFloat(cell[2]));
+        }
+    }
+	
+	for(i=0;i<3;i++) 
+	{
+	    for(j=0;j<data_time_series[i].length;j++)
+		{	
+	        y1_time_series[i][j]=data_time_series[i][j];
+	        y1_value_series[i][j]=data_value_series[i][j];
+		}
+	}
+	
+	for(i=3;i<20;i++) 
+	{
+	    for(j=0;j<data_time_series[i].length -1;j++)
+		{
+		    y2_time_series[i-3][j]=data_time_series[i][j];
+		    y2_value_series[i-3][j]=(data_value_series[i][j+1] - data_value_series[i][j])/(data_time_series[i][j+1] - data_time_series[i][j]);		
+		}
+	}
+	
+	//db_file_sequential_read
+	for(j=0;j<data_time_series[20].length -1;j++)
+	{
+		y2_time_series[20-3][j]=data_time_series[20][j];
+		if(data_value_series[20][j+1] - data_value_series[20][j]==0)
+		{
+		    y2_value_series[20-3][j]=0;
+		}
+		else
+		{
+		    y2_value_series[20-3][j]= 10*(data_value_series[21][j+1] - data_value_series[21][j])/(data_value_series[20][j+1] - data_value_series[20][j]);
+		}	
+	}
+	
+	//db_file_scatter_read
+	for(j=0;j<data_time_series[22].length -1;j++)
+	{
+		y2_time_series[21-3][j]=data_time_series[22][j];
+		if(data_value_series[22][j+1] - data_value_series[22][j]==0)
+		{
+		    y2_value_series[21-3][j]=0;
+		}
+		else
+		{
+		    y2_value_series[21-3][j]= 10*(data_value_series[23][j+1] - data_value_series[23][j])/(data_value_series[22][j+1] - data_value_series[22][j]);
+		}
+	}
+
+	//log_file_sync
+	for(j=0;j<data_time_series[24].length -1;j++)
+	{
+		y2_time_series[22-3][j]=data_time_series[24][j];
+		if(data_value_series[24][j+1] - data_value_series[24][j]==0)
+		{
+		    y2_value_series[22-3][j]=0;
+		}
+		else
+		{
+		    y2_value_series[22-3][j]= 10*(data_value_series[25][j+1] - data_value_series[25][j])/(data_value_series[24][j+1] - data_value_series[24][j]);		
+		}
+	}
+	
+	//log_file_parallel_write
+	//(curr_time_waited - pre_time_waited)/(curr_total_waits - pre_total_waits)
+	for(j=0;j<data_time_series[26].length -1;j++)
+	{
+		y2_time_series[23-3][j]=data_time_series[26][j];
+		if(data_value_series[26][j+1] - data_value_series[26][j]==0)
+		{
+		    y2_value_series[23-3][j]=0;
+		}
+		else
+		{
+		    y2_value_series[23-3][j]= 10*(data_value_series[27][j+1] - data_value_series[27][j])/(data_value_series[26][j+1] - data_value_series[26][j]);		
+		}
+	}
+	var max_y2coor;
+    if(cbx_auto_maxy.checked) 
+    {
+        var max_v = 1;
+		var currvalue;
+        for(i = 0; i < y2_value_series.length; i ++ )
+        {
+			currvalue=array_max(y2_value_series[i]);
+			if(currvalue>max_v)
+			{
+			    max_v=currvalue;
+			}
+        }
+
+		var pow10unit = Math.pow(10,parseInt(Math.log(max_v)/Math.log(10)));
+		max_y2coor=parseInt(Math.ceil(max_v/pow10unit)*pow10unit);
+		//alert("max_v="+max_v+",max_y2coor="+max_y2coor+",pow10unit="+pow10unit);
+		if(max_y2coor<1)
+		{
+		    max_y2coor=1;
+		}
+    }
+    else
+    {
+        max_y2coor=parseInt(document.getElementById("max_y").value);
+    }
+	
+	
+    Draw_ChartData(jg,
+	               mychart,
+	               g_starttime,
+	               y1_time_series,
+				   y1_value_series,
+				   g_y1_stats_color,
+				   y2_time_series,
+				   y2_value_series,
+				   max_y2coor,
+				   g_y2_stats_color
+				   );
+				   
+}
+
+function Draw_ChartData(
+   chart,
+   divobj,
+   starttime,
+   timeseries1,
+   valueseries1,
+   y1color,
+   timeseries2,
+   valueseries2,
+   max_y2coor,
+   y2color)
+{
+	var chart_width = parseInt(divobj.style.width.substring(0, divobj.style.width.length - 2));
+    var chart_height = parseInt(divobj.style.height.substring(0, divobj.style.height.length - 2));
+    var chart_marge = 60;
+    var chart_asidelen = 100;
+	
+    var i;
+    var j;
+    var index;
+    var xtime;
+    var yvalue;
+    var yunit;
+    var y2unit;
+    var daysec;
+    var xcoorlen;
+    var ycoorlen;
+    var x0coor;
+    var y0coor;
+    var endtime;
+    var dt;
+    var curmin;
+    var curhour;
+    var strhour;
+    var strmin;
+    var totalmin;
+    var max_yv;
+    var max_ycoor;
+    var max_y2coor_with_unit;
+    var xp = new Array();
+    var yp = new Array();
+    var currval;
+	
+
+    dt = new Date();
+    dt.setTime((starttime + 60) * 1000);
+    totalmin = 10;
+    curmin = dt.getMinutes();
+    curhour = dt.getHours();
+	
+    xcoorlen = chart_width - chart_marge * 2 - chart_asidelen;
+    ycoorlen = chart_height - chart_marge * 2;
+    x0coor = chart_marge;
+    y0coor = chart_height - chart_marge;
+    arrowlen = 20;
+    //if (window.event) event.cancelBubble = true;
+    chart.clear();
+    chart.setPrintable(true);
+    chart.setFont("??", "22", Font.BOLD);
+    var droplist_db=document.getElementById("droplist_db");
+    
+    chart.drawString(droplist_db.options[droplist_db.selectedIndex].text, chart_width / 3, 10);
+    chart.setFont("Arial", "12", Font.PLAIN);
+
+    var zoneoff = ((new Date()).getTimezoneOffset()) / 60;
+    chart.setColor("#000000");
+    chart.setStroke(1);
+    // draw x and y coordinate line
+    chart.drawLine(x0coor, y0coor, x0coor + xcoorlen, y0coor);
+    chart.drawLine(x0coor, y0coor, x0coor, y0coor - ycoorlen - arrowlen);
+    chart.drawLine(x0coor + xcoorlen, y0coor, x0coor + xcoorlen, y0coor - ycoorlen - arrowlen);
+    // draw y1 coordinate arraw
+    chart.drawLine(x0coor, y0coor - ycoorlen - arrowlen, x0coor - 3, y0coor - ycoorlen - arrowlen + 10);
+    chart.drawLine(x0coor, y0coor - ycoorlen - arrowlen, x0coor + 3, y0coor - ycoorlen - arrowlen + 10);
+    // draw y2 coordinate arraw
+    chart.drawLine(x0coor + xcoorlen, y0coor - ycoorlen - arrowlen, x0coor + xcoorlen - 3, y0coor - ycoorlen - arrowlen + 10);
+    chart.drawLine(x0coor + xcoorlen, y0coor - ycoorlen - arrowlen, x0coor + xcoorlen + 3, y0coor - ycoorlen - arrowlen + 10);
+    // draw x coordinate scale
+    for(i = 0; i < totalmin * 6; i ++ )
+    {
+        if((i + 1) % 6 == 0)
+        {
+            chart.drawLine(x0coor + (i + 1) * xcoorlen / (totalmin * 6),
+            y0coor - 6,
+            x0coor + (i + 1) * xcoorlen / (totalmin * 6),
+            y0coor + 6);
+            if(curhour < 10)
+            {
+                strhour = '0' + curhour;
+            }
+            else
+            {
+                strhour = String(curhour);
+            }
+            if(curmin < 10)
+            {
+                strmin = '0' + curmin;
+            }
+            else
+            {
+                strmin = String(curmin);
+            }
+            chart.drawString(strhour + ':' + strmin,
+            x0coor + (i + 1) * xcoorlen / (totalmin * 6) - 18,
+            y0coor + 6 );
+            curmin = curmin + 1;
+            if(curmin > 59)
+            {
+                curmin = 0;
+                curhour = curhour + 1;
+                if(curhour > 23)
+                {
+                    curhour = 0;
+                }
+            }
+        }
+        else
+        {
+            chart.drawLine(x0coor + (i + 1) * xcoorlen / (totalmin * 6),
+            y0coor - 2,
+            x0coor + (i + 1) * xcoorlen / (totalmin * 6),
+            y0coor + 2);
+        }
+    }
+ 
+    if(max_y2coor >= 10000000)
+    {
+        y2unit = 'M';
+        max_y2coor_with_unit = max_y2coor / 1000000;
+    }
+    else if(max_y2coor >= 10000)
+    {
+        y2unit = 'K';
+        max_y2coor_with_unit = max_y2coor / 1000;
+    }
+    else
+    {
+        max_y2coor_with_unit = max_y2coor;
+        y2unit = '';
+    }
+    //alert("max_yv=" + max_yv + ",max_y2coor=" + max_y2coor + ",max_y2coor_with_unit=" + max_y2coor_with_unit);
+    for(i = 0; i < 10; i ++ )
+    {
+        // draw y1 coordinate scale
+        chart.drawLine(x0coor - 6,
+        y0coor - (i + 1) * ycoorlen / 10,
+        x0coor + 6,
+        y0coor - (i + 1) * ycoorlen / 10);
+        chart.drawString( String((i + 1) * 10) + "%",
+        x0coor - 50,
+        y0coor - (i + 1) * ycoorlen / 10 - 10);
+        // draw y2 coordinate scale
+        chart.drawLine(x0coor + xcoorlen - 6,
+        y0coor - (i + 1) * ycoorlen / 10,
+        x0coor + xcoorlen + 6,
+        y0coor - (i + 1) * ycoorlen / 10);
+        chart.drawString( String(max_y2coor_with_unit * (i + 1) / 10) + y2unit,
+        x0coor + xcoorlen + 10,
+        y0coor - (i + 1) * ycoorlen / 10 - 10);
+    }
+
+    chart.setStroke(1);
+	var k=0;
+	for(i = 0; i <timeseries1.length;i++)
+	{
+		chart.setColor(y1color[i]);
+        xp.length = 0;
+        yp.length = 0;
+        max_ycoor = 100;
+        for(j = 0; j < timeseries1[i].length;j ++ )
+        {
+            xp.push(x0coor + xcoorlen * (timeseries1[i][j] - starttime) / g_xcoor_seconds);
+            yp.push(y0coor - ycoorlen * (valueseries1[i][j] / max_ycoor));
+        }
+        if(xp.length > 0)
+        {
+            chart.drawPolyline(xp, yp);
+            chart.drawLine(x0coor + xcoorlen + 44,
+            y0coor - ycoorlen + 20 + k * 20,
+            x0coor + xcoorlen + 64,
+            y0coor - ycoorlen + 20 + k * 20);
+            chart.drawString(g_y1_stats_name[i],
+            x0coor + xcoorlen + 64 + 4,
+            y0coor - ycoorlen + 20 + k * 20 - 10);
+			k++;
+        }
+	}
+
+    for(i = 0; i < timeseries2.length; i ++ )
+    {
+        //alert("index="+index);
+        chart.setColor(y2color[i]);
+        xp.length = 0;
+        yp.length = 0;
+		
+        for(j = 0; j < valueseries2[i].length;j ++ )
+        {
+            xp.push(x0coor + xcoorlen * (timeseries2[i][j] - starttime) / g_xcoor_seconds);
+            yp.push(y0coor - ycoorlen * (valueseries2[i][j] / max_y2coor));
+			//alert("time="+timeseries2[i][j]+",value="+valueseries2[i][j]);
+        }
+        if(xp.length > 0)
+        {					
+			chart.drawPolyline(xp, yp);
+            // draw line aside
+            chart.drawLine(x0coor + xcoorlen + 44,
+            y0coor - ycoorlen + 20 + k * 20,
+            x0coor + xcoorlen + 64,
+            y0coor - ycoorlen + 20 + k * 20);
+            chart.drawString(g_y2_stats_name[i],
+            x0coor + xcoorlen + 64 + 4,
+            y0coor - ycoorlen + 20 + k * 20 - 10);
+			k++;
+        }
+    }
+    chart.setColor("#000000");
+    // alert("xv.length=" + xv.length + ",xv[i-2]=" + xv[i - 2] + ",starttime=" + starttime);
+    chart.paint();
+}
+</script>
+  </body>
+</html>
+

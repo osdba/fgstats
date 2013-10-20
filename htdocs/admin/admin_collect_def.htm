@@ -1,0 +1,777 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML lang=zh-CN xmlns="http://www.w3.org/1999/xhtml">
+  <HEAD>
+    <META http-equiv=Content-Type content=text/html;charset=UTF-8>
+    <META http-equiv=Content-Language content=zh-CN>
+    <LINK href="styles/css.css" type=text/css rel=StyleSheet>
+    <LINK href="styles/navg.css" type=text/css rel=StyleSheet>
+    <STYLE TYPE="text/css">
+    <!--
+	
+  #div_freeze_col_container
+  {
+    width:100px;
+	height:442px!important;
+	height:444px;
+	background:buttonface;
+	float:left;
+	border-bottom:1px solid #000;
+	border-left:1px solid #000
+  } 
+  #span_freeze_col
+  {
+	width:99px;
+    display:block;
+	text-align:center;
+	line-height:22px;
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;	
+	border-right:1px solid #000;	
+	height:22px!important;
+	height:22px
+  }
+  
+  #div_freeze_col_yscroll
+  {
+    height:400px!important;
+	height:404px; 
+	overflow-y:hidden;
+	overflow-x:hidden;
+  }
+
+  #table_freeze_col
+  {
+    border-right:1px solid #000;
+    width:100%;
+    margin-bottom:5px
+	table-layout: fixed;
+  }
+  
+  #table_freeze_col td
+  {
+    border-bottom:1px solid #000;
+	width:30px;
+	height:25px;
+	text-align:center
+    table-layout: fixed;
+	WORD-BREAK: keep-all;
+	word-wrap: normal;
+	overflow: hidden;  
+  } 
+  
+  #span_title_margin
+  {
+    display:block;
+	border:1px solid #000;
+	width:28px;
+	height:20px;
+	float:left;
+  }
+
+  #div_content_container
+  {
+    width:670px;
+	height:auto;
+	float:left;
+	border-right:1px solid #000;
+	border-top:1px solid #000
+  } 
+  
+  #div_title_xscroll
+  {
+    width:100%;
+	overflow-x:hidden;
+    overflow-y:hidden;
+	border:0px;
+  }
+
+  #table_title_container
+  {
+    table-layout: fixed;
+	border:0px;
+	float:left;
+  }
+    
+  #table_title
+  {
+    table-layout: fixed;
+	background:buttonface;
+	float:left;
+  }
+  
+  #table_title td
+  {
+    table-layout: fixed;
+    border-right:1px solid #000;
+	border-bottom:1px solid #000;
+	height:22px;
+	text-align:center;
+	overflow:hidden;
+  }
+  
+  #div_content_scroll
+  {
+    width:100%;
+	height:420px;
+	border-bottom:1px solid #000;
+	border-right:1px solid #000;
+	background:#fff;
+	overflow:scroll;
+  }
+  
+  #table_content
+  {
+      table-layout: fixed;
+	  //WORD-BREAK: break-all;	  
+  }
+  #table_content td
+  {
+    height:25px;
+    border-bottom:1px solid #000;
+	border-right:1px solid #000;
+	text-align:center
+  }
+  
+    -->
+    </STYLE>
+<script type="text/javascript">
+<!--
+//
+// patch of innerText for firefox
+//
+(function (bool) {
+    function setInnerText(o, s) {
+        while (o.childNodes.length != 0) {
+            o.removeChild(o.childNodes[0]);
+        }
+        o.appendChild(document.createTextNode(s));
+    }
+    function getInnerText(o) {
+        var sRet = "";
+        for (var i = 0; i < o.childNodes.length; i ++) {
+            if (o.childNodes[i].childNodes.length != 0) {
+                sRet += getInnerText(o.childNodes[i]);
+            }
+            if (o.childNodes[i].nodeValue) {
+                if (o.currentStyle.display == "block") {
+                    sRet += o.childNodes[i].nodeValue + "\n";
+                } else {
+                    sRet += o.childNodes[i].nodeValue;
+                }
+            }
+        }
+        return sRet;
+    }
+    if (bool) {
+        HTMLElement.prototype.__defineGetter__("currentStyle", function () {
+            return this.ownerDocument.defaultView.getComputedStyle(this, null);
+        });
+        HTMLElement.prototype.__defineGetter__("innerText", function () {
+            return getInnerText(this);
+        })
+        HTMLElement.prototype.__defineSetter__("innerText", function(s) {
+            setInnerText(this, s);
+        })
+    }
+})(/Firefox/.test(window.navigator.userAgent));
+
+
+  function sync_scroll()
+  { 
+     var a=document.getElementById("div_content_scroll").scrollTop; 
+     var b=document.getElementById("div_content_scroll").scrollLeft; 
+      document.getElementById("div_freeze_col_yscroll").scrollTop=a; 
+      document.getElementById("div_title_xscroll").scrollLeft=b; 
+  }
+//-->
+</script>
+  </HEAD>
+  <BODY >
+    <center>
+      <DIV id=header>
+      </DIV>
+      <DIV class=navg >
+        <DIV class=mainNavg id=item03>
+          <UL>
+            <LI id=item01Navg>
+              <A href="admin_db_def.htm">监控主机配置</A>
+            </LI>
+            <LI id=item02Navg>
+              <A href="admin_dbstats_def.htm">监控方法配置</A>
+            </LI>
+            <LI id=item03Navg>
+              <A href="#">监控项目配置</A>
+            </LI>
+          </UL>
+        </DIV>
+      </DIV>
+    </center>
+    <center>
+    <DIV id=mainContent >
+	  <div id="div_freeze_col_container">
+        <span id="span_freeze_col">主机名称</span> 
+          <div id="div_freeze_col_yscroll"> 
+            <table id="table_freeze_col" cellpadding="0" cellspacing="0" border="0" > 
+            <tbody> 
+                <tr> 
+                <td></td> 
+                </tr> 
+            </tbody> 
+            </table> 
+          </div> 
+      </div> 
+      <!--table栏目--> 
+      <div id="div_content_container"> 
+        <div id="div_title_xscroll" >
+          <table id="table_title_container" cellpadding="0" cellspacing="0" border="0">
+		  <tr>
+		    <td>
+              <table id="table_title" cellpadding="0" cellspacing="0" border="0"> 
+                <tr> 
+                </tr> 
+              </table>
+		    </td>
+		    <td >
+		      <span id="span_title_margin">&nbsp;</span>
+		    </td>
+          </tr>
+          </table>
+         </div> 
+        <div id="div_content_scroll" onscroll="sync_scroll()"> 
+        <table id="table_content" cellpadding="0" cellspacing="0" border="0"> 
+            <tr>  
+            </tr> 
+        </table> 
+        </div>
+      </div> 
+    </DIV>
+    </center>
+<script type="text/javascript">
+/* Create a new XMLHttpRequest object to talk to the Web server */
+var xmlhttp;
+try
+{
+    // Mozilla / Safari / IE7
+    xmlhttp = new XMLHttpRequest();
+}
+catch(e)
+{
+    // IE
+    var XMLHTTP_IDS = new Array('MSXML2.XMLHTTP.5.0',
+                                'MSXML2.XMLHTTP.4.0',
+                                'MSXML2.XMLHTTP.3.0',
+                                'MSXML2.XMLHTTP',
+                                'Microsoft.XMLHTTP');
+    var success = false;
+    for (var i=0;i < XMLHTTP_IDS.length && !success; i++)
+    {
+      try
+      {
+          //alert(XMLHTTP_IDS[i]);
+          xmlhttp = new ActiveXObject(XMLHTTP_IDS[i]);
+           success = true;
+      }catch (e) {}
+    }
+    if (!success)
+    {
+      //throw new Error('tangUnable to create XMLHttpRequest.');
+    }
+}
+if(!xmlhttp)
+{
+    alert("发生错误，无法创建AJAX对象!");
+    //location="nonAjax.htm"
+}
+
+var hostslist=new Array();
+var dbstatslist=new Array();
+var g_collectlist=new Array();
+
+QueryData();
+
+function processHttpResponse(response)
+{
+
+    dataArray = response.split("\n");
+    if (dataArray.length <=0)
+    {
+        alert('异常，http没有返回任何数据!!!');
+        return {
+            errCode: -1,
+            errMsg: '异常，http没有返回任何数据!!!',
+            resArray: []
+        };
+    }
+    errInfo = dataArray.pop().split('\t');
+    if (errInfo.length <2)
+    {
+        alert('返回无效的数据: '+unescape(errInfo));
+        return {
+            errCode: -1,
+            errMsg: '返回无效的数据: '+unescape(errInfo),
+            resArray: []
+        };
+    }
+    if (errInfo[0] != '0')
+    {
+        alert('errCode='+errInfo[0]+':'+unescape(errInfo[1]));
+        if(errInfo[0]=='9')
+		{
+            xmlhttp=null;
+			window.location.href="adminlogin.htm";
+        }
+        
+        return {
+            errCode: parseInt(errInfo[0]),
+            errMsg: unescape(errInfo[1]),
+            resArray: []
+        };
+    }
+    return {
+        errCode: 0,
+        errMsg: '',
+        resArray:dataArray
+    };
+}
+
+
+function QueryData()
+{
+    var url;
+    var content;
+	OpenMessage("正在提取数据，请稍候...");
+    url = "./";
+    content = "gethostlist";
+    xmlhttp.open("POST", url, true);
+    xmlhttp.onreadystatechange = HandleQueryData1;
+    xmlhttp.setRequestHeader("Content-Length",content.length);
+    xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    xmlhttp.send(content);
+}
+
+function HandleQueryData1()
+{
+    var cell;
+    var i;
+    var index;
+    var time_value;
+    var max_time_value;
+    // alert("g_initfinished=" + g_initfinished);
+    if (xmlhttp.readyState == 4)
+    {
+        if (xmlhttp.status != 200) // call server error
+        {
+            CloseMessage();
+            return ;
+        }
+
+        httpRes = processHttpResponse(xmlhttp.responseText)
+        if (httpRes.errCode!=0) //失败
+        {
+            CloseMessage();
+            return;
+        }
+        
+		var linearray = httpRes.resArray
+		var valueoriarray;
+		for(i=0; i<linearray.length; i++)
+        {
+		    valueoriarray=linearray[i].split("\t");
+			valuearray=new Array();
+            for(j=0;j<valueoriarray.length;j++)
+            {
+                valuearray[j]=unescape(valueoriarray[j]);
+            }
+			hostslist[i]=valuearray;
+		}
+		
+		var url;
+        var content;
+        url = "./";
+        content = "getdbstatslist";
+        xmlhttp.open("POST", url, true);
+        xmlhttp.onreadystatechange = HandleQueryData2;
+        xmlhttp.setRequestHeader("Content-Length",content.length);
+        xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xmlhttp.send(content);
+    }
+}
+
+function HandleQueryData2()
+{
+    var cell;
+    var i;
+    var index;
+    var time_value;
+    var max_time_value;
+    // alert("g_initfinished=" + g_initfinished);
+    if (xmlhttp.readyState == 4)
+    {
+        if (xmlhttp.status != 200) // call server error
+        {
+            CloseMessage();
+            return ;
+        }
+        httpRes = processHttpResponse(xmlhttp.responseText)
+        if (httpRes.errCode!=0) //失败
+        {
+            CloseMessage();
+            return;
+        }
+        
+		var linearray = httpRes.resArray
+        var valueoriarray;
+		for(i=0; i<linearray.length; i++)
+        {
+		    valueoriarray=linearray[i].split("\t");
+			valuearray=new Array();
+            for(j=0;j<valueoriarray.length;j++)
+            {
+                valuearray[j]=unescape(valueoriarray[j]);
+            }
+			dbstatslist[i]=valuearray;
+		}
+		
+		var url;
+        var content;
+        url = "./";
+        content = "getcollectdef";
+        xmlhttp.open("POST", url, true);
+        xmlhttp.onreadystatechange = HandleQueryData3;
+        xmlhttp.setRequestHeader("Content-Length",content.length);
+        xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xmlhttp.send(content);
+    }
+}
+
+function HandleQueryData3()
+{
+    var cell;
+    var index;
+    var time_value;
+    var max_time_value;
+    // alert("g_initfinished=" + g_initfinished);
+    if (xmlhttp.readyState == 4)
+    {
+        if (xmlhttp.status != 200) // call server error
+        {
+            CloseMessage();
+            return ;
+        }
+        httpRes = processHttpResponse(xmlhttp.responseText)
+        if (httpRes.errCode!=0) //失败
+        {
+            CloseMessage();
+            return;
+        }
+        
+		var linearray = httpRes.resArray
+		var valueoriarray;
+		for(var i=0,len=linearray.length; i<len; i++)
+        {
+		    valueoriarray=linearray[i].split("\t");
+			valuearray=new Array();
+            for(var j=0,valuecnt=valueoriarray.length;j<valuecnt;j++)
+            {
+                valuearray[j]=unescape(valueoriarray[j]);
+            }
+			g_collectlist[i]=valuearray;
+		}
+		SetTableContent();
+		CloseMessage();
+    }
+}
+
+
+function SetTableContent()
+{
+    try
+    {
+        var row;
+		var col;
+	    var colheight=26;
+		var colwidth=160;
+		var titleheight=20;
+		
+		var cbxid;
+		var currcbx;
+		
+        var rowhostarray=new Array();
+        var colstatarray=new Array();
+
+		//alert(titletable.width);
+        var st1=new Date().getTime();
+
+		
+		var table_freeze_col=document.getElementById("table_freeze_col");
+		for(var i=table_freeze_col.rows.length-1;i>=0;i--)
+        {
+            table_freeze_col.deleteRow(i);
+		}
+		
+		for(var i=0,len=hostslist.length;i<len;i++)
+		{         
+		    rowhostarray[hostslist[i][0]]=i;
+            row  = table_freeze_col.insertRow(table_freeze_col.rows.length);
+		    col  = row.insertCell(0);
+            col.innerHTML  =  "<NOBR>"+hostslist[i][1]+"</NOBR>";
+            //col.width   = colwidth;
+            //col.height  = titleheight;
+        }
+		
+		var div_freeze_col_yscroll=document.getElementById("div_freeze_col_yscroll");
+		div_freeze_col_yscroll.height=hostslist.length*25;
+		
+		var table_title=document.getElementById("table_title");
+		for(var i=table_title.rows.length-1;i>=0;i--)
+        {
+            table_title.deleteRow(i);
+		}
+
+		var table_title_container=document.getElementById("table_title_container");
+		table_title.width=colwidth*(dbstatslist.length+1);
+		table_title_container.width=table_title.width+24;
+
+		row   =  table_title.insertRow(table_title.rows.length);
+		for(var i=0,len=dbstatslist.length;i<len;i++)
+		{         
+			colstatarray[dbstatslist[i][0]]=i;
+            col  = row.insertCell(i);
+            col.innerText  =  dbstatslist[i][1];
+            col.width   = colwidth;
+            //col.height  = titleheight;
+            //alert("colwidth="+colwidth+",len="+len+",text="+col.innerText);
+        }
+        //return ;
+
+		
+        var checkedlist='';
+        for(var x=0,y=0,n=0,len=g_collectlist.length;n<len;n++)
+		{
+             //alert("hostid="+g_collectlist[n][0]+",statid="+g_collectlist[n][1]);
+             y=rowhostarray[g_collectlist[n][0]];
+             x=colstatarray[g_collectlist[n][1]];
+             //alert("y="+y+",x="+x);
+             cbxid='cbx'+y+'_'+x;
+             checkedlist+=cbxid+',';
+	         //var cbx = document.getElementById(cbxid);
+             //if(cbx) cbx.checked=true;
+        }
+		//alert(checkedlist);
+		
+		var table_content=document.getElementById("table_content");
+		for(var i=table_content.rows.length-1;i>=0;i--)
+        {
+            table_content.deleteRow(i);
+		}
+		table_content.width=colwidth*(dbstatslist.length+1);
+
+        var st2=new Date().getTime();		
+		
+        var offsetcnt=0;
+		var offset=0;
+		var n=0;
+        var tabhtml='';
+
+		for(var i=0,hostcnt=hostslist.length;i<hostcnt;i++)
+		{         
+		    //row  = table_content.insertRow(table_content.rows.length);
+			//row = document.createElement("TR");
+            tabhtml+="<TR>"
+            offsetcnt=0;
+		    for(var j=0,dbstatscnt=dbstatslist.length;j<dbstatscnt;j++)
+			{
+			    tabhtml+='<TD width="'+colwidth+'">'
+                //col  = row.insertCell(j);
+				//col.width=colwidth;
+				
+                cbxid='cbx'+i+'_'+j;
+                cbxname='cbx_'+hostslist[i][0]+'_'+dbstatslist[j][0];
+                if(checkedlist.indexOf(cbxid+',') >=0)
+                { 
+                    tabhtml+='<input type="checkbox" id="'+cbxid+'" name="'+cbxname+'"'+'onclick="onclick_checkbox(this);"'+' checked'+'/>';
+				}
+                else
+                {
+                    tabhtml+='<input type="checkbox" id="'+cbxid+'" name="'+cbxname+'" onclick="onclick_checkbox(this);"'+'/>';
+                }
+                tabhtml+='</TD>';
+			}
+            tabhtml+="</TR>";
+            //table_content.appendChild(row);
+        }
+        //alert(tabhtml);
+        table_content.innerHTML=tabhtml;
+
+
+        var st3=new Date().getTime();
+        var time1=st2-st1;
+        var time2=st3-st2;
+        //alert("time1:"+time1+",time2:"+time2);
+
+		//var cc=document.getElementById("cc");
+		//cc.style.width=colwidth*(dbstatslist.length+1)+"px";
+		
+    }
+    catch(e)
+    {
+        alert(e);
+    }
+}
+
+var g_currcbx;
+
+function onclick_checkbox(cbx_current)
+{
+    var url;
+    var content;
+    var cbxname=cbx_current.name;
+	var regx = /^cbx_(\d+)_(\d+)$/;
+    //alert(cbxname);
+    var rs=regx.exec(cbxname);
+    /*
+    if(rs)
+    {
+        alert("rs.length:"+rs.length);
+    }
+    else
+    {
+    	alert("unk");
+    }*/
+
+    var hostid=rs[1];
+    var stat_id=parseInt(rs[2]);
+    
+    
+
+
+	g_currcbx=cbx_current;
+    url = "./";
+	if(cbx_current.checked)
+	{
+        //addcollectdef;
+        //var stat_id=parseInt(cbx_current.stat_id);
+        var interval;
+        if(stat_id<1000)
+        {
+            interval=84600;
+        }
+        else
+        {
+            interval=10;
+        }
+        content = "addcollectdef&"+escape(hostid)+
+                 "&"+stat_id;
+
+	}
+	else
+	{
+        content = "deletecollectdef&"+escape(hostid)+"&"+stat_id;
+	}
+	//alert(content);
+    xmlhttp.open("POST", url, true);
+    xmlhttp.onreadystatechange = HandleSetHostCollect;
+    xmlhttp.setRequestHeader("Content-Length",content.length);
+    xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    xmlhttp.send(content);
+}
+
+function HandleSetHostCollect()
+{
+    var cell;
+    var i;
+    if (xmlhttp.readyState == 4)
+    {
+        if (xmlhttp.status != 200) // call server error
+        {
+            // alert(tangxmlHttp.responseText);
+            return ;
+        }
+        httpRes = processHttpResponse(xmlhttp.responseText)
+        if (httpRes.errCode!=0) //失败
+        {
+            g_currcbx.checked=! g_currcbx.checked;
+            return;
+        }
+    }
+}
+
+
+//弹出提示信息并自动关闭
+function OpenMessage(str) {
+    var msgw,msgh,bordercolor;
+    msgw=350;//提示窗口的宽度
+
+    msgh=80;//提示窗口的高度
+    titleheight=25 //提示窗口标题高度
+    bordercolor="#336699";//提示窗口的边框颜色
+    titlecolor="#99CCFF";//提示窗口的标题颜色
+    var sWidth,sHeight;
+    //获取当前窗口尺寸
+    sWidth = document.body.offsetWidth;
+    sHeight = document.body.scrollHeight;
+    //背景div
+    var bgObj=document.createElement("div");
+    bgObj.setAttribute('id','alertbgDiv');
+    bgObj.style.position="absolute";
+    bgObj.style.top="0";
+    bgObj.style.background="#E8E8E8";
+    bgObj.style.filter="progid:DXImageTransform.Microsoft.Alpha(style=3,opacity=25,finishOpacity=75";
+    bgObj.style.opacity="0.6";
+    bgObj.style.left="0";
+    bgObj.style.width = sWidth + "px";
+    bgObj.style.height = sHeight + "px";
+    bgObj.style.zIndex = "10000";
+    document.body.appendChild(bgObj);
+    //创建提示窗口的div
+    var msgObj = document.createElement("div")
+    msgObj.setAttribute("id","alertmsgDiv");
+    msgObj.setAttribute("align","center");
+    msgObj.style.background="white";
+    msgObj.style.border="1px solid " + bordercolor;
+    msgObj.style.position = "absolute";
+    msgObj.style.left = "50%";
+    msgObj.style.font="12px/1.6em Verdana, Geneva, Arial, Helvetica, sans-serif";
+    //窗口距离左侧和顶端的距离 
+    msgObj.style.marginLeft = "-225px";
+    //窗口被卷去的高+（屏幕可用工作区高/2）-150
+    msgObj.style.top = document.body.scrollTop+(window.screen.availHeight/2)-150 +"px";
+    msgObj.style.width = msgw + "px";
+    msgObj.style.height = msgh + "px";
+    msgObj.style.textAlign = "center";
+    msgObj.style.lineHeight ="25px";
+    msgObj.style.zIndex = "10001";
+    document.body.appendChild(msgObj);
+    //提示信息标题
+    var title=document.createElement("h4");
+    title.setAttribute("id","alertmsgTitle");
+    title.setAttribute("align","left");
+    title.style.margin="0";
+    title.style.padding="3px";
+    title.style.background = bordercolor;
+    title.style.filter="progid:DXImageTransform.Microsoft.Alpha(startX=20, startY=20, finishX=100, finishY=100,style=1,opacity=75,finishOpacity=100);";
+    title.style.opacity="0.75";
+    title.style.border="1px solid " + bordercolor;
+    title.style.height="18px";
+    title.style.font="12px Verdana, Geneva, Arial, Helvetica, sans-serif";
+    title.style.color="white";
+    title.innerHTML="提示信息";
+    document.getElementById("alertmsgDiv").appendChild(title);
+    //提示信息
+    var txt = document.createElement("p");
+    txt.setAttribute("id","msgTxt");
+    txt.style.margin="16px 0";
+    txt.innerHTML = str;
+    document.getElementById("alertmsgDiv").appendChild(txt);
+}
+function CloseMessage() {
+    document.body.removeChild(document.getElementById("alertbgDiv"));
+    document.getElementById("alertmsgDiv").removeChild(document.getElementById("alertmsgTitle"));
+    document.body.removeChild(document.getElementById("alertmsgDiv"));
+}
+
+
+
+</script>
+  </BODY>
+</HTML>

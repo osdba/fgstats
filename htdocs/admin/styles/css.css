@@ -1,0 +1,39 @@
+﻿HTML {
+	FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+BODY {
+	text-align: center;
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	BACKGROUND: #fff;
+	PADDING-BOTTOM: 0px; 
+	MARGIN: 0px auto;
+	PADDING-TOP: 0px
+}
+A {
+	outline: none
+}
+#header {
+	 width: 800px;BACKGROUND:
+	 url(../images/logo.gif);
+	 BORDER-BOTTOM: #8fbaf4 1px solid;
+	 HEIGHT: 30px
+}
+#mainContent {
+    DISPLAY:block;
+	HEIGHT: 540px;
+	WIDTH: 800px;
+	text-align: left;
+	Margin-Right: auto;
+	Margin-Left: auto;
+	clear:both;
+}
+
+#footer {
+	BORDER-TOP: #f2f7fd 1px solid;
+	BACKGROUND: #c3dbf9;
+	HEIGHT: 25px
+}
+FIELDSET {
+	MARGIN: auto; WIDTH: 600px
+}

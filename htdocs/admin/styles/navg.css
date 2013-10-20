@@ -1,0 +1,133 @@
+﻿.navg {
+	width: 800px;
+	BORDER-TOP: #f2f7fd 1px solid;
+	BORDER-BOTTOM: #8fbaf4 1px solid;
+}
+.navg .mainNavg {
+	BACKGROUND: url(../images/navg.gif) repeat-x 50% top; 
+	HEIGHT: 35px;
+	padding-top:0px;
+}
+.navg .mainNavg UL {
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	PADDING-TOP: 0px;
+	LIST-STYLE-TYPE: none
+}
+.navg .mainNavg UL LI {
+	BACKGROUND: url(../images/tab_right.gif) no-repeat right top;
+	FLOAT: left; 
+	MARGIN: 10px 3px;
+	HEIGHT: 25px
+}
+.navg .mainNavg UL LI A {
+	PADDING-RIGHT: 25px;
+	DISPLAY: block;
+	PADDING-LEFT: 25px;
+	FONT-WEIGHT: bold;
+	BACKGROUND: url(../images/tab_left.gif) no-repeat left top;
+	FLOAT: left; 
+	PADDING-BOTTOM: 0px; 
+	COLOR: #fff;
+	LINE-HEIGHT: 24px; 
+	PADDING-TOP: 0px; 
+	HEIGHT: 25px; 
+	TEXT-ALIGN: center; 
+	TEXT-DECORATION: none
+}
+.navg .mainNavg UL LI A:hover {
+	FONT-WEIGHT: bold;
+	COLOR: #0000ff
+}
+
+
+#item01 #item01Navg {
+	BACKGROUND: url(../images/tab_right_on.gif) no-repeat right top; 
+	FLOAT: left; 
+	MARGIN: 10px 3px; 
+	HEIGHT: 25px
+}
+
+#item02 #item02Navg {
+	BACKGROUND: url(../images/tab_right_on.gif) no-repeat right top;
+	FLOAT: left;
+	MARGIN: 10px 3px;
+	HEIGHT: 25px
+}
+#item03 #item03Navg {
+	BACKGROUND: url(../images/tab_right_on.gif) no-repeat right top;
+	FLOAT: left;
+	MARGIN: 10px 3px;
+	HEIGHT: 25px
+}
+
+#item04 #item04Navg {
+	BACKGROUND: url(../images/tab_right_on.gif) no-repeat right top;
+	MARGIN: 10px 3px;
+	HEIGHT: 25px
+}
+#item01 #item01Navg A {
+	PADDING-RIGHT: 25px;
+	DISPLAY: block;
+	PADDING-LEFT: 25px;
+	FONT-WEIGHT: bold;
+	BACKGROUND: url(../images/tab_left_on.gif) no-repeat left top;
+	FLOAT: left;
+	PADDING-BOTTOM: 0px;
+	COLOR: #0000ff;
+	LINE-HEIGHT: 24px;
+	PADDING-TOP: 0px;
+	HEIGHT: 25px;
+	TEXT-ALIGN: center;
+	TEXT-DECORATION: none
+}
+
+#item02 #item02Navg A {
+	PADDING-RIGHT: 25px;
+	DISPLAY: block;
+	PADDING-LEFT: 25px;
+	FONT-WEIGHT: bold;
+	BACKGROUND: url(../images/tab_left_on.gif) no-repeat left top;
+	FLOAT: left;
+	PADDING-BOTTOM: 0px;
+	COLOR: #0000ff;
+	LINE-HEIGHT: 24px;
+	PADDING-TOP: 0px;
+	HEIGHT: 25px;
+	TEXT-ALIGN: center;
+	TEXT-DECORATION: none
+}
+
+#item03 #item03Navg A {
+	PADDING-RIGHT: 25px;
+	DISPLAY: block;
+	PADDING-LEFT: 25px;
+	FONT-WEIGHT: bold;
+	BACKGROUND: url(../images/tab_left_on.gif) no-repeat left top;
+	FLOAT: left;
+	PADDING-BOTTOM: 0px;
+	COLOR: #0000ff;
+	LINE-HEIGHT: 24px;
+	PADDING-TOP: 0px;
+	HEIGHT: 25px;
+	TEXT-ALIGN: center;
+	TEXT-DECORATION: none
+}
+
+#item04 #item04Navg A {
+	PADDING-RIGHT: 25px;
+	DISPLAY: block;
+	PADDING-LEFT: 25px;
+	FONT-WEIGHT: bold;
+	BACKGROUND: url(../images/tab_left_on.gif) no-repeat left top;
+	FLOAT: left;
+	PADDING-BOTTOM: 0px;
+	COLOR: #0000ff;
+	LINE-HEIGHT: 24px;
+	PADDING-TOP: 0px;
+	HEIGHT: 25px;
+	TEXT-ALIGN: center;
+	TEXT-DECORATION: none
+}

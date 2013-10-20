@@ -1,0 +1,834 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0073)http://www.demo2do.com/htmldemo/school/attendance/DailyAttendanceList.htm -->
+<HTML lang=zh-CN xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<META http-equiv=Content-Type content=text/html;charset=UTF-8>
+<META http-equiv=Content-Language content=zh-CN>
+<LINK href="styles/css.css" type=text/css rel=StyleSheet>
+<LINK href="styles/navg.css" type=text/css rel=StyleSheet>
+<META content="MSHTML 6.00.2900.5890" name=GENERATOR>
+    <STYLE TYPE="text/css">
+    <!--
+	#hostlist_title TD
+	{
+		border-top-width: 0px;
+		border-bottom-width: 0px;
+		border-right-width: 0px;
+		border-right-style: solid;
+		border-right-color: #EEEEEE;
+		border-left-width: 1px;
+		border-left-style: solid;
+		border-left-color: #EEEEEE;
+	}
+	.edit_content
+	{
+	    width:160px;
+	}
+
+	.edit_content INPUT
+	{
+	    width:160px;
+	}
+	.edit_caption
+	{
+	    width:80px;
+	}
+	-->
+    </STYLE>
+<script type="text/javascript">
+<!--
+//
+// patch of innerText for firefox
+//
+(function (bool) {
+    function setInnerText(o, s) {
+        while (o.childNodes.length != 0) {
+            o.removeChild(o.childNodes[0]);
+        }
+
+        o.appendChild(document.createTextNode(s));
+    }
+
+    function getInnerText(o) {
+        var sRet = "";
+
+        for (var i = 0; i < o.childNodes.length; i ++) {
+            if (o.childNodes[i].childNodes.length != 0) {
+                sRet += getInnerText(o.childNodes[i]);
+            }
+
+            if (o.childNodes[i].nodeValue) {
+                if (o.currentStyle.display == "block") {
+                    sRet += o.childNodes[i].nodeValue + "\n";
+                } else {
+                    sRet += o.childNodes[i].nodeValue;
+                }
+            }
+        }
+
+        return sRet;
+    }
+
+    if (bool) {
+        HTMLElement.prototype.__defineGetter__("currentStyle", function () {
+            return this.ownerDocument.defaultView.getComputedStyle(this, null);
+        });
+
+        HTMLElement.prototype.__defineGetter__("innerText", function () {
+            return getInnerText(this);
+        })
+
+        HTMLElement.prototype.__defineSetter__("innerText", function(s) {
+            setInnerText(this, s);
+        })
+    }
+})(/Firefox/.test(window.navigator.userAgent));
+//-->
+</script>
+
+</HEAD>
+
+<BODY >
+<center>
+<DIV id=header></DIV>
+<DIV class=navg >
+<DIV class=mainNavg id=item01>
+<UL>
+  <LI id=item01Navg><A href="admin_db_def.htm">监控主机配置</A> </LI>
+  <LI id=item02Navg><A href="admin_dbstats_def.htm">监控方法配置</A>  </LI>
+  <LI id=item03Navg><A href="admin_collect_def.htm">监控项目配置</A> </LI>
+</UL>
+</DIV>
+</DIV>
+
+</center>
+<center>
+<DIV id=mainContent >
+	<TABLE style="BORDER-COLLAPSE: collapse" borderColor=#111111 cellSpacing=1 cellPadding=0 width=800 height=200 border=0>
+	  <TBODY>
+	  <TR>
+	    <TD>
+		  <TABLE border=0 cellspacing=0 cellPadding=0 width="100%">
+		  <TR>
+		  <TD>
+		  <TABLE id="hostlist_title" border=0 cellSpacing=0 cellPadding=0 width="782" align=center summary="" border=0>
+			<TBODY>
+			<TR>
+			  <TD height=16 align=middle bgColor=#000080 colSpan=8 ><center><FONT
+				color=#ffffff>监控主机列表</FONT><center></TD></TR>
+			<TR>
+			  <TD height=20 width="15%" bgColor=#6c95d0>主机名</TD>
+			  <TD height=20 width="15%" bgColor=#6c95d0>IP地址</TD>
+			  <TD height=20 width="15%" bgColor=#6c95d0>数据库名称</TD>
+			  <TD height=20 width="15%" bgColor=#6c95d0>数据库端口</TD>
+			  <TD height=20 width="15%" bgColor=#6c95d0>数据库用户名</TD>
+			  <TD height=20 width="15%" bgColor=#6c95d0>数据库类型</TD>
+			  <TD height=20 width="10%" bgColor=#6c95d0>OS类型</TD>
+			  </TR>
+			 </TBODY>
+		  </TABLE>
+		  </TD>
+		  <TD >
+		  <TABLE border=0 cellSpacing=0 cellPadding=0 width="18" align=center  border=0>
+			<TR>
+			  <TD height=16 width="100%" bgColor=#000080 >&nbsp;</TD>
+			</TR>
+			<TR>
+			  <TD height=20 width="100%" bgColor=#6c95d0>&nbsp;</TD>
+			</TR>
+		  </TABLE>
+		  </TD>
+		  </TABLE>
+		</TD>
+	  </TR>
+	  <TR>
+	  <TD>
+		  <DIV border=0 id="containhostlist" style="OVERFLOW-x:hidden;overflow-y:scroll; WIDTH: 800; HEIGHT: 200px" >
+		  <TABLE border=0 cellspacing=0 cellPadding=0 >
+		  <TR>
+		  <TD>
+		  <TABLE id="hostlisttable" border=0 bgcolor="#FFFFFF" cellspacing=1 cellPadding=0 width="784">
+			<TBODY>
+			</TBODY>
+		 </TABLE>
+		 </TD>
+		 <TD width=18></TD>
+		 </TR>
+		 </TABLE>
+		 </DIV>
+		 </TD>
+	  </TR>
+	  <TR>
+		<TD>
+		  <DIV bgColor=#ffffd9style="OVERFLOW: auto; WIDTH: 100%;">
+		  <TABLE id="editTable" align=center style="BORDER-COLLAPSE: collapse" cellSpacing=1 cellPadding=4 width="100%">
+			<TBODY>
+			<TR>
+			  <TD align=center width="25%" bgColor=#FFFFFF height=12><input type='button' id='queryhost' value='查询主机定义' onclick="QueryHostDef();"></TD>
+			  <TD align=center width="25%" bgColor=#FFFFFF height=12><input type='button' id='addhost' value='增加主机定义' onclick="AddHostDef();"></TD>
+			  <TD align=center width="25%" bgColor=#FFFFFF height=12><input type='button' id='deletehost' value='删除主机定义' onclick="DeleteHostDef();"></TD>
+			  <TD align=center width="25%" bgColor=#FFFFFF height=12><input type='button' id='modifyhost' value=' 修改主机定义' onclick="ModifyHostDef();"></TD>
+			</TR>
+			</TBODY>
+		 </TABLE>
+		 </DIV>
+		 </TD>
+	  </TR>
+
+	  <TR>
+		<TD>
+		  <TABLE id="commandTable" cellSpacing=1 cellPadding=4 width="100%">
+			<TBODY>
+			<TR bgColor=#ffffd9>
+			  <TD class="edit_caption" height=12 align=right>主机名:</TD>
+			  <TD class="edit_content" height=12 align=left><input type='text' maxlength=30 id='ed_hostname' value='' ></TD>
+			  <TD class="edit_caption" height=12 align=right>数据库名称:</TD>
+			  <TD class="edit_content" height=12 align=left><input type='text' maxlength=30 id='ed_dbname' value=''> </TD>
+			  <TD class="edit_caption" height=12 align=right>IP地址:</TD>
+			  <TD class="edit_content" height=12 align=left><input type='text' maxlength=17 id='ed_dbipaddr' value=''> </TD>
+			</TR>
+			<TR bgColor=#ffffd9>
+			</TR>
+			<TR bgColor=#ffffd9>
+			  <TD class="edit_caption" height=11 align=right>数据库端口:</TD>
+			  <TD class="edit_content" height=11 align=leftadminlogin.htm><input type='text' maxlength=5 id='ed_dbport' onKeypress="if(event.keyCode<48 || event.keyCode>57) event.returnValue = false;" value='1521'> </TD>
+			  <TD class="edit_caption" height=11 align=right>数据库用户:</TD>
+			  <TD class="edit_content" height=11 align=left><input type='text' maxlength=30 id='ed_dbuser' value=''> </TD>
+			  <TD class="edit_caption" height=11 align=right>数据库密码:</TD>
+			  <TD class="edit_content" height=11 align=left><input type='password' maxlength=64 id='ed_dbpass' value=''></TD>
+			</TR>
+			<TR bgColor=#ffffd9>
+			  <TD class="edit_caption" height=11 align=right>数据库类型:</TD>
+			  <TD class="edit_content" height=11 align=left>
+				<!--<input type='text' id='ed_dbtype' value=''> -->
+				<select class="edit_content" id="ed_dbtype">
+				  <option value="oracle" selected>oracle</option>
+				  <option value="mysql">mysql</option>
+				 </select>
+			  </TD>
+			  <TD class="edit_caption" height=11 align=right>数据库版本:</TD>
+			  <TD class="edit_content" height=11 align=left><input  type='text' maxlength=20 id='ed_dbvers' value=''></TD>
+			</TR>
+			<TR bgColor=#ffffd9>
+			  <TD class="edit_caption" height=11 align=right>OS类型:</TD>
+			  <TD class="edit_content" height=11 align=left>
+			  <!--<input type='text' id='ed_ostype' value=''> -->
+			  <select class="edit_content" id="ed_ostype" >
+				<option value="Linux">Linux</option>
+                <option value="AIX">AIX</option>
+				<option value="HPUX">HPUX</option>
+				<option value="Solaris">Solaris</option>
+			  </select>
+			  </TD>
+			  <TD class="edit_caption" height=11 align=right>OS用户名:</TD>
+			  <TD class="edit_content" height=11 align=left><input type='text' maxlength=30 id='ed_osuser' value=''></TD>
+			  <TD class="edit_caption"  height=11 align=right>&nbsp;</TD>
+			  <TD class="edit_content"  height=11 align=left>&nbsp;</TD>
+			</TR>
+			<TR bgColor=#ffffd9>
+			  <TD class="edit_caption"  height=11 align=right>备注</TD>
+			  <TD class="edit_content"  height=11 align=left><input type='text' maxlength=128 id='ed_remark' value=''></TD>
+			  <TD class="edit_caption"  height=11 align=right>&nbsp;</TD>
+			  <TD class="edit_content"  height=11 align=left>&nbsp;</TD>		  
+			</TR>
+
+			</TBODY>
+		 </TABLE>
+		</TD>
+	  </TR>
+
+	  </TBODY>
+	</TABLE>
+</DIV>
+</center>
+<script type="text/javascript">
+/* Create a new XMLHttpRequest object to talk to the Web server */
+var xmlhttp;
+try
+{
+    // Mozilla / Safari / IE7
+    xmlhttp = new XMLHttpRequest();
+}
+catch(e)
+{
+    // IE
+    var XMLHTTP_IDS = new Array('MSXML2.XMLHTTP.5.0',
+                                'MSXML2.XMLHTTP.4.0',
+                                'MSXML2.XMLHTTP.3.0',
+                                'MSXML2.XMLHTTP',
+                                'Microsoft.XMLHTTP');
+    var success = false;
+    for (var i=0;i < XMLHTTP_IDS.length && !success; i++)
+	{
+      try
+	  {
+          //alert(XMLHTTP_IDS[i]);
+		  xmlhttp = new ActiveXObject(XMLHTTP_IDS[i]);
+           success = true;
+      }catch (e) {}
+    }
+    if (!success)
+	{
+      //throw new Error('tangUnable to create XMLHttpRequest.');
+    }
+}
+
+if(!xmlhttp)
+{
+    alert("发生错误，无法创建AJAX对象!");
+    //location="nonAjax.htm"
+}
+
+//各个数据库的列名
+g_colNameList = ['hostid','hostname','dbipaddr','dbport','dbname','dbuser','dbpass','osuser','dbtype','ostype','dbvers','remark'];
+
+//把内容显示成一行一行的表格中各列的各列的序号，需要与<TABLE id="hostlist_title">表格中的各列一致
+g_listTableColIndexList = [1,2,4,3,5,8,9];
+
+g_editObjList = []
+typeList = ["input", "select", "textarea"]
+for (j = 0; j < typeList.length; j++)
+{ 
+    edObjList = document.getElementsByTagName(typeList[j]);
+    for (i=0; i <edObjList.length; i++)
+    {
+        if (edObjList[i].id.substr(0,3) != 'ed_')
+        {
+            continue;
+        }
+        objColName = edObjList[i].id.substr(3)
+        g_editObjList[objColName] = edObjList[i]
+    }
+}
+
+QueryHostDef();
+
+function processHttpResponse(response)
+{
+
+    dataArray = response.split("\n");
+    if (dataArray.length <=0)
+    {
+        alert('异常，http没有返回任何数据!!!');
+        return {
+            errCode: -1,
+            errMsg: '异常，http没有返回任何数据!!!',
+            resArray: []
+        };
+    }
+    errInfo = dataArray.pop().split('\t');
+    if (errInfo.length <2)
+    {
+        alert('返回无效的数据: '+unescape(errInfo));
+        return {
+            errCode: -1,
+            errMsg: '返回无效的数据: '+unescape(errInfo),
+            resArray: []
+        };
+    }
+    if (errInfo[0] != '0')
+    {
+        alert('errCode='+errInfo[0]+':'+unescape(errInfo[1]));
+        if(errInfo[0]=='9')
+		{
+            xmlhttp=null;
+			window.location.href="adminlogin.htm";
+        }
+        
+        return {
+            errCode: parseInt(errInfo[0]),
+            errMsg: unescape(errInfo[1]),
+            resArray: []
+        };
+    }
+    return {
+        errCode: 0,
+        errMsg: '',
+        resArray:dataArray
+    };
+}
+
+
+function QueryHostDef()
+{
+    var url;
+    var content;
+    url = "./";
+	content = "gethostlist";
+	OpenMessage("正在提取数据，请稍候...");
+    xmlhttp.open("POST", url, true);
+	xmlhttp.onreadystatechange = HandleQueryHostDef;
+    xmlhttp.setRequestHeader("Content-Length",content.length);
+    xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    xmlhttp.send(content);
+}
+
+function HandleQueryHostDef()
+{
+    var cell;
+    var i;
+    var index;
+    var time_value;
+    var max_time_value;
+    // alert("g_initfinished=" + g_initfinished);
+    if (xmlhttp.readyState == 4)
+    {
+        if (xmlhttp.status != 200) // call server error
+        {
+            // alert(tangxmlHttp.responseText);
+            return ;
+        }
+        
+        httpRes = processHttpResponse(xmlhttp.responseText)
+        if (httpRes.errCode!=0) //失败
+        {
+            return;
+        }
+		RetrieveHostList(httpRes.resArray);
+		CloseMessage();
+    }
+}
+
+function RetrieveHostList(lineArray)
+{
+    var i;
+	var valuearray;
+	var valueoriarray;
+	var row;
+	var col;
+	var colheight=26;
+
+	var hosttable=document.getElementById("hostlisttable");
+
+	try
+	{
+		for (i=hosttable.rows.length-1; i>=0; i--)
+		{
+		    hosttable.deleteRow(i);
+		}
+
+		for (i=0; i<lineArray.length; i++)
+		{
+		   valueoriarray=lineArray[i].split("\t");
+           valuearray=new Array();
+           for(j=0;j<valueoriarray.length;j++)
+		   {
+		       valuearray[j]=unescape(valueoriarray[j]);
+		   }
+
+		   row   =   hosttable.insertRow(hosttable.rows.length);//id=recordTable
+		   row.onclick=function(){selectrow(this);};
+		   row.bgColor = "#DDDDFF";
+		   //row.usedata=new Array();
+		   row.usedata=valuearray;
+
+           for (var j=0; j < g_listTableColIndexList.length; j++)
+           {
+		       col   =   row.insertCell(j);
+		       col.innerText  =  valuearray[ g_listTableColIndexList[j] ];
+		       col.width   = "15%";
+		       //col.bgColor = "#ffffd9";
+		       col.height  = colheight;
+           }
+		}
+	}
+	catch(e)
+	{
+	    alert(e);
+	}
+}
+
+function GetMaxHostId()
+{
+    var hosttable=document.getElementById("hostlisttable");
+    var cnt=hosttable.rows.length;
+    var MaxHostId=0;
+    var i;
+
+    for(i=0;i<cnt;i++)
+    {
+        if(hosttable.rows[i].usedata[0] > MaxHostId)
+        {
+            MaxHostId=parseInt(hosttable.rows[i].usedata[0]);
+        }
+    }
+    return MaxHostId;
+}
+
+function AddHostDef()
+{
+    try
+	{
+		var i;
+		var hosttable=document.getElementById("hostlisttable");
+
+		//检查新插入的主机名是否与现有的主机名重复
+		for(i=0; i<hosttable.rows.length; i++)
+		{
+			if(hosttable.rows[i].cells[0].innerText==g_editObjList['hostname'].value)
+			{
+			   alert("新增的主机名与现有的重复，请修改!");
+			   return;
+			}
+		}
+
+		var url;
+        var content;
+
+		url = "./";
+		content="addhostdef";
+
+        var hostid=GetMaxHostId()+1;
+		//hostid,hostname,dbipaddr,dbport,dbname,dbuser,dbpass,osuser,dbtype,ostype,dbvers,remark
+		content=content+'&'+hostid
+        
+        for (i=1; i<g_colNameList.length; i++)
+        {
+            content=content+'&'+escape(g_editObjList[g_colNameList[i]].value)
+        }
+
+		//alert(url);
+		xmlhttp.open("POST", url, true);
+	    xmlhttp.onreadystatechange = HandleAddHostDef;
+        xmlhttp.setRequestHeader("Content-Length",content.length);
+        xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xmlhttp.send(content);
+
+    }
+    catch(e)
+    {
+        alert("发生错误："+e);
+    }
+}
+
+function HandleAddHostDef()
+{
+    try
+	{
+		var valuearray ;
+		var col;
+		var containhostlist=document.getElementById("containhostlist");
+
+		if (xmlhttp.readyState == 4)
+		{
+			if (xmlhttp.status != 200) // call server error
+			{
+				// alert(tangxmlHttp.responseText);
+				return ;
+			}
+            
+            httpRes = processHttpResponse(xmlhttp.responseText)
+			if (httpRes.errCode!=0) //失败
+			{
+				return;
+			}
+
+            var valuearray=new Array();
+			valuearray[0]=parseInt(GetMaxHostId())+1;
+            for (var i=1; i<g_colNameList.length; i++)
+            {
+                valuearray[i] = g_editObjList[g_colNameList[i]].value;
+            }
+			appendrow(valuearray);
+			containhostlist.scrollTop = containhostlist.scrollHeight;
+		}
+	}
+	catch(e)
+	{
+	    alert("发生错误："+e);
+	}
+}
+
+function DeleteHostDef()
+{
+    try
+	{
+		var i;
+		//检查新插入的主机名是否与现有的主机名重复
+		if(!confirm("是否要删除当前记录?"))
+		{
+			return;
+		}
+
+		if(currentrow==null)
+		{
+			alert("没有选中要删除的行");
+			return;
+		}
+
+		var url;
+		var content;
+		url = "./";
+		content="deletehostdef";
+		//hostname,dbipaddr,dbport,dbname,dbuser,dbpass,osuser,ospass,dbtype,ostype,dbvers,check_db_hang,sms,remark
+		content=content+'&'+escape(currentrow.usedata[0]);
+		xmlhttp.open("POST", url, true);
+	    xmlhttp.onreadystatechange = HandleDeleteHostDef;
+        xmlhttp.setRequestHeader("Content-Length",content.length);
+        xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xmlhttp.send(content);
+	}
+	catch(e)
+	{
+	    alert("发生错误："+e);
+	}
+}
+
+function HandleDeleteHostDef()
+{
+    // alert("g_initfinished=" + g_initfinished);
+	try
+	{
+		var valuearray;
+		var col;
+		var hosttable=document.getElementById("hostlisttable");
+
+		if (xmlhttp.readyState == 4)
+		{
+			if (xmlhttp.status != 200) // call server error
+			{
+				// alert(tangxmlHttp.responseText);
+				return ;
+			}
+            httpRes = processHttpResponse(xmlhttp.responseText)
+			if (httpRes.errCode!=0) //失败
+			{
+				return;
+			}
+            
+			hosttable.deleteRow(currentrow.rowIndex);
+		}
+	}
+	catch(e)
+	{
+	    alert("发生错误："+e);
+	}
+}
+
+function ModifyHostDef()
+{
+    try
+	{
+		var i;
+		//检查新插入的主机名是否与现有的主机名重复
+		var url;
+
+		if(!confirm("是否要更新当前记录?"))
+		{
+			return;
+		}
+
+		if(currentrow==null)
+		{
+			alert("没有选中要修改的行!");
+			return;
+		}
+
+		url = "./";
+		content="modifyhostdef";
+		content =content+'&1&'+escape(currentrow.usedata[0]);
+		var ischanged=false;
+
+		for(var i=1; i<g_colNameList.length; i++)
+		{
+            editValue = g_editObjList[g_colNameList[i]].value
+            if(editValue != currentrow.usedata[i])
+			{
+				content=content+'&'+g_colNameList[i]+'&'+escape(editValue);
+				ischanged=true;
+			}
+		}
+		if(! ischanged)
+		{
+			alert("没有改变任何数据!");
+			return;
+		}
+
+		xmlhttp.open("POST", url, true);
+	    xmlhttp.onreadystatechange = HandleModifyHostDef;
+        xmlhttp.setRequestHeader("Content-Length",content.length);
+        xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        xmlhttp.send(content);
+	}
+	catch(e)
+	{
+	    alert("发生错误："+e);
+	}
+}
+
+function HandleModifyHostDef()
+{
+    try
+	{
+		var valuearray;
+		var col;
+		if (xmlhttp.readyState == 4)
+		{
+			if (xmlhttp.status != 200) // call server error
+			{
+				// alert(tangxmlHttp.responseText);
+				return ;
+			}
+            httpRes = processHttpResponse(xmlhttp.responseText)
+			if (httpRes.errCode!=0) //失败
+			{
+				return;
+			}
+            
+
+			valuearray=new Array();
+			//hostname,dbipaddr,dbport,dbname,dbuser,dbpass,osuser,dbtype,ostype,dbvers,remark
+			valuearray[0]=currentrow.usedata[0];
+            for (var i=1; i<g_colNameList.length; i++)
+            {
+                valuearray[i] = g_editObjList[g_colNameList[i]].value;
+            }
+			currentrow.usedata=valuearray;
+            for (var i=0; i < g_listTableColIndexList.length; i++)
+            {
+                currentrow.cells[i].innerText=valuearray[g_listTableColIndexList[i]];                
+            }
+		}
+	}
+	catch(e)
+	{
+	    alert("发生错误："+e);
+	}
+}
+
+
+function appendrow(valuearray)
+{
+    try
+	{
+		var colheight=26;
+		var row,col;
+		var hosttable=document.getElementById("hostlisttable");
+
+		row   =   hosttable.insertRow(hosttable.rows.length);//id=recordTable
+		row.onclick = function(){selectrow(this);};
+
+		row.bgColor = "#DDDDFF";
+		row.usedata = valuearray;
+        for (var i=0; i < g_listTableColIndexList.length; i++)
+        {
+            col   =   row.insertCell(i);
+            col.innerText  =  valuearray[ g_listTableColIndexList[i] ];
+            col.width   = "15%";
+            //col.bgColor = "#ffffd9";
+            col.height  = colheight;
+        }
+		selectrow(row);
+	}
+	catch(e)
+	{
+	    alert(e);
+	}
+}
+
+
+var currentrow = null;
+function selectrow(object)
+{
+	try
+	{
+		if(currentrow!=null)
+		{
+			currentrow.bgColor="#DDDDFF";
+		}
+		currentrow = object;
+		object.bgColor="#AAAAFF";
+
+        /*
+        for (var i=0; i < g_listTableColIndexList.length; i++)
+        {
+            currentrow.cells[i].innerText = object.usedata[g_listTableColIndexList[i]];                
+        }*/
+
+        for(var i=1; i<g_colNameList.length; i++)
+		{
+            g_editObjList[g_colNameList[i]].value = object.usedata[i];
+		}
+	}
+	catch(e)
+	{
+	    alert(e);
+	}
+
+}
+
+//弹出提示信息并自动关闭
+function OpenMessage(str) {
+    var msgw,msgh,bordercolor;
+    msgw=350;//提示窗口的宽度
+    msgh=80;//提示窗口的高度
+    titleheight=25 //提示窗口标题高度
+    bordercolor="#336699";//提示窗口的边框颜色
+    titlecolor="#99CCFF";//提示窗口的标题颜色
+    var sWidth,sHeight;
+    //获取当前窗口尺寸
+    sWidth = document.body.offsetWidth;
+    sHeight = document.body.scrollHeight;
+    //背景div
+    var bgObj=document.createElement("div");
+    bgObj.setAttribute('id','alertbgDiv');
+    bgObj.style.position="absolute";
+    bgObj.style.top="0";
+    bgObj.style.background="#E8E8E8";
+    bgObj.style.filter="progid:DXImageTransform.Microsoft.Alpha(style=3,opacity=25,finishOpacity=75";
+    bgObj.style.opacity="0.6";
+    bgObj.style.left="0";
+    bgObj.style.width = sWidth + "px";
+    bgObj.style.height = sHeight + "px";
+    bgObj.style.zIndex = "10000";
+    document.body.appendChild(bgObj);
+    //创建提示窗口的div
+    var msgObj = document.createElement("div")
+    msgObj.setAttribute("id","alertmsgDiv");
+    msgObj.setAttribute("align","center");
+    msgObj.style.background="white";
+    msgObj.style.border="1px solid " + bordercolor;
+    msgObj.style.position = "absolute";
+    msgObj.style.left = "50%";
+    msgObj.style.font="12px/1.6em Verdana, Geneva, Arial, Helvetica, sans-serif";
+    //窗口距离左侧和顶端的距离 
+    msgObj.style.marginLeft = "-225px";
+    //窗口被卷去的高+（屏幕可用工作区高/2）-150
+    msgObj.style.top = document.body.scrollTop+(window.screen.availHeight/2)-150 +"px";
+    msgObj.style.width = msgw + "px";
+    msgObj.style.height = msgh + "px";
+    msgObj.style.textAlign = "center";
+    msgObj.style.lineHeight ="25px";
+    msgObj.style.zIndex = "10001";
+    document.body.appendChild(msgObj);
+    //提示信息标题
+    var title=document.createElement("h4");
+    title.setAttribute("id","alertmsgTitle");
+    title.setAttribute("align","left");
+    title.style.margin="0";
+    title.style.padding="3px";
+    title.style.background = bordercolor;
+    title.style.filter="progid:DXImageTransform.Microsoft.Alpha(startX=20, startY=20, finishX=100, finishY=100,style=1,opacity=75,finishOpacity=100);";
+    title.style.opacity="0.75";
+    title.style.border="1px solid " + bordercolor;
+    title.style.height="18px";
+    title.style.font="12px Verdana, Geneva, Arial, Helvetica, sans-serif";
+    title.style.color="white";
+    title.innerHTML="提示信息";
+    document.getElementById("alertmsgDiv").appendChild(title);
+    //提示信息
+    var txt = document.createElement("p");
+    txt.setAttribute("id","msgTxt");
+    txt.style.margin="16px 0";
+    txt.innerHTML = str;
+    document.getElementById("alertmsgDiv").appendChild(txt);
+}
+function CloseMessage() {
+    document.body.removeChild(document.getElementById("alertbgDiv"));
+    document.getElementById("alertmsgDiv").removeChild(document.getElementById("alertmsgTitle"));
+    document.body.removeChild(document.getElementById("alertmsgDiv"));
+}
+
+</script>
+</BODY>
+</HTML>

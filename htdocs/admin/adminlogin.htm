@@ -1,0 +1,128 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>fgstats
+    </title>
+    <STYLE TYPE="text/css"> 
+    <!-- 
+	--> 
+    </STYLE> 
+	
+  </head>
+  
+  <body style="background-color: rgb(255, 240, 255);">
+    <center>
+      <table style="background-color: rgb(0, 0, 0); width: 400px; height: 80px;" col="0" sellspan="0" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+          <tr>
+            <td style="background-color: rgb(255, 255, 255);" id="noticemsg">输入密码:</td>
+            <td style="background-color: rgb(255, 255, 255);" ><input onkeydown="inputonkeydown();" type="password" name= "input_password"  length=19 id="input_password"  /></td>
+			<td style="background-color: rgb(255, 255, 255);" ><input id="enter" type="submit" name="signIn" value="登录" onclick="signIn_click();" />		
+          </tr>
+		  </tbody>
+      </table>
+    </center>
+<script type="text/javascript">
+/* Create a new XMLHttpRequest object to talk to the Web server */
+var xmlhttp;
+try
+{
+    // Mozilla / Safari / IE7
+    xmlhttp = new XMLHttpRequest();
+}
+catch(e)
+{
+	// IE
+    var XMLHTTP_IDS = new Array('Msxml2.XMLHTTP',
+	                            'MSXML2.XMLHTTP.5.0',
+                                'MSXML2.XMLHTTP.4.0',
+                                'MSXML2.XMLHTTP.3.0',
+                                'Microsoft.XMLHTTP');
+    var success = false;
+    for (var i=0;i < XMLHTTP_IDS.length && !success; i++)
+	{
+      try
+	  {
+          //alert(XMLHTTP_IDS[i]);
+		   if(window.ActiveXObject)
+		   {
+		      xmlhttp = new ActiveXObject(XMLHTTP_IDS[i]);
+              success = true;
+		   }
+      }catch (e) {alert(XMLHTTP_IDS[i]+":"+e)}
+    }
+    if (!success)
+	{
+      //throw new Error('tangUnable to create XMLHttpRequest.');
+    }
+}
+
+if(!xmlhttp)
+{
+  alert("XMLHTTP不可用,即将跳转到非Ajax页面。");
+  //location="nonAjax.htm"
+}
+
+function inputonkeydown() 
+{
+	if(window.event.keyCode == 13) 
+    { 
+	    document.getElementById("enter").click(); 
+	    return false; 
+	} 
+} 
+
+
+function signIn_click()
+{
+    var url;
+    var content;
+    url = "./";
+	//alert(url);
+	content = "httpdbauth&"+document.getElementById("input_password").value;
+	
+	/*
+    xmlhttp.open("GET", url, true);
+    xmlhttp.onreadystatechange = ResultAdminLogin;
+    xmlhttp.send(null);
+    */
+    xmlhttp.open("POST", url, true);
+	xmlhttp.onreadystatechange = ResultAdminLogin;
+    xmlhttp.setRequestHeader("Content-Length",content.length);
+    xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    xmlhttp.send(content);
+}
+
+function ResultAdminLogin()
+{
+    var cell;
+    var i;
+    var index;
+    var time_value;
+    var max_time_value;
+    // alert("g_initfinished=" + g_initfinished);
+    if (xmlhttp.readyState == 4)
+    {
+        if (xmlhttp.status != 200) // call server error
+        {
+            // alert(tangxmlHttp.responseText);
+            return ;
+        }
+        var response = xmlhttp.responseText;
+		//alert(response);
+		if(response=="0")
+		{
+		    window.location.href="admin_db_def.htm";
+		}
+		else
+		{
+		    //alert("login failed!");
+			document.getElementById("noticemsg").innerText="密码错误，重新输入:";
+		}
+    }
+}
+
+</script>
+  </body>
+</html>
+
